@@ -1,0 +1,6 @@
+{
+  "libraries": ["./slices"],
+  "repositoryName": "dan-hiester-design",
+  "adapter": "@slicemachine/adapter-nuxt",
+  "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
+}

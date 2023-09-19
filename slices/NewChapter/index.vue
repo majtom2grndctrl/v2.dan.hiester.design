@@ -1,0 +1,82 @@
+<script setup lang="ts">
+import { Content } from "@prismicio/client";
+
+// The array passed to `getSliceComponentProps` is purely optional.
+// Consider it as a visual hint for you when templating your slice.
+defineProps(
+  getSliceComponentProps<Content.OverlineSlice>([
+    "slice",
+    "index",
+    "slices",
+    "context",
+  ])
+);
+</script>
+
+<template>
+  <div
+    :data-slice-type="slice.slice_type"
+    :data-slice-variation="slice.variation"
+    class="new-chapter-intro"
+  >
+    <div class="horizontal-rule"></div>
+    <div class="dhd--text--overline" v-if="slice.primary.overline" v-html="slice.primary.overline" />
+    <PrismicRichText :field="slice.primary.title" class="heading" />
+    <PrismicRichText v-if="slice.primary.lede" :field="slice.primary.lede" class="lede" />
+</div>
+</template>
+
+<style lang="scss">
+.new-chapter-intro {
+  @include wrapper-full-width;
+  margin: var(--spatial-scale-12) var(--spatial-scale-2) 0;
+  .heading {
+    font-family: var(--font-heading);
+  }
+
+  h2 {
+    font-size: var(--type-scale-4);
+    font-weight: 600;
+    line-height: var(--spatial-scale-7);
+    margin-top: 0;
+  }
+  h3 {
+    font-size: var(--type-scale-3);
+    line-height: var(--spatial-scale-6); 
+    margin-top: 0;
+  }
+  .lede {
+    font-size: var(--type-scale-2);
+    line-height: var(--spatial-scale-6);
+  }
+}
+
+@media(min-width: $breakpoint-small) {
+  .new-chapter-intro {
+    margin: var(--spatial-scale-10) auto 0;
+    .dhd--text--overline, .heading, .lede {
+      max-width: calc(100% * 11 / 13);
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}
+
+@media(min-width: $breakpoint-medium) {
+  .new-chapter-intro {
+    .dhd--text--overline, .heading, .lede {
+      max-width: calc(100% * 9 / 15);
+    }
+  }
+}
+
+@media(min-width: $breakpoint-large) {
+  .new-chapter-intro {
+    margin-top: var(--spatial-scale-12);
+    .dhd--text--overline, .heading, .lede {
+      max-width: calc(100% * 9 / 17);
+    }
+  }
+}
+
+</style>

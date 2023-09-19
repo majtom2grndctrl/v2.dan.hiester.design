@@ -1,0 +1,28 @@
+{
+  "id": "ct2",
+  "label": "CT2",
+  "format": "custom",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "body_copy": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

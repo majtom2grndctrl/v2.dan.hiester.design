@@ -1,0 +1,82 @@
+:root {
+  --font-heading: gilmer, poppins, sans-serif;
+  --font-body: libre-franklin, 'Libre Franklin', sans-serif;
+  --mobile-nav-transition-duration: .3s;
+
+  --gray-300: #5a6468;
+  --gray-400: #707B7F;
+  --gray-500: #899497;
+  --gray-600: #97A3A7;
+  --gray-800: #D9E1E5;
+  --gray-900: #E7ECEF;
+
+  --bg-blue-600: #197FA1;
+  --bg-blue-400: #55768C;
+  --bg-blue-200: #296C82;
+
+  --blue-400: #03A1D5;
+
+  --link-bg-inactive: rgba(229, 239, 239, 0);
+  --link-bg-active: rgba(229, 239, 239, 1);
+
+  --white: #fff;
+
+  --type-scale-base: 1rem;
+  --scale-multiplier: 1.2;
+  --type-scale-1: var(--type-scale-base);
+  --type-scale-2: calc(var(--type-scale-1) * var(--scale-multiplier));
+  --type-scale-3: calc(var(--type-scale-2) * var(--scale-multiplier));
+  --type-scale-4: calc(var(--type-scale-3) * var(--scale-multiplier));
+  --type-scale-5: calc(var(--type-scale-4) * var(--scale-multiplier));
+  --type-scale-6: calc(var(--type-scale-5) * var(--scale-multiplier));
+  --type-scale-7: calc(var(--type-scale-6) * var(--scale-multiplier));
+  --type-scale-8: calc(var(--type-scale-7) * var(--scale-multiplier));
+  --type-scale-0: calc(var(--type-scale-base) / var(--scale-multiplier));
+  --type-scale-00: calc(var(--type-scale-0) / var(--scale-multiplier));
+
+  --spatial-scale-base: calc(var(--type-scale-base) * .73);
+  --spatial-scale-1: var(--spatial-scale-base);
+  --spatial-scale-2: calc(var(--spatial-scale-1) * var(--scale-multiplier));
+  --spatial-scale-3: calc(var(--spatial-scale-2) * var(--scale-multiplier));
+  --spatial-scale-4: calc(var(--spatial-scale-3) * var(--scale-multiplier));
+  --spatial-scale-5: calc(var(--spatial-scale-4) * var(--scale-multiplier));
+  --spatial-scale-6: calc(var(--spatial-scale-5) * var(--scale-multiplier));
+  --spatial-scale-7: calc(var(--spatial-scale-6) * var(--scale-multiplier));
+  --spatial-scale-8: calc(var(--spatial-scale-7) * var(--scale-multiplier));
+  --spatial-scale-9: calc(var(--spatial-scale-8) * var(--scale-multiplier));
+  --spatial-scale-10: calc(var(--spatial-scale-9) * var(--scale-multiplier));
+  --spatial-scale-11: calc(var(--spatial-scale-10) * var(--scale-multiplier));
+  --spatial-scale-12: calc(var(--spatial-scale-11) * var(--scale-multiplier));
+  --spatial-scale-0: calc(var(--spatial-scale-base) / var(--scale-multiplier));
+  --spatial-scale-00: calc(var(--spatial-scale-0) / var(--scale-multiplier));
+
+  --desktop-max-width: calc(1512rem /16);
+
+  --block-border-radius: var(--spatial-scale-2);
+  --mobile-block-margin: var(--spatial-scale-2);
+  --mobile-max-width: 30rem;
+
+  @media(min-width: $breakpoint-small) {
+    --scale-multiplier: 1.25;
+    --type-scale-base: calc(18rem/16);
+  }
+
+  @media(min-width: $breakpoint-large) {
+    --type-scale-base: calc(20rem/16);
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  margin: 0;
+}
+
+.dhd--text--overline {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--type-scale-0);
+  line-height: var(--spatial-scale-0);
+  margin-top: 0;
+  margin-bottom: var(--spatial-scale-00);
+  text-transform: uppercase;
+}

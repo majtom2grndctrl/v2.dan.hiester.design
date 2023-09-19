@@ -1,0 +1,84 @@
+{
+  "id": "story",
+  "label": "Story",
+  "format": "page",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "story_title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Story Title",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "heading1,em"
+        }
+      },
+      "story_type": {
+        "type": "Text",
+        "config": {
+          "label": "Story Type",
+          "placeholder": ""
+        }
+      },
+      "time_meta": {
+        "type": "Text",
+        "config": {
+          "label": "Time Meta",
+          "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "body_copy": {
+              "type": "SharedSlice"
+            },
+            "image": {
+              "type": "SharedSlice"
+            },
+            "overline": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_description": {
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "A brief summary of the page"
+        },
+        "type": "Text"
+      },
+      "meta_image": {
+        "config": {
+          "constraint": {
+            "height": 1260,
+            "width": 2400
+          },
+          "label": "Meta Image",
+          "thumbnails": []
+        },
+        "type": "Image"
+      },
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      }
+    }
+  }
+}
