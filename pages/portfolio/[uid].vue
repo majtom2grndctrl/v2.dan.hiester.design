@@ -6,7 +6,7 @@ const route = useRoute()
 const { data: page } = useAsyncData('[uid]', () =>
   prismic.client.getByUID('case_study', route.params.uid as string)
 )
-
+setPageLayout('inside-page');
 useHead({
   title: prismic.asText(page.value?.data.title)
 })
@@ -15,7 +15,6 @@ useHead({
 
 
 <template>
-  <NuxtLayout name="inside-page">
     <div>
       <PrismicRichText class="title" :field="page?.data.title" />
       <SliceZone
@@ -24,7 +23,6 @@ useHead({
         :components="components"
       />
     </div>
-  </NuxtLayout>
 </template>
 
 <style lang="scss" scoped>

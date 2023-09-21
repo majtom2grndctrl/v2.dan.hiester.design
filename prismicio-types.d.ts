@@ -188,6 +188,63 @@ interface Ct2DocumentData {
 export type Ct2Document<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<Ct2DocumentData>, "ct2", Lang>;
 
+/**
+ * Item in *Main Navigation → Links*
+ */
+export interface MainNavigationDocumentDataLinksItem {
+  /**
+   * Link field in *Main Navigation → Links*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: main_navigation.links[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+
+  /**
+   * Label field in *Main Navigation → Links*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: main_navigation.links[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+}
+
+/**
+ * Content for Main Navigation documents
+ */
+interface MainNavigationDocumentData {
+  /**
+   * Links field in *Main Navigation*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: main_navigation.links[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  links: prismic.GroupField<Simplify<MainNavigationDocumentDataLinksItem>>;
+}
+
+/**
+ * Main Navigation document from Prismic
+ *
+ * - **API ID**: `main_navigation`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type MainNavigationDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<MainNavigationDocumentData>,
+    "main_navigation",
+    Lang
+  >;
+
 type PageDocumentDataSlicesSlice = BodyCopySlice;
 
 /**
@@ -328,6 +385,7 @@ export type AllDocumentTypes =
   | CaseStudyDocument
   | Ct1Document
   | Ct2Document
+  | MainNavigationDocument
   | PageDocument
   | StoryDocument;
 
@@ -542,6 +600,9 @@ declare module "@prismicio/client" {
       Ct2Document,
       Ct2DocumentData,
       Ct2DocumentDataSlicesSlice,
+      MainNavigationDocument,
+      MainNavigationDocumentData,
+      MainNavigationDocumentDataLinksItem,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,

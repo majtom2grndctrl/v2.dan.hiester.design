@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h1 class="foo">Let me tell you a story…</h1>
-    <h2>About Dan</h2>
-    <slot />
+      <h1 class="foo">Let me tell you a story…</h1>
+      <h2>About Dan</h2>
+      <slot />
   </div>
 </template>
 
