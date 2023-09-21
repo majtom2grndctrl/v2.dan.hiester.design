@@ -1,12 +1,15 @@
 <script setup lang="ts">
 import { components } from '~/slices'
 
+definePageMeta({
+  layout: 'inside-page',
+})
+
 const prismic = usePrismic()
 const route = useRoute()
 const { data: page } = useAsyncData('[uid]', () =>
   prismic.client.getByUID('case_study', route.params.uid as string)
 )
-setPageLayout('inside-page');
 useHead({
   title: prismic.asText(page.value?.data.title)
 })
