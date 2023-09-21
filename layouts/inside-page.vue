@@ -18,9 +18,12 @@
       <nav class="header-nav">
         <PrismicLink
           v-for="item in navLinks?.data.links"
+          :key="item.label + '_link'"
           :field="item.link"
-          v-html="item.label"
-        />
+          class="header-link"
+        >
+          {{ item.label }}
+        </PrismicLink>
       </nav>
     </header>
   </div>
@@ -35,6 +38,10 @@
 <style lang="scss" scoped>
   .header {
     margin: var(--mobile-margin);
+  }
+  .header-nav {
+    display: flex;
+    gap: 1rem;
   }
   .logo-type {
     font-family: var(--font-heading);
