@@ -1,30 +1,14 @@
 <script setup lang="ts">
-  const prismic = usePrismic();
-  const navLinks = useAsyncData(
-    '$site_navigation',
-    () => prismic.client.getSingle('main_navigation')
-  ).data;
-
-  console.log({ links: navLinks });
-
+import Nav1 from '~/components/Nav1.vue';
 </script>
 
 <template>
   <div class="header-wrapper">
     <header class="header">
-      <div class="logo-wrapper">
+      <div class="logo-wrapper" id="dh-logo-wrapper">
         <div class="logo-type">Dan Hiester</div>
       </div>
-      <nav class="header-nav">
-        <PrismicLink
-          v-for="item in navLinks?.data.links"
-          :key="item.label + '_link'"
-          :field="item.link"
-          class="header-link"
-        >
-          {{ item.label }}
-        </PrismicLink>
-      </nav>
+      <Nav1 />
     </header>
   </div>
   <main class="main-wrapper">
@@ -36,16 +20,39 @@
 </template>
 
 <style lang="scss" scoped>
-  .header {
-    margin: var(--mobile-margin);
+  .header-wrapper {
+    @include wrapper-full-width;
   }
-  .header-nav {
+  .header {
+    margin-top: var(--mobile-block-margin);
+    margin-bottom: var(--mobile-block-margin);
     display: flex;
-    gap: 1rem;
+    flex-direction: row;
+    align-items: basline;
+    gap: var(--spatial-scale-3);
   }
   .logo-type {
     font-family: var(--font-heading);
     font-size: var(--type-scale-3);
     font-weight: 700;
+  }
+  @media(min-width: $breakpoint-medium) {
+    .header {
+      display: grid;
+      grid-template-columns: repeat(17, 1fr);
+      gap: var(--spatial-scale-1);
+    }
+    .logo-wrapper {
+      grid-column-start: 1;
+      grid-column-end: 8;
+    }
+    @media(min-width: $breakpoint-large) {
+      .header {
+        grid-template-columns: repeat(19, 1fr);
+      }
+      .logo-wrapper {
+        grid-column-end: 6;
+      }
+    }
   }
 </style>

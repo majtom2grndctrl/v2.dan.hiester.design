@@ -1,8 +1,12 @@
 @mixin wrapper-full-width() {
-  max-width: var(--desktop-max-width);
-  margin-right: auto;
-  margin-left: auto;
-  box-sizing: border-box;
+  margin-right: var(--mobile-block-margin);
+  margin-left: var(--mobile-block-margin);
+  @media (min-width: $breakpoint-large) {
+    max-width: var(--desktop-max-width);
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 var(--mobile-block-margin);
+  }
 }
 
 $breakpoint-small: calc(600rem/16);

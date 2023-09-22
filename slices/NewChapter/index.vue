@@ -29,7 +29,7 @@ defineProps(
 <style lang="scss">
 .new-chapter-intro {
   @include wrapper-full-width;
-  margin: var(--spatial-scale-12) var(--spatial-scale-2) 0;
+  margin-top: var(--spatial-scale-12);
   .heading {
     font-family: var(--font-heading);
   }

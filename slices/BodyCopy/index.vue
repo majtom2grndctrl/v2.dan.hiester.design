@@ -29,7 +29,6 @@ defineProps(
 }
 
 .body-copy {
-  margin: 0 var(--spatial-scale-2);
   p {
     font-size: var(--type-scale-1);
     line-height: var(--spatial-scale-6);
