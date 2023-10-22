@@ -31,7 +31,7 @@ defineProps(
 .body-copy {
   p {
     font-size: var(--type-scale-1);
-    line-height: var(--spatial-scale-6);
+    line-height: var(--spatial-scale-5);
     margin-top: var(--spatial-scale-5);
     margin-bottom: var(--spatial-scale-5);
   }
