@@ -10,9 +10,6 @@ const { data: page } = useAsyncData('[uid]', () =>
 useHead({
   title: prismic.asText(page.value?.data.title)
 })
-definePageMeta({
-  layout: 'inside-page',
-});
 </script>
 
 
