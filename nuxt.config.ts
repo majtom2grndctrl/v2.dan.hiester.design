@@ -31,6 +31,15 @@ export default defineNuxtConfig({
     },
   },
   modules: ['@nuxtjs/prismic'],
+  image: {
+    provider: "prismic",
+    prismic: {},
+    screens: {
+      "small": 600,
+      "medium": 800,
+      "large": 1200,
+    }
+  },
 
   prismic: {
     endpoint: 'dan-hiester-design',

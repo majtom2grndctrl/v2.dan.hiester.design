@@ -26,12 +26,12 @@ useHead({
       </div>
     </div>
   </PageHero>
-  <NuxtLink to="/portfolio/road-closures-tracker">First case study</NuxtLink>
-
+  <PrismicRichText class="section-header" :field="page?.data.case_study_heading" />
   <SliceZone
     wrapper="main"
     :slices="page?.data.slices ?? []"
     :components="components"
+    class="dhd--layout-wrapper"
   />
 </template>
 
@@ -46,6 +46,14 @@ useHead({
       border: var(--spatial-scale-1) solid var(--text-knockout);
       box-sizing: border-box;
       max-width: 100%
+    }
+    .section-header {
+      font-family: var(--font-heading);
+      font-size: var(--type-scale-3);
+      line-height: var(--spatial-scale-2);
+      margin-top: var(--spatial-scale-10);
+      margin-bottom: var(--spatial-scale-8);
+      text-align: center;
     }
 
   @media (min-width: $breakpoint-large) {

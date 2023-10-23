@@ -548,12 +548,12 @@ export interface CaseStudyTeaserSliceDefaultPrimary {
   /**
    * Case Study Type field in *CaseStudyTeaser → Primary*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: case_study_teaser.primary.case_study_type
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  case_study_type: prismic.KeyTextField;
+  case_study_type: prismic.RichTextField;
 
   /**
    * Title field in *CaseStudyTeaser → Primary*
@@ -574,6 +574,16 @@ export interface CaseStudyTeaserSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   summary: prismic.RichTextField;
+
+  /**
+   * Image field in *CaseStudyTeaser → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: case_study_teaser.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
 
   /**
    * CMS Document field in *CaseStudyTeaser → Primary*
