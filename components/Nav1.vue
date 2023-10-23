@@ -7,29 +7,27 @@
 </script>
 
 <template>
-  <div>
-    <nav class="Nav1">
-        <PrismicLink
-          v-for="item in navLinks?.data.links"
-          :key="item.label + '_link'"
-          :field="item.link"
-          class="header-link"
-        >
-          {{ item.label }}
-        </PrismicLink>
-      </nav>
-  </div>
+  <nav class="Nav1">
+    <PrismicLink
+      v-for="item in navLinks?.data.links"
+      :key="item.label + '_link'"
+      :field="item.link"
+      class="Nav1-link"
+    >
+      {{ item.label }}
+    </PrismicLink>
+  </nav>
 </template>
 
 <style lang="scss" scoped>
   .Nav1 {
     display: flex;
     gap: var(--spatial-scale-00);
-    > a {
+    > .Nav1-link {
       background-color: var(--link-bg-inactive);
       border-radius: var(--spatial-scale-00);
       box-sizing: border-box;
-      color: #97A3A7;
+      color: var(--nav-link-color);
       display: flex;
         align-items: center;
         justify-content: center;
@@ -38,7 +36,7 @@
       font-family: var(--font-heading);
       line-height: var(--spatial-scale-0);
       min-width: var(--spatial-scale-10);
-      margin: 0;
+      margin: calc(var(--spatial-scale-0) * -1);
       padding: var(--spatial-scale-1);
       position: relative;
       text-decoration: none;

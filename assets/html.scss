@@ -16,10 +16,27 @@
 
   --blue-400: #03A1D5;
 
+
   --link-bg-inactive: rgba(229, 239, 239, 0);
   --link-bg-active: rgba(229, 239, 239, 1);
 
   --white: #fff;
+
+  --midnight-slate: hsl(220 6% 10%);
+
+  --text-primary: var(--midnight-slate);
+  --background-primary: hsl(0 0% 100%);
+  --text-knockout: var(--white);
+  --blue-hero-bg: hsl(198 60% 51%);
+
+  @media(prefers-contrast: more) {
+    --blue-hero-bg: hsl(198 59% 26%);
+  }
+
+  @media(prefers-color-scheme: dark) {
+    --background-primary: var(--midnight-slate);
+    --text-primary: var(--white)
+  }
 
   --type-scale-base: 1rem;
   --scale-multiplier: 1.2;
@@ -65,7 +82,6 @@
     --type-scale-base: calc(20rem/16);
   }
 }
-
 body {
   font-family: var(--font-body);
   margin: 0;
@@ -80,3 +96,23 @@ body {
   margin-bottom: var(--spatial-scale-00);
   text-transform: uppercase;
 }
+.dhd--layout-wrapper {
+  margin-right: var(--spatial-scale-2);
+  margin-left: var(--spatial-scale-2);
+}
+@media (min-width: $breakpoint-large) {
+  .dhd--layout-wrapper {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: calc(1302rem / 16);
+    /*
+       One out of 15 columns, plus a gutter of spacial scale 2
+       This sets the illusion of a 17 column grid,
+       where the outermost rows are reserved for spacing / rhythm
+    */
+    --lateral-padding: calc(calc(1/15*100%) + var(--spatial-scale-2));
+    padding-right: var(--lateral-padding);
+    padding-left: var(--lateral-padding);
+  }
+}
+
