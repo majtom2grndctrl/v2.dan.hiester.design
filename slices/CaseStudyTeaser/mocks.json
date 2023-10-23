@@ -1,0 +1,54 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"case_study_type": {
+				"__TYPE__": "FieldContent",
+				"value": "excited",
+				"type": "Text"
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Tears"
+						}
+					}
+				]
+			},
+			"summary": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nisi qui fugiat do consequat pariatur occaecat irure est irure Lorem consectetur non."
+						}
+					}
+				]
+			},
+			"cta_link": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Consectetur consectetur dolore sint labore aliquip duis enim sunt."
+						}
+					}
+				]
+			},
+			"cms_document": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "DocumentLink",
+					"id": "mock_document_id"
+				}
+			}
+		},
+		"items": []
+	}
+]
