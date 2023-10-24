@@ -14,11 +14,11 @@ defineProps(
 </script>
 
 <template>
-  <div class="CaseStudyTeaser-wrapper">
+  <div class="dhd--CaseStudyTeaser-wrapper">
     <article
       :data-slice-type="slice.slice_type"
       :data-slice-variation="slice.variation"
-      class="CaseStudyTeaser"
+      class="dhd--CaseStudyTeaser"
     >
       <div class="screenshot-wrapper">
         <PrismicImage
@@ -28,7 +28,7 @@ defineProps(
           loading="lazy"
         />
       </div>
-      <div class="content-wrapper">
+      <div class="content-wrapper dhd--cms-content">
         <PrismicText class="dhd--text--overline" :field="slice.primary.case_study_type" />
         <PrismicRichText class="title" :field="slice.primary.title" />
         <PrismicRichText class="summary" :field="slice.primary.summary" />
@@ -38,24 +38,48 @@ defineProps(
   </div>
 </template>
 
-<style lang="scss" scoped>
-  .CaseStudyTeaser {
+<style lang="scss">
+  /* Scoping this the old-fashioned way, because
+     it’s the only way to style the Prismic content */
+  .dhd--CaseStudyTeaser {
+    .conent-wrapper > div {
+      display: inline;
+    }
+    .summary {
+      p {
+        margin: var(--spatial-scale-3) 0;
+      }
+    }
 
+    .cta {
+      p {
+        display: inline;
+      }
+      a {
+      border-bottom: 0.12rem solid var(--text-inline-hyperlink);
+      color: var(--text-inline-hyperlink);
+      display: inline-block;
+      font-size: var(--type-scale-2);
+      line-height: var(--spatial-scale-5);
+      text-decoration: none;
+      }
+    }
   }
   @media (min-width: $breakpoint-large) {
-    .CaseStudyTeaser {
+    .dhd--CaseStudyTeaser {
+      align-items: center;
       display: grid;
       grid-template-columns: repeat(15, 1fr);
-    }
-    .screenshot-wrapper {
-      grid-column: 1 / span 9;
-    }
-    .screenshot {
-      aspect-ratio: calc(3/2);
-      max-width: 100%;
-    }
-    .content-wrapper {
-      grid-column: 11 / span 5;
+      .screenshot-wrapper {
+        grid-column: 1 / span 9;
+      }
+      .screenshot {
+        aspect-ratio: calc(3/2);
+        max-width: 100%;
+      }
+      .content-wrapper {
+        grid-column: 11 / span 5;
+      }
     }
   }
 </style>

@@ -49,6 +49,7 @@
 
   @media (min-width: $breakpoint-large) {
     .site-header {
+      align-items: center;
       display: grid;
       gap: var(--spatial-scale-2);
       grid-template-columns: repeat(15, 1fr);
@@ -59,6 +60,7 @@
     }
     .site-header-nav1-wrapper {
       grid-column: 4 / span 6;
+      padding-top: var(--spatial-scale-00);
     }
     .site-header-logo-link {
       font-size: var(--type-scale-4);

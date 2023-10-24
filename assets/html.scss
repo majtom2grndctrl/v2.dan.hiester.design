@@ -27,7 +27,8 @@
   --text-primary: var(--midnight-slate);
   --background-primary: hsl(0 0% 100%);
   --text-knockout: var(--white);
-  --blue-hero-bg: hsl(198 60% 51%);
+  --blue-hero-bg: oklch(66.05% 0.139623 224.62);
+  --text-inline-hyperlink: oklch(60.38% 0.144423 226.95);
 
   @media(prefers-contrast: more) {
     --blue-hero-bg: hsl(198 59% 26%);
@@ -91,8 +92,9 @@ body {
 
 .dhd--text--overline {
   font-family: var(--font-heading);
-  font-weight: 600;
+  font-weight: 700;
   font-size: var(--type-scale-0);
+  letter-spacing: 0.045em;
   line-height: var(--spatial-scale-0);
   margin-top: 0;
   margin-bottom: var(--spatial-scale-00);
@@ -118,3 +120,25 @@ body {
   }
 }
 
+.dhd--cms-content {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+  h2 {
+    font-size: var(--type-scale-3);
+    font-weight: 600;
+    line-height: var(--spatial-scale-7);
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  h3 {
+    font-size: var(--type-scale-2);
+    line-height: var(--spatial-scale-6);
+  }
+  p {
+    font-size: var(--type-scale-1);
+    line-height: var(--spatial-scale-5);
+    margin-top: var(--spatial-scale-5);
+    margin-bottom: var(--spatial-scale-5);
+  }
+}

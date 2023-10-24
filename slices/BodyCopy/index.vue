@@ -19,23 +19,13 @@ defineProps(
     :data-slice-variation="slice.variation"
     class="body-copy-wrapper"
   >
-    <PrismicRichText :field="slice.primary.content" class="body-copy" />
+    <PrismicRichText :field="slice.primary.content" class="body-copy dhd--cms-content" />
 </div>
 </template>
 
 <style lang="scss">
 .body-copy-wrapper {
   @include wrapper-full-width;
-}
-
-.body-copy {
-  p {
-    font-size: var(--type-scale-1);
-    line-height: var(--spatial-scale-5);
-    margin-top: var(--spatial-scale-5);
-    margin-bottom: var(--spatial-scale-5);
-  }
-
 }
 
 @media(min-width: $breakpoint-small) {
