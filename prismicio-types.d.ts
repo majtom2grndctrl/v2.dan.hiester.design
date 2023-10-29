@@ -77,8 +77,7 @@ interface CaseStudyDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<CaseStudyDocumentDataSlicesSlice>
-  /**
+  slices: prismic.SliceZone<CaseStudyDocumentDataSlicesSlice> /**
    * Meta Description field in *Case Study*
    *
    * - **Field Type**: Text
@@ -247,8 +246,7 @@ interface HomeDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<HomeDocumentDataSlicesSlice>
-  /**
+  slices: prismic.SliceZone<HomeDocumentDataSlicesSlice> /**
    * Meta Description field in *Home*
    *
    * - **Field Type**: Text
@@ -293,6 +291,115 @@ interface HomeDocumentData {
  */
 export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<HomeDocumentData>, "home", Lang>;
+
+type HomepageDocumentDataSlicesSlice = CaseStudyTeaserSlice;
+
+/**
+ * Content for Homepage documents
+ */
+interface HomepageDocumentData {
+  /**
+   * Hero Intro field in *Homepage*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.hero_intro
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  hero_intro: prismic.RichTextField;
+
+  /**
+   * Hero Image field in *Homepage*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.hero_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  hero_image: prismic.ImageField<never>;
+
+  /**
+   * Case Study Heading field in *Homepage*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.case_study_heading
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  case_study_heading: prismic.RichTextField;
+
+  /**
+   * Additional Projects Heading field in *Homepage*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.additional_projects_heading
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  additional_projects_heading: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *Homepage*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<HomepageDocumentDataSlicesSlice> /**
+   * Meta Description field in *Homepage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: homepage.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Homepage*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: homepage.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Homepage*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: homepage.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Homepage document from Prismic
+ *
+ * - **API ID**: `homepage`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HomepageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<HomepageDocumentData>,
+    "homepage",
+    Lang
+  >;
 
 /**
  * Item in *Main Navigation → Links*
@@ -440,8 +547,7 @@ interface StoryDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<StoryDocumentDataSlicesSlice>
-  /**
+  slices: prismic.SliceZone<StoryDocumentDataSlicesSlice> /**
    * Meta Description field in *Story*
    *
    * - **Field Type**: Text
@@ -492,6 +598,7 @@ export type AllDocumentTypes =
   | Ct1Document
   | Ct2Document
   | HomeDocument
+  | HomepageDocument
   | MainNavigationDocument
   | PageDocument
   | StoryDocument;
@@ -787,7 +894,7 @@ declare module "@prismicio/client" {
   interface CreateClient {
     (
       repositoryNameOrEndpoint: string,
-      options?: prismic.ClientConfig
+      options?: prismic.ClientConfig,
     ): prismic.Client<AllDocumentTypes>;
   }
 
@@ -805,6 +912,9 @@ declare module "@prismicio/client" {
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
+      HomepageDocument,
+      HomepageDocumentData,
+      HomepageDocumentDataSlicesSlice,
       MainNavigationDocument,
       MainNavigationDocumentData,
       MainNavigationDocumentDataLinksItem,

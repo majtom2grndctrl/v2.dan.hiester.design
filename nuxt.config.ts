@@ -1,4 +1,5 @@
 import { repositoryName } from './slicemachine.config.json'
+import paths from './paths';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -48,16 +49,16 @@ export default defineNuxtConfig({
       routes: [
         {
           type: 'page',
-          path: '/:uid',
+          path: paths.single_page(':uid'),
         },
         {
-          type: 'page',
+          type: 'homepage',
           uid: 'home',
-          path: '/',
+          path: paths.home,
         },
         {
           type: 'case_study',
-          path: '/portfolio/:uid',
+          path: paths.portfolio_page(':uid'),
         }
       ]
     }
