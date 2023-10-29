@@ -19,14 +19,16 @@ useHead({
   <PageHero>
     <div class="hero dhd--layout-wrapper">
       <div class="summary-wrapper">
-        <PrismicText :field="page?.data.hero_intro" class="summary" />
+        <PrismicText :field="page?.data.hero_intro" class="summary dhd--cms-content" />
       </div>
       <div class="photo-wrapper">
         <PrismicImage :field="page?.data.hero_image" class="photo" />
       </div>
     </div>
   </PageHero>
-  <PrismicRichText class="section-header" :field="page?.data.case_study_heading" />
+  <h2 class="section-header">
+    <PrismicText :field="page?.data.case_study_heading" />
+  </h2>
   <SliceZone
     wrapper="main"
     :slices="page?.data.slices ?? []"
@@ -42,19 +44,20 @@ useHead({
     padding-bottom: var(--spatial-scale-3);
   }
   .photo {
-      aspect-ratio: calc(3/2);
-      border: var(--spatial-scale-1) solid var(--text-knockout);
-      box-sizing: border-box;
-      max-width: 100%
-    }
-    .section-header {
+    aspect-ratio: calc(3/2);
+    border: var(--spatial-scale-1) solid var(--text-knockout);
+    box-sizing: border-box;
+    max-width: 100%
+  }
+  .section-header {
+      font-size: var(--type-scale-2);
       font-family: var(--font-heading);
-      font-size: var(--type-scale-3);
+      font-weight: 500;
       line-height: var(--spatial-scale-2);
-      margin-top: var(--spatial-scale-10);
-      margin-bottom: var(--spatial-scale-8);
+      margin-top: var(--spatial-scale-8);
+      margin-bottom: var(--spatial-scale-3);
       text-align: center;
-    }
+  }
 
   @media (min-width: $breakpoint-large) {
     .hero {
@@ -76,6 +79,12 @@ useHead({
     }
     .photo-wrapper {
       grid-column: 9 / span 7;
+    }
+    .section-header {
+      font-size: var(--type-scale-3);
+      line-height: var(--spatial-scale-3);
+      margin-top: var(--spatial-scale-12);
+      margin-bottom: var(--spatial-scale-9);
     }
   }
 </style>
