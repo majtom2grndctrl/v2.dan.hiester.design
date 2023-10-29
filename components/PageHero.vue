@@ -1,12 +1,13 @@
 <script lang="ts" setup>
   import Nav1 from './Nav1.vue';
+  import paths from '~/paths';
 </script>
 
 <template>
   <div class="PageHero--wrapper">
     <div class="site-header dhd--layout-wrapper">
       <div class="site-header-logo-wrapper">
-        <NuxtLink to="/" class="site-header-logo-link">Dan Hiester</NuxtLink>
+        <NuxtLink :to="paths.home" class="site-header-logo-link">Dan Hiester</NuxtLink>
       </div>
       <div class="site-header-nav1-wrapper">
         <Nav1 class="Nav1--site-header" />
