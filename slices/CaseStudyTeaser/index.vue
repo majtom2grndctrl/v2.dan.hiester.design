@@ -42,19 +42,28 @@ defineProps(
   /* Scoping this the old-fashioned way, because
      it’s the only way to style the Prismic content */
   .dhd--CaseStudyTeaser {
-    .conent-wrapper > div {
-      display: inline;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spatial-scale-6);
+    .screenshot {
+      aspect-ratio: calc(3/2);
+      max-width: 100%;
     }
+    .content-wrapper > div {
+      padding: 0 calc(1/15*100%);
+      max-width: 40rem;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
     .summary {
       p {
-        margin: var(--spatial-scale-3) 0;
+        margin-top: var(--spatial-scale-3);
+        margin-bottom: var(--spatial-scale-3)
       }
     }
 
     .cta {
-      p {
-        display: inline;
-      }
       a {
       border-bottom: 0.12rem solid var(--text-inline-hyperlink);
       color: var(--text-inline-hyperlink);
@@ -79,6 +88,12 @@ defineProps(
       }
       .content-wrapper {
         grid-column: 11 / span 5;
+        > div {
+          margin-right: unset;
+          margin-left: unset;
+          max-width: unset;
+          padding: unset;
+        }
       }
     }
   }
