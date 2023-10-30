@@ -69,6 +69,17 @@ interface CaseStudyDocumentData {
   project_image: prismic.ImageField<never>;
 
   /**
+   * Employer field in *Case Study*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: case_study.employer
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  employer: prismic.KeyTextField;
+
+  /**
    * Slice Zone field in *Case Study*
    *
    * - **Field Type**: Slice Zone
