@@ -17,34 +17,43 @@ defineProps(
   <div
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
-    class="body-copy-wrapper"
+    class="body-copy-wrapper dhd--layout-wrapper"
   >
     <PrismicRichText :field="slice.primary.content" class="body-copy dhd--cms-content" />
-</div>
+  </div>
 </template>
 
 <style lang="scss">
 .body-copy-wrapper {
-  @include wrapper-full-width;
 }
 
 @media(min-width: $breakpoint-small) {
-  .body-copy {
-    max-width: calc(100% * 11 / 13);
-    margin-right: auto;
-    margin-left: auto;
-  }
 }
+
+/*
+  After we get to the Medium breakpoint, we want the text
+  to take up less space than the full available width, so
+  we’re overriding .dhd--layout-wrapper as we move to
+  larger breakpoints.
+*/
 
 @media(min-width: $breakpoint-medium) {
   .body-copy {
-    max-width: calc(100% * 9 / 15);
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 45rem;
   }
 }
 
 @media(min-width: $breakpoint-large) {
   .body-copy {
-    max-width: calc(100% * 9 / 17);
+    max-width: calc(calc(#{11 / 15} * 100%) - var(--grid-gutter));
+  }
+}
+
+@media(min-width: $breakpoint-royale) {
+  .body-copy {
+    max-width: calc(calc(#{9 / 17} * 100%) - var(--grid-gutter));
   }
 }
 

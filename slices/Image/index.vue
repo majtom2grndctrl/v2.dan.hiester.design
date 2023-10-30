@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Content } from "@prismicio/client";
+import type { Content } from "@prismicio/client";
 
 defineProps(getSliceComponentProps<Content.ImageSlice>());
 
@@ -7,7 +7,7 @@ defineProps(getSliceComponentProps<Content.ImageSlice>());
 
 
 <template>
-  <div class="dhd--image-slice-wrapper">
+  <div class="dhd--layout-wrapper">
     <figure
       :class="`dhd--image-slice has-size--${slice.primary.display_size} has-style--${slice.primary.image_style}`"
       v-if="Boolean(slice.primary.image.url)"
@@ -23,10 +23,6 @@ defineProps(getSliceComponentProps<Content.ImageSlice>());
 
 
 <style lang="scss">
-
-.dhd--image-slice-wrapper {
-  @include wrapper-full-width;
-}
 
 .dhd--image-slice {
   margin: var(--spatial-scale-6) var(--spatial-scale-2) var(--spatial-scale-10);
@@ -80,14 +76,14 @@ defineProps(getSliceComponentProps<Content.ImageSlice>());
   .dhd--image-slice {
     box-sizing: border-box;
     font-size: var(--type-scale-0);
-    max-width: calc(100% * 9 / 15);
+    max-width: calc(#{9 / 15} * 100%);
     &.has-size--Aside {
       max-width: calc(100% * 5 / 15);
       margin-right: calc(100% * 1 / 15);
       margin-left: var(--spatial-scale-3);
     }
     &.has-size--Cover_Image {
-      max-width: calc(100% * 13 / 15);
+      max-width: calc(#{13 / 15} * 100%);
     }
     &.has-style--Diagram {
       padding: 0;

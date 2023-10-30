@@ -17,7 +17,7 @@ defineProps(
   <div
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
-    class="new-chapter-intro"
+    class="new-chapter-intro-wrapper dhd--layout-wrapper"
   >
     <div class="horizontal-rule"></div>
     <div class="dhd--text--overline" v-if="slice.primary.overline" v-html="slice.primary.overline" />
@@ -27,8 +27,7 @@ defineProps(
 </template>
 
 <style lang="scss">
-.new-chapter-intro {
-  @include wrapper-full-width;
+.new-chapter-intro-wrapper {
   margin-top: var(--spatial-scale-12);
   .heading {
     font-family: var(--font-heading);
@@ -52,10 +51,9 @@ defineProps(
 }
 
 @media(min-width: $breakpoint-small) {
-  .new-chapter-intro {
-    margin: var(--spatial-scale-10) auto 0;
+  .new-chapter-intro-wrapper {
+    margin-top: var(--spatial-scale-10);
     .dhd--text--overline, .heading, .lede {
-      max-width: calc(100% * 11 / 13);
       margin-right: auto;
       margin-left: auto;
     }
@@ -63,18 +61,25 @@ defineProps(
 }
 
 @media(min-width: $breakpoint-medium) {
-  .new-chapter-intro {
+  .new-chapter-intro-wrapper {
     .dhd--text--overline, .heading, .lede {
-      max-width: calc(100% * 9 / 15);
+      max-width: 45rem;
     }
   }
 }
 
 @media(min-width: $breakpoint-large) {
-  .new-chapter-intro {
+  .new-chapter-intro-wrapper {
     margin-top: var(--spatial-scale-12);
     .dhd--text--overline, .heading, .lede {
-      max-width: calc(100% * 9 / 17);
+      max-width: calc(calc(#{11 / 15} * 100%) - var(--grid-gutter));
+    }
+  }
+}
+@media(min-width: $breakpoint-royale) {
+  .new-chapter-intro-wrapper {
+    .dhd--text--overline, .heading, .lede {
+      max-width: calc(calc(#{9 / 17} * 100%) - var(--grid-gutter));
     }
   }
 }
