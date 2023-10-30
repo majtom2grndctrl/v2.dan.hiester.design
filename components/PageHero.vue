@@ -36,8 +36,8 @@
   }
   .site-header-logo-link {
     color: var(--text-knockout);
-    font-size: var(--type-scale-3);
-    line-height: var(--spatial-scale-3);
+    font-size: var(--type-scale-1);
+    line-height: var(--spatial-scale-1);
     font-family: var(--font-heading);
     font-weight: 700;
     text-decoration: none;
@@ -47,7 +47,12 @@
     margin: 0 calc(var(--spatial-scale-2) * -1);
     --nav-link-color: var(--text-knockout);
   }
-
+  @media (min-width: $breakpoint-medium) {
+    .site-header-logo-link {
+      font-size: var(--type-scale-3);
+      line-height: var(--spatial-scale-3);
+    }
+  }
   @media (min-width: $breakpoint-large) {
     .site-header {
       align-items: center;
