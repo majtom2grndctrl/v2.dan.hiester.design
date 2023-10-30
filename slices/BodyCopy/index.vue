@@ -24,9 +24,6 @@ defineProps(
 </template>
 
 <style lang="scss">
-.body-copy-wrapper {
-}
-
 @media(min-width: $breakpoint-small) {
 }
 
