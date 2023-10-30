@@ -4,7 +4,7 @@ import PageHero from '~/components/PageHero.vue';
 
 const prismic = usePrismic()
 const { data: page } = useAsyncData('index', async () =>
-  await prismic.client.getByUID('home', 'home')
+  await prismic.client.getByUID('homepage', 'home')
 )
 
 console.log({ page_data: await page.value?.data });
