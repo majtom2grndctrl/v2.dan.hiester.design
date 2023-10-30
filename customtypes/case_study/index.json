@@ -50,6 +50,13 @@
           "thumbnails": []
         }
       },
+      "employer": {
+        "type": "Text",
+        "config": {
+          "label": "Employer",
+          "placeholder": ""
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
