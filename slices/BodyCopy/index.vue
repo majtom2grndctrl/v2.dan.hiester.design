@@ -47,13 +47,13 @@ defineProps(
 
 @media(min-width: $breakpoint-large) {
   .body-copy {
-    max-width: calc(calc(#{11 / 15} * 100%) - var(--grid-gutter));
+    max-width: calc(calc(#{11 / 15} * 100%) - calc(var(--grid-gutter) / 2));
   }
 }
 
 @media(min-width: $breakpoint-royale) {
   .body-copy {
-    max-width: calc(calc(#{9 / 17} * 100%) - var(--grid-gutter));
+    max-width: calc(calc(#{9 / 17} * 100%) - calc(var(--grid-gutter) / 2));
   }
 }
 

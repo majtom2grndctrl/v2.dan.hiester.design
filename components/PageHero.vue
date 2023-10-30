@@ -41,6 +41,7 @@
     font-family: var(--font-heading);
     font-weight: 700;
     text-decoration: none;
+    white-space: nowrap;
   }
 
   .Nav1--site-header {
@@ -58,14 +59,14 @@
       align-items: center;
       display: grid;
       gap: var(--spatial-scale-2);
-      grid-template-columns: repeat(15, 1fr);
+      grid-template-columns: repeat(17, 1fr);
       padding-top: var(--spatial-scale-7);
     }
     .site-header-logo-wrapper {
-      grid-column: 1 / span 3;
+      grid-column: 1 / span 4;
     }
     .site-header-nav1-wrapper {
-      grid-column: 4 / span 6;
+      grid-column: 5 / span 9;
       padding-top: var(--spatial-scale-00);
     }
     .site-header-logo-link {

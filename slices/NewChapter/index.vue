@@ -72,14 +72,14 @@ defineProps(
   .new-chapter-intro-wrapper {
     margin-top: var(--spatial-scale-12);
     .dhd--text--overline, .heading, .lede {
-      max-width: calc(calc(#{11 / 15} * 100%) - var(--grid-gutter));
+      max-width: calc(calc(#{11 / 15} * 100%) - calc(var(--grid-gutter) / 2));
     }
   }
 }
 @media(min-width: $breakpoint-royale) {
   .new-chapter-intro-wrapper {
     .dhd--text--overline, .heading, .lede {
-      max-width: calc(calc(#{9 / 17} * 100%) - var(--grid-gutter));
+      max-width: calc(calc(#{9 / 17} * 100%) - calc(var(--grid-gutter) / 2));
     }
   }
 }
