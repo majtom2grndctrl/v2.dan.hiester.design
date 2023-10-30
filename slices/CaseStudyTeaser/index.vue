@@ -57,7 +57,17 @@ defineProps(
       margin-right: auto;
       margin-left: auto;
     }
-
+    .title a {
+      color: inherit;
+      display: block;
+      text-decoration: underline;
+      text-decoration-color: oklch(100 0 0 / 0);
+      transition: text-decoration-color .3s ease-in-out;
+      &:hover {
+        text-decoration-color: currentColor;
+        text-decoration-thickness: .0625em;
+      }
+    }
     .summary {
       p {
         margin-top: var(--spatial-scale-3);
