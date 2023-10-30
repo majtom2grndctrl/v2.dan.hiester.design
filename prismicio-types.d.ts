@@ -676,12 +676,12 @@ export interface CaseStudyTeaserSliceDefaultPrimary {
   /**
    * Title field in *CaseStudyTeaser → Primary*
    *
-   * - **Field Type**: Title
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: case_study_teaser.primary.title
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  title: prismic.TitleField;
+  title: prismic.RichTextField;
 
   /**
    * Summary field in *CaseStudyTeaser → Primary*
