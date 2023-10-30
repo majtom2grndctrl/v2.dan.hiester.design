@@ -18,7 +18,11 @@ useHead({
     <PageHero>
       <div class="hero dhd--layout-wrapper">
         <div class="hero-image-wrapper">
-          <PrismicImage class="hero-image" :field="page?.data.project_image!" />
+          <PrismicImage
+            class="hero-image"
+            :field="page.data.project_image"
+            v-if="page"
+          />
         </div>
         <div class="hero-meta-wrapper">
           <div class="dhd--text--overline" v-html="page?.data.case_study_type" />

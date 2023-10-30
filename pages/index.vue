@@ -22,7 +22,11 @@ useHead({
         <PrismicText :field="page?.data.hero_intro" class="summary dhd--cms-content" />
       </div>
       <div class="photo-wrapper">
-        <PrismicImage :field="page?.data.hero_image!" class="photo" />
+        <PrismicImage
+          :field="page.data.hero_image"
+          v-if="page"
+          class="photo"
+        />
       </div>
     </div>
   </PageHero>
