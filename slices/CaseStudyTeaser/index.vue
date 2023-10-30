@@ -21,12 +21,14 @@ defineProps(
       class="dhd--CaseStudyTeaser"
     >
       <div class="screenshot-wrapper">
-        <PrismicImage
-          class="screenshot"
-          :field="slice.primary.image"
-          sizes="small:600px medium:1200px large:2000px"
-          loading="lazy"
-        />
+        <PrismicLink class="screenshot-link" :field="slice.primary.cms_document">
+          <PrismicImage
+            class="screenshot"
+            :field="slice.primary.image"
+            sizes="small:600px medium:1200px large:2000px"
+            loading="lazy"
+          />
+        </PrismicLink>
       </div>
       <div class="content-wrapper dhd--cms-content">
         <PrismicText class="dhd--text--overline" :field="slice.primary.case_study_type" />
