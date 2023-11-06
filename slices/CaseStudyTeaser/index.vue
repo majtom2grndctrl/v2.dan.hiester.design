@@ -90,6 +90,7 @@ defineProps(
     .dhd--CaseStudyTeaser {
       align-items: center;
       display: grid;
+      gap: var(--grid-gutter);
       grid-template-columns: repeat(15, 1fr);
       .screenshot-wrapper {
         grid-column: 1 / span 9;

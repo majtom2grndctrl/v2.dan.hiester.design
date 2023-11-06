@@ -72,7 +72,7 @@
 
   --block-border-radius: var(--spatial-scale-2);
   --mobile-block-margin: var(--spatial-scale-2);
-  --grid-gutter: var(--spatial-scale-2);
+  --grid-gutter: var(--spatial-scale-4);
 
   @media(min-width: $breakpoint-small) {
     --scale-multiplier: 1.25;
@@ -101,8 +101,8 @@ body {
   text-transform: uppercase;
 }
 .dhd--layout-wrapper {
-  padding-right: var(--spatial-scale-2);
-  padding-left: var(--spatial-scale-2);
+  padding-right: var(--grid-gutter);
+  padding-left: var(--grid-gutter);
   @media (min-width: $breakpoint-small) {
     margin-right: auto;
     margin-left: auto;
@@ -120,7 +120,7 @@ body {
        This sets the illusion of a 17 column grid,
        where the outermost columns are reserved for spacing / rhythm
     */
-    --lateral-padding: calc(calc(1/15*#{100%}) + var(--spatial-scale-2));
+    --lateral-padding: calc(calc(1/15*#{100%}) + var(--grid-gutter));
     padding-right: var(--lateral-padding);
     padding-left: var(--lateral-padding);
   }

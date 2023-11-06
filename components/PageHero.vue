@@ -29,7 +29,7 @@
   }
   .site-header {
     display: flex;
-    gap: var(--spatial-scale-2);
+    gap: var(--grid-gutter);
     justify-content: space-between;
     align-items: center;
     padding-top: var(--spatial-scale-3);
@@ -45,7 +45,7 @@
   }
 
   .Nav1--site-header {
-    margin: 0 calc(var(--spatial-scale-2) * -1);
+    margin: 0 calc(var(--grid-gutter) * -1);
     --nav-link-color: var(--text-knockout);
   }
   @media (min-width: $breakpoint-medium) {
@@ -58,7 +58,7 @@
     .site-header {
       align-items: center;
       display: grid;
-      gap: var(--spatial-scale-2);
+      gap: var(--grid-gutter);
       grid-template-columns: repeat(17, 1fr);
       padding-top: var(--spatial-scale-7);
     }
