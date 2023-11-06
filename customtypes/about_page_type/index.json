@@ -5,7 +5,7 @@
   "repeatable": false,
   "status": true,
   "json": {
-    "Main": {
+    "Hero": {
       "uid": {
         "type": "UID",
         "config": {
@@ -51,15 +51,12 @@
           }
         }
       },
-      "slices": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
+      "hero_image": {
+        "type": "Image",
         "config": {
-          "choices": {
-            "body_copy": {
-              "type": "SharedSlice"
-            }
-          }
+          "label": "Hero Image",
+          "constraint": {},
+          "thumbnails": []
         }
       }
     },
@@ -88,6 +85,77 @@
           "placeholder": "A title of the page used for social media and search engines"
         },
         "type": "Text"
+      }
+    },
+    "Influences": {
+      "influences_section_overline": {
+        "type": "Text",
+        "config": {
+          "label": "Section Overline",
+          "placeholder": ""
+        }
+      },
+      "influences_section_title": {
+        "type": "Text",
+        "config": {
+          "label": "Section Title",
+          "placeholder": ""
+        }
+      },
+      "influences_list": {
+        "type": "Group",
+        "config": {
+          "label": "Artifacts",
+          "fields": {
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "Title",
+                "placeholder": ""
+              }
+            },
+            "credit": {
+              "type": "Text",
+              "config": {
+                "label": "Credit",
+                "placeholder": ""
+              }
+            },
+            "cover_image": {
+              "type": "Image",
+              "config": {
+                "label": "Cover Image",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "description": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Description",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "single": "strong,em,hyperlink,rtl,paragraph"
+              }
+            }
+          }
+        }
+      }
+    },
+    "Outside of Work": {
+      "slices3": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "body_copy": {
+              "type": "SharedSlice"
+            },
+            "overline": {
+              "type": "SharedSlice"
+            }
+          }
+        }
       }
     }
   }

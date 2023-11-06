@@ -19,7 +19,52 @@ export interface AboutPageTypeDocumentDataTocLinksItem {
   page_section: prismic.LinkField;
 }
 
-type AboutPageTypeDocumentDataSlicesSlice = BodyCopySlice;
+/**
+ * Item in *About Page Type → Artifacts*
+ */
+export interface AboutPageTypeDocumentDataInfluencesListItem {
+  /**
+   * Title field in *About Page Type → Artifacts*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_page_type.influences_list[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Credit field in *About Page Type → Artifacts*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_page_type.influences_list[].credit
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  credit: prismic.KeyTextField;
+
+  /**
+   * Cover Image field in *About Page Type → Artifacts*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_page_type.influences_list[].cover_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  cover_image: prismic.ImageField<never>;
+
+  /**
+   * Description field in *About Page Type → Artifacts*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_page_type.influences_list[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+type AboutPageTypeDocumentDataSlices3Slice = BodyCopySlice | OverlineSlice;
 
 /**
  * Content for About Page Type documents
@@ -31,7 +76,7 @@ interface AboutPageTypeDocumentData {
    * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: about_page_type.page_title_overline
-   * - **Tab**: Main
+   * - **Tab**: Hero
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   page_title_overline: prismic.KeyTextField;
@@ -42,7 +87,7 @@ interface AboutPageTypeDocumentData {
    * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: about_page_type.page_title
-   * - **Tab**: Main
+   * - **Tab**: Hero
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   page_title: prismic.KeyTextField;
@@ -53,7 +98,7 @@ interface AboutPageTypeDocumentData {
    * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: about_page_type.toc_overline
-   * - **Tab**: Main
+   * - **Tab**: Hero
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   toc_overline: prismic.KeyTextField;
@@ -64,7 +109,7 @@ interface AboutPageTypeDocumentData {
    * - **Field Type**: Group
    * - **Placeholder**: *None*
    * - **API ID Path**: about_page_type.toc_links[]
-   * - **Tab**: Main
+   * - **Tab**: Hero
    * - **Documentation**: https://prismic.io/docs/field#group
    */
   toc_links: prismic.GroupField<
@@ -72,15 +117,15 @@ interface AboutPageTypeDocumentData {
   >;
 
   /**
-   * Slice Zone field in *About Page Type*
+   * Hero Image field in *About Page Type*
    *
-   * - **Field Type**: Slice Zone
+   * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: about_page_type.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
+   * - **API ID Path**: about_page_type.hero_image
+   * - **Tab**: Hero
+   * - **Documentation**: https://prismic.io/docs/field#image
    */
-  slices: prismic.SliceZone<AboutPageTypeDocumentDataSlicesSlice> /**
+  hero_image: prismic.ImageField<never> /**
    * Meta Description field in *About Page Type*
    *
    * - **Field Type**: Text
@@ -111,7 +156,49 @@ interface AboutPageTypeDocumentData {
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  meta_title: prismic.KeyTextField;
+  meta_title: prismic.KeyTextField /**
+   * Section Overline field in *About Page Type*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_page_type.influences_section_overline
+   * - **Tab**: Influences
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  influences_section_overline: prismic.KeyTextField;
+
+  /**
+   * Section Title field in *About Page Type*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_page_type.influences_section_title
+   * - **Tab**: Influences
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  influences_section_title: prismic.KeyTextField;
+
+  /**
+   * Artifacts field in *About Page Type*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_page_type.influences_list[]
+   * - **Tab**: Influences
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  influences_list: prismic.GroupField<
+    Simplify<AboutPageTypeDocumentDataInfluencesListItem>
+  > /**
+   * Slice Zone field in *About Page Type*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_page_type.slices3[]
+   * - **Tab**: Outside of Work
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */;
+  slices3: prismic.SliceZone<AboutPageTypeDocumentDataSlices3Slice>;
 }
 
 /**
@@ -1216,7 +1303,8 @@ declare module "@prismicio/client" {
       AboutPageTypeDocument,
       AboutPageTypeDocumentData,
       AboutPageTypeDocumentDataTocLinksItem,
-      AboutPageTypeDocumentDataSlicesSlice,
+      AboutPageTypeDocumentDataInfluencesListItem,
+      AboutPageTypeDocumentDataSlices3Slice,
       CaseStudyDocument,
       CaseStudyDocumentData,
       CaseStudyDocumentDataSlicesSlice,
