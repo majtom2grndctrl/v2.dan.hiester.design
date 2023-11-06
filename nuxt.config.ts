@@ -57,6 +57,11 @@ export default defineNuxtConfig({
           path: paths.home,
         },
         {
+          type: 'about_page_type',
+          uid: 'about',
+          path: paths.single_page('about'),
+        },
+        {
           type: 'case_study',
           path: paths.portfolio_page(':uid'),
         }
