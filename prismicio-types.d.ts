@@ -4,6 +4,132 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+/**
+ * Item in *About Page Type → TOC Links*
+ */
+export interface AboutPageTypeDocumentDataTocLinksItem {
+  /**
+   * Page Section field in *About Page Type → TOC Links*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_page_type.toc_links[].page_section
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  page_section: prismic.LinkField;
+}
+
+type AboutPageTypeDocumentDataSlicesSlice = BodyCopySlice;
+
+/**
+ * Content for About Page Type documents
+ */
+interface AboutPageTypeDocumentData {
+  /**
+   * Page Title Overline field in *About Page Type*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_page_type.page_title_overline
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  page_title_overline: prismic.KeyTextField;
+
+  /**
+   * Page Title field in *About Page Type*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_page_type.page_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  page_title: prismic.KeyTextField;
+
+  /**
+   * TOC Overline field in *About Page Type*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_page_type.toc_overline
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  toc_overline: prismic.KeyTextField;
+
+  /**
+   * TOC Links field in *About Page Type*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_page_type.toc_links[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  toc_links: prismic.GroupField<
+    Simplify<AboutPageTypeDocumentDataTocLinksItem>
+  >;
+
+  /**
+   * Slice Zone field in *About Page Type*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_page_type.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<AboutPageTypeDocumentDataSlicesSlice> /**
+   * Meta Description field in *About Page Type*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: about_page_type.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *About Page Type*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_page_type.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *About Page Type*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: about_page_type.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * About Page Type document from Prismic
+ *
+ * - **API ID**: `about_page_type`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type AboutPageTypeDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<AboutPageTypeDocumentData>,
+    "about_page_type",
+    Lang
+  >;
+
 type CaseStudyDocumentDataSlicesSlice =
   | OverlineSlice
   | BodyCopySlice
@@ -605,6 +731,7 @@ export type StoryDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<StoryDocumentData>, "story", Lang>;
 
 export type AllDocumentTypes =
+  | AboutPageTypeDocument
   | CaseStudyDocument
   | Ct1Document
   | Ct2Document
@@ -901,6 +1028,181 @@ export type OverlineSlice = prismic.SharedSlice<
   OverlineSliceVariation
 >;
 
+/**
+ * Primary content in *Prologue → Primary*
+ */
+export interface PrologueSliceDefaultPrimary {
+  /**
+   * Content field in *Prologue → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: prologue.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Prologue Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PrologueSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PrologueSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Prologue*
+ */
+type PrologueSliceVariation = PrologueSliceDefault;
+
+/**
+ * Prologue Shared Slice
+ *
+ * - **API ID**: `prologue`
+ * - **Description**: Prologue
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PrologueSlice = prismic.SharedSlice<
+  "prologue",
+  PrologueSliceVariation
+>;
+
+/**
+ * Primary content in *QuoteSpread → Primary*
+ */
+export interface QuoteSpreadSliceDefaultPrimary {
+  /**
+   * Background Image field in *QuoteSpread → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quote_spread.primary.background_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image: prismic.ImageField<never>;
+
+  /**
+   * Primary Content field in *QuoteSpread → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quote_spread.primary.primary_content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  primary_content: prismic.RichTextField;
+
+  /**
+   * Attribution field in *QuoteSpread → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quote_spread.primary.attribution
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  attribution: prismic.KeyTextField;
+
+  /**
+   * Supplemental Content field in *QuoteSpread → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quote_spread.primary.supplemental_content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  supplemental_content: prismic.RichTextField;
+}
+
+/**
+ * Default variation for QuoteSpread Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type QuoteSpreadSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<QuoteSpreadSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *QuoteSpread*
+ */
+type QuoteSpreadSliceVariation = QuoteSpreadSliceDefault;
+
+/**
+ * QuoteSpread Shared Slice
+ *
+ * - **API ID**: `quote_spread`
+ * - **Description**: QuoteSpread
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type QuoteSpreadSlice = prismic.SharedSlice<
+  "quote_spread",
+  QuoteSpreadSliceVariation
+>;
+
+/**
+ * Primary content in *Sidebar → Items*
+ */
+export interface SidebarSliceDefaultItem {
+  /**
+   * Section Title field in *Sidebar → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sidebar.items[].section_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  section_title: prismic.KeyTextField;
+
+  /**
+   * Content field in *Sidebar → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sidebar.items[].content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Sidebar Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SidebarSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<SidebarSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Sidebar*
+ */
+type SidebarSliceVariation = SidebarSliceDefault;
+
+/**
+ * Sidebar Shared Slice
+ *
+ * - **API ID**: `sidebar`
+ * - **Description**: Sidebar
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SidebarSlice = prismic.SharedSlice<
+  "sidebar",
+  SidebarSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -911,6 +1213,10 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      AboutPageTypeDocument,
+      AboutPageTypeDocumentData,
+      AboutPageTypeDocumentDataTocLinksItem,
+      AboutPageTypeDocumentDataSlicesSlice,
       CaseStudyDocument,
       CaseStudyDocumentData,
       CaseStudyDocumentDataSlicesSlice,
@@ -952,6 +1258,18 @@ declare module "@prismicio/client" {
       OverlineSliceDefaultPrimary,
       OverlineSliceVariation,
       OverlineSliceDefault,
+      PrologueSlice,
+      PrologueSliceDefaultPrimary,
+      PrologueSliceVariation,
+      PrologueSliceDefault,
+      QuoteSpreadSlice,
+      QuoteSpreadSliceDefaultPrimary,
+      QuoteSpreadSliceVariation,
+      QuoteSpreadSliceDefault,
+      SidebarSlice,
+      SidebarSliceDefaultItem,
+      SidebarSliceVariation,
+      SidebarSliceDefault,
     };
   }
 }
