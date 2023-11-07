@@ -62,6 +62,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "quote_spread": {
+              "type": "SharedSlice"
+            },
+            "sidebar": {
+              "type": "SharedSlice"
+            },
             "overline": {
               "type": "SharedSlice"
             },

@@ -218,6 +218,8 @@ export type AboutPageTypeDocument<Lang extends string = string> =
   >;
 
 type CaseStudyDocumentDataSlicesSlice =
+  | QuoteSpreadSlice
+  | SidebarSlice
   | OverlineSlice
   | BodyCopySlice
   | ImageSlice;
