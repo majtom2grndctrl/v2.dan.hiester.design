@@ -10,7 +10,9 @@ export const components = defineSliceZoneComponents({
   ),
   image: defineAsyncComponent(() => import("./Image/index.vue")),
   overline: defineAsyncComponent(() => import("./NewChapter/index.vue")),
-  prologue: defineAsyncComponent(() => import("./Prologue/index.vue")),
   quote_spread: defineAsyncComponent(() => import("./QuoteSpread/index.vue")),
   sidebar: defineAsyncComponent(() => import("./Sidebar/index.vue")),
+  story_overview: defineAsyncComponent(
+    () => import("./StoryOverview/index.vue"),
+  ),
 });

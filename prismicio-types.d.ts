@@ -218,6 +218,7 @@ export type AboutPageTypeDocument<Lang extends string = string> =
   >;
 
 type CaseStudyDocumentDataSlicesSlice =
+  | StoryOverviewSlice
   | QuoteSpreadSlice
   | SidebarSlice
   | OverlineSlice
@@ -1118,51 +1119,6 @@ export type OverlineSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *Prologue → Primary*
- */
-export interface PrologueSliceDefaultPrimary {
-  /**
-   * Content field in *Prologue → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: prologue.primary.content
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  content: prismic.RichTextField;
-}
-
-/**
- * Default variation for Prologue Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type PrologueSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<PrologueSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *Prologue*
- */
-type PrologueSliceVariation = PrologueSliceDefault;
-
-/**
- * Prologue Shared Slice
- *
- * - **API ID**: `prologue`
- * - **Description**: Prologue
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type PrologueSlice = prismic.SharedSlice<
-  "prologue",
-  PrologueSliceVariation
->;
-
-/**
  * Primary content in *QuoteSpread → Primary*
  */
 export interface QuoteSpreadSliceDefaultPrimary {
@@ -1292,6 +1248,76 @@ export type SidebarSlice = prismic.SharedSlice<
   SidebarSliceVariation
 >;
 
+/**
+ * Primary content in *StoryOverview → Primary*
+ */
+export interface StoryOverviewSliceDefaultPrimary {
+  /**
+   * Body Copy field in *StoryOverview → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: story_overview.primary.body_copy
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  body_copy: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *StoryOverview → Items*
+ */
+export interface StoryOverviewSliceDefaultItem {
+  /**
+   * Section Title field in *StoryOverview → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: story_overview.items[].section_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  section_title: prismic.KeyTextField;
+
+  /**
+   * Section Content field in *StoryOverview → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: story_overview.items[].section_content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  section_content: prismic.RichTextField;
+}
+
+/**
+ * Default variation for StoryOverview Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type StoryOverviewSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<StoryOverviewSliceDefaultPrimary>,
+  Simplify<StoryOverviewSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *StoryOverview*
+ */
+type StoryOverviewSliceVariation = StoryOverviewSliceDefault;
+
+/**
+ * StoryOverview Shared Slice
+ *
+ * - **API ID**: `story_overview`
+ * - **Description**: StoryOverview
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type StoryOverviewSlice = prismic.SharedSlice<
+  "story_overview",
+  StoryOverviewSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -1348,10 +1374,6 @@ declare module "@prismicio/client" {
       OverlineSliceDefaultPrimary,
       OverlineSliceVariation,
       OverlineSliceDefault,
-      PrologueSlice,
-      PrologueSliceDefaultPrimary,
-      PrologueSliceVariation,
-      PrologueSliceDefault,
       QuoteSpreadSlice,
       QuoteSpreadSliceDefaultPrimary,
       QuoteSpreadSliceVariation,
@@ -1360,6 +1382,11 @@ declare module "@prismicio/client" {
       SidebarSliceDefaultItem,
       SidebarSliceVariation,
       SidebarSliceDefault,
+      StoryOverviewSlice,
+      StoryOverviewSliceDefaultPrimary,
+      StoryOverviewSliceDefaultItem,
+      StoryOverviewSliceVariation,
+      StoryOverviewSliceDefault,
     };
   }
 }
