@@ -47,6 +47,7 @@ defineProps(
     display: flex;
     flex-direction: column;
     gap: var(--spatial-scale-6);
+    margin: 0 0 var(--spatial-scale-6);
     .screenshot {
       aspect-ratio: calc(3/2);
       max-width: 100%;
@@ -83,10 +84,17 @@ defineProps(
       font-size: var(--type-scale-2);
       line-height: var(--spatial-scale-5);
       text-decoration: none;
+      white-space: nowrap;
       }
     }
   }
   @media (min-width: $breakpoint-large) {
+    .dhd--CaseStudyTeaser-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      min-height: 70dvh;
+    }
     .dhd--CaseStudyTeaser {
       align-items: center;
       display: grid;
@@ -107,6 +115,10 @@ defineProps(
           max-width: unset;
           padding: unset;
         }
+      }
+      .cta a {
+        border-bottom: 0.12rem solid var(--text-inline-hyperlink);
+        text-decoration: none;
       }
     }
   }
