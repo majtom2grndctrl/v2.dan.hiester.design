@@ -23,7 +23,7 @@ defineProps(
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @media(min-width: $breakpoint-small) {
 }
 
