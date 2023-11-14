@@ -11,5 +11,4 @@ dist
 .idea
 .yarn/*
 yarn-error.log
-
-!.yarn/releases/*
+!.yarn/releases
