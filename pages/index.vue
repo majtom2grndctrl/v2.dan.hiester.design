@@ -66,7 +66,7 @@ useHead({
   @media (min-width: $breakpoint-large) {
     .hero {
       display: grid;
-      gap: var(--spatial-scale-2);
+      gap: var(--grid-gutter);
       grid-template-columns: repeat(15, 1fr);
       padding-top: var(--spatial-scale-5);
       padding-bottom: var(--spatial-scale-6);
