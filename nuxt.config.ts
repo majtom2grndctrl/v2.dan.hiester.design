@@ -1,4 +1,3 @@
-import { repositoryName } from './slicemachine.config.json'
 import paths from './paths';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
