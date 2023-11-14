@@ -57,6 +57,8 @@ defineProps(
         margin: 0;
       }
       .sidebar {
+        font-size: var(--type-scale-0);
+        line-height: var(--spatial-scale-3);
         grid-column: 9 / span 3;
         margin: 0;
       }
