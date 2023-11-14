@@ -9,5 +9,7 @@ dist
 .DS_Store
 .fleet
 .idea
-.yarn
+.yarn/*
 yarn-error.log
+
+!.yarn/releases/*
