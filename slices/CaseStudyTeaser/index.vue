@@ -33,14 +33,17 @@ defineProps(
       <div class="content-wrapper dhd--cms-content">
         <div class="dhd--text--overline" v-html="slice.primary.case_study_type" />
         <h2 class="title">
-          <PrismicLink :field="slice.primary.cms_document" v-html="slice.primary.title" />
+          <PrismicLink :field="slice.primary.cms_document">
+            {{ slice.primary.title }}
+          </PrismicLink>
         </h2>
         <PrismicRichText class="summary" :field="slice.primary.summary" />
         <PrismicLink 
           class="cta"
           :field="slice.primary.cms_document"
-          v-html="slice.primary.cta_label"
-        />
+        >
+          {{ slice.primary.cta_label }}
+        </PrismicLink>
       </div>
     </article>
   </div>
