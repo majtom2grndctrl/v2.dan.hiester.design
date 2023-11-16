@@ -4,15 +4,9 @@
 		"variation": "default",
 		"primary": {
 			"title": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading2",
-						"content": {
-							"text": "Consist"
-						}
-					}
-				]
+				"__TYPE__": "FieldContent",
+				"value": "they",
+				"type": "Text"
 			},
 			"summary": {
 				"__TYPE__": "StructuredTextContent",
@@ -25,17 +19,6 @@
 					}
 				]
 			},
-			"cta_link": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Consectetur consectetur dolore sint labore aliquip duis enim sunt."
-						}
-					}
-				]
-			},
 			"cms_document": {
 				"__TYPE__": "LinkContent",
 				"value": {
@@ -44,15 +27,9 @@
 				}
 			},
 			"case_study_type": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Enim labore aliqua aliqua nulla culpa sint anim laboris sit est consequat. Excepteur veniam officia enim elit duis reprehenderit exercitation eiusmod nostrud cillum exercitation ut dolore dolore pariatur. Duis magna non nulla labore amet cillum ex culpa mollit irure officia aute ipsum elit."
-						}
-					}
-				]
+				"__TYPE__": "FieldContent",
+				"value": "seeing",
+				"type": "Text"
 			},
 			"image": {
 				"origin": {
@@ -76,6 +53,11 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"cta_label": {
+				"__TYPE__": "FieldContent",
+				"value": "find",
+				"type": "Text"
 			}
 		},
 		"items": []

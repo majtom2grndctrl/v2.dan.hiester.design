@@ -31,10 +31,16 @@ defineProps(
         </PrismicLink>
       </div>
       <div class="content-wrapper dhd--cms-content">
-        <PrismicText class="dhd--text--overline" :field="slice.primary.case_study_type" />
-        <PrismicRichText class="title" :field="slice.primary.title" />
+        <div class="dhd--text--overline" v-html="slice.primary.case_study_type" />
+        <h2 class="title">
+          <PrismicLink :field="slice.primary.cms_document" v-html="slice.primary.title" />
+        </h2>
         <PrismicRichText class="summary" :field="slice.primary.summary" />
-        <PrismicRichText class="cta" :field="slice.primary.cta_link" />
+        <PrismicLink 
+          class="cta"
+          :field="slice.primary.cms_document"
+          v-html="slice.primary.cta_label"
+        />
       </div>
     </article>
   </div>
@@ -58,15 +64,20 @@ defineProps(
       margin-right: auto;
       margin-left: auto;
     }
-    .title a {
-      color: inherit;
-      display: block;
-      text-decoration: underline;
-      text-decoration-color: oklch(100 0 0 / 0);
-      transition: text-decoration-color .3s ease-in-out;
-      &:hover {
-        text-decoration-color: currentColor;
-        text-decoration-thickness: .0625em;
+    .title  {
+      font-family: var(--font-heading);
+      font-size: var(--type-scale-3);
+      line-height: var(--spatial-scale-6);
+      > a {
+        color: inherit;
+        display: block;
+        text-decoration: underline;
+        text-decoration-color: oklch(100 0 0 / 0);
+        transition: text-decoration-color .3s ease-in-out;
+        &:hover {
+          text-decoration-color: currentColor;
+          text-decoration-thickness: .0625em;
+        }
       }
     }
     .summary {
@@ -77,7 +88,6 @@ defineProps(
     }
 
     .cta {
-      a {
       border-bottom: 0.12rem solid var(--text-inline-hyperlink);
       color: var(--text-inline-hyperlink);
       display: inline-block;
@@ -85,7 +95,6 @@ defineProps(
       line-height: var(--spatial-scale-5);
       text-decoration: none;
       white-space: nowrap;
-      }
     }
   }
   @media (min-width: $breakpoint-large) {

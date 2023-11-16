@@ -883,22 +883,22 @@ export interface CaseStudyTeaserSliceDefaultPrimary {
   /**
    * Case Study Type field in *CaseStudyTeaser → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: case_study_teaser.primary.case_study_type
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  case_study_type: prismic.RichTextField;
+  case_study_type: prismic.KeyTextField;
 
   /**
    * Title field in *CaseStudyTeaser → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: case_study_teaser.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  title: prismic.RichTextField;
+  title: prismic.KeyTextField;
 
   /**
    * Summary field in *CaseStudyTeaser → Primary*
@@ -931,14 +931,14 @@ export interface CaseStudyTeaserSliceDefaultPrimary {
   cms_document: prismic.ContentRelationshipField;
 
   /**
-   * CTA Link field in *CaseStudyTeaser → Primary*
+   * CTA Label field in *CaseStudyTeaser → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: case_study_teaser.primary.cta_link
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **API ID Path**: case_study_teaser.primary.cta_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  cta_link: prismic.RichTextField;
+  cta_label: prismic.KeyTextField;
 }
 
 /**

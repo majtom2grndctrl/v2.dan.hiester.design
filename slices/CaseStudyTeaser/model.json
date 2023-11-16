@@ -13,21 +13,17 @@
       "imageUrl": "",
       "primary": {
         "case_study_type": {
-          "type": "StructuredText",
+          "type": "Text",
           "config": {
             "label": "Case Study Type",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "paragraph"
+            "placeholder": ""
           }
         },
         "title": {
-          "type": "StructuredText",
+          "type": "Text",
           "config": {
             "label": "Title",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "em,heading2,hyperlink"
+            "placeholder": ""
           }
         },
         "summary": {
@@ -54,13 +50,11 @@
             "select": "document"
           }
         },
-        "cta_link": {
-          "type": "StructuredText",
+        "cta_label": {
+          "type": "Text",
           "config": {
-            "label": "CTA Link",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "strong,em,hyperlink"
+            "label": "CTA Label",
+            "placeholder": ""
           }
         }
       },
