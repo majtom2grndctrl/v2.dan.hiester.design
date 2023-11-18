@@ -38,12 +38,14 @@ defineProps(
           </PrismicLink>
         </h2>
         <PrismicRichText class="summary" :field="slice.primary.summary" />
-        <PrismicLink 
-          class="cta"
-          :field="slice.primary.cms_document"
-        >
-          {{ slice.primary.cta_label }}
-        </PrismicLink>
+        <div class="actions">
+          <PrismicLink 
+            class="cta"
+            :field="slice.primary.cms_document"
+          >
+            {{ slice.primary.cta_label }}
+          </PrismicLink>
+        </div>
       </div>
     </article>
   </div>
@@ -61,7 +63,7 @@ defineProps(
       aspect-ratio: calc(3/2);
       max-width: 100%;
     }
-    .content-wrapper > div {
+    .content-wrapper > div, h2 {
       padding: 0 calc(1/15*100%);
       max-width: 40rem;
       margin-right: auto;
@@ -121,7 +123,7 @@ defineProps(
       }
       .content-wrapper {
         grid-column: 11 / span 5;
-        > div {
+        > div, h2 {
           margin-right: unset;
           margin-left: unset;
           max-width: unset;
