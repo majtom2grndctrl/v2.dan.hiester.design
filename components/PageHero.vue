@@ -45,7 +45,6 @@
   }
 
   .Nav1--site-header {
-    margin: 0 calc(var(--grid-gutter) * -1);
     --nav-link-color: var(--text-knockout);
   }
   @media (min-width: $breakpoint-medium) {
@@ -72,6 +71,9 @@
     .site-header-logo-link {
       font-size: var(--type-scale-4);
       line-height: var(--spatial-scale-4);
+    }
+    .Nav1--site-header {
+      margin: 0 calc(var(--grid-gutter) * -1);
     }
   }
 </style>
