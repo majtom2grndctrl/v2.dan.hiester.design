@@ -77,7 +77,7 @@
   --mobile-block-margin: var(--spatial-scale-2);
   --grid-gutter: var(--spatial-scale-4);
 
-  @media(min-width: $breakpoint-small) {
+  @media(min-width: $breakpoint-medium) {
     --scale-multiplier: 1.25;
     --type-scale-base: calc(18rem/16);
   }
@@ -91,6 +91,11 @@ body {
   color: var(--text-primary);
   font-family: var(--font-body);
   margin: 0;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
 }
 
 .dhd--text--overline {

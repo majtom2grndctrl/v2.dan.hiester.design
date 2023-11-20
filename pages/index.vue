@@ -44,14 +44,7 @@ useHead({
 <style lang="scss" scoped>
   .hero {
     display: block;
-    padding-top: var(--spatial-scale-3);
-    padding-bottom: var(--spatial-scale-3);
-  }
-  .photo {
-    aspect-ratio: calc(3/2);
-    border: var(--spatial-scale-1) solid var(--text-knockout);
-    box-sizing: border-box;
-    max-width: 100%
+    overflow: hidden;
   }
   .section-header {
       font-size: var(--type-scale-2);
@@ -62,19 +55,83 @@ useHead({
       margin-bottom: var(--spatial-scale-3);
       text-align: center;
   }
-
-  @media (min-width: $breakpoint-large) {
+  .summary-wrapper {
+    margin: var(--spatial-scale-9) 0 var(--spatial-scale-7);
+  }
+  .summary {
+    font-size: var(--type-scale-2);
+    line-height: var(--spatial-scale-6);
+  }
+  .photo-wrapper {
+    margin: var(--spatial-scale-6) 0 var(--spatial-scale-9);
+  }
+  .photo {
+    aspect-ratio: calc(3/2);
+    border: var(--spatial-scale-1) solid var(--text-knockout);
+    box-sizing: border-box;
+    max-width: 100%
+  }
+  @media (min-width: $breakpoint-medium) {
     .hero {
       display: grid;
       gap: var(--grid-gutter);
       grid-template-columns: repeat(15, 1fr);
-      padding-top: var(--spatial-scale-5);
-      padding-bottom: var(--spatial-scale-6);
+      overflow: unset;
+      padding-top: var(--spatial-scale-6);
+      padding-bottom: var(--spatial-scale-8);
     }
     .summary-wrapper {
       display: flex;
       flex-direction: row;
       align-items: center;
+      grid-column: 1 / span 7;
+      margin: 0;
+    }
+    .summary {
+      font-size: var(--type-scale-1);
+      line-height: var(--spatial-scale-5);
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .photo-wrapper {
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      grid-column: 9 / span 7;
+      margin: 0;
+    }
+  }
+  @media (min-width: calc($breakpoint-medium + (200rem/16))) {
+    .summary {
+      font-size: var(--type-scale-2);
+      line-height: var(--spatial-scale-6);
+    }
+  }
+
+  @media (min-width: $breakpoint-large) {
+    .hero {
+      display: grid;
+      grid-template-columns: repeat(15, 1fr);
+      padding-top: var(--spatial-scale-9);
+      padding-bottom: var(--spatial-scale-8);
+    }
+    .summary {
+      font-size: var(--type-scale-2);
+      line-height: var(--spatial-scale-6);
+    }
+    .section-header {
+      font-size: var(--type-scale-3);
+      line-height: var(--spatial-scale-3);
+      margin-top: var(--spatial-scale-12);
+      margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: $breakpoint-royale) {
+    .hero {
+      grid-template-columns: repeat(17, 1fr);
+    }
+    .summary-wrapper {
       grid-column: 1 / span 7;
     }
     .summary {
@@ -82,13 +139,7 @@ useHead({
       line-height: var(--spatial-scale-7);
     }
     .photo-wrapper {
-      grid-column: 9 / span 7;
-    }
-    .section-header {
-      font-size: var(--type-scale-3);
-      line-height: var(--spatial-scale-3);
-      margin-top: var(--spatial-scale-12);
-      margin-bottom: var(--spatial-scale-9);
+      grid-column: 10 / span 6;
     }
   }
 </style>

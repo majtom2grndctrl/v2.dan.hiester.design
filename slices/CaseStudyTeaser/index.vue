@@ -58,7 +58,7 @@ defineProps(
     display: flex;
     flex-direction: column;
     gap: var(--spatial-scale-6);
-    margin: 0 0 var(--spatial-scale-6);
+    margin: 0 0 var(--spatial-scale-10);
     .screenshot {
       aspect-ratio: calc(3/2);
       max-width: 100%;
@@ -107,7 +107,8 @@ defineProps(
       display: flex;
       flex-direction: row;
       align-items: center;
-      min-height: 70dvh;
+      margin-top: var(--spatial-scale-10);
+      margin-bottom: var(--spatial-scale-10);
     }
     .dhd--CaseStudyTeaser {
       align-items: center;
