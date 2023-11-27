@@ -136,5 +136,18 @@ defineProps(
         text-decoration: none;
       }
     }
+    @media (min-width: $breakpoint-royale) {
+      .dhd--CaseStudyTeaser-wrapper {
+        .dhd--CaseStudyTeaser {
+          grid-template-columns: repeat(17, 1fr);
+        }
+        .screenshot-wrapper {
+          grid-column: 1 / span 10;
+        }
+        .content-wrapper {
+          grid-column: 12 / span 6;
+        }
+      }
+    }
   }
 </style>
