@@ -63,11 +63,26 @@ defineProps(
       aspect-ratio: calc(3/2);
       max-width: 100%;
     }
-    .content-wrapper > div, h2 {
-      padding: 0 calc(1/15*100%);
-      max-width: 40rem;
-      margin-right: auto;
-      margin-left: auto;
+    .content-wrapper{
+      > div, h2 {
+        padding: 0 calc(1/15*100%);
+      }
+      @media (min-width: $breakpoint-medium) {
+        > div, h2 {
+          padding: unset;
+          margin-right: auto;
+          margin-left: auto;
+          width: calc(#{11 / 15} *100%);
+        }
+      }
+      @media (min-width: $breakpoint-large) {
+        > div, h2 {
+          margin-right: unset;
+          margin-left: unset;
+          max-width: unset;
+          padding: unset;
+        }
+      }
     }
     .title  {
       font-family: var(--font-heading);
@@ -114,13 +129,6 @@ defineProps(
       }
       .content-wrapper {
         grid-column: 11 / span 5;
-        > div, h2 {
-          margin-right: unset;
-          margin-left: unset;
-          max-width: unset;
-          padding: unset;
-        }
-      }
       }
     }
     @media (min-width: $breakpoint-royale) {

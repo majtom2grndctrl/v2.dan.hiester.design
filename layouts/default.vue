@@ -1,8 +1,10 @@
 <script lang="ts" setup>
+  import ContactCTA from '~/components/ContactCTA.vue';
 </script>
 
 <template>
   <slot />
+  <ContactCTA />
   <footer class="SiteFooter--wrapper">
     <div class="SiteFooter dhd--layout-wrapper">
       Dan Hiester
