@@ -91,16 +91,6 @@ defineProps(
         margin-bottom: var(--spatial-scale-3)
       }
     }
-
-    .cta {
-      border-bottom: 0.12rem solid var(--text-inline-hyperlink);
-      color: var(--text-inline-hyperlink);
-      display: inline-block;
-      font-size: var(--type-scale-2);
-      line-height: var(--spatial-scale-5);
-      text-decoration: none;
-      white-space: nowrap;
-    }
   }
   @media (min-width: $breakpoint-large) {
     .dhd--CaseStudyTeaser-wrapper {
