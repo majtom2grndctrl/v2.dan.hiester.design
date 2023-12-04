@@ -30,7 +30,10 @@ export default defineNuxtConfig({
       },
     },
   },
-  modules: ['@nuxtjs/prismic'],
+  modules: [
+    '@nuxtjs/prismic',
+    '@zadigetvoltaire/nuxt-gtm'
+  ],
   image: {
     provider: "prismic",
     prismic: {},
@@ -67,4 +70,7 @@ export default defineNuxtConfig({
       ]
     }
   },
-})
+  gtm: {
+    id: 'GTM-MRDBF6QQ',
+  }
+});
