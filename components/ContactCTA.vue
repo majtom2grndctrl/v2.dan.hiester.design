@@ -122,6 +122,9 @@ onMounted(() => {
       gap: var(--spatial-scale-5) calc(calc(#{1 / 15} *100%) + calc(var(--grid-gutter) * 2));
       padding: 0;
     }
+    @media (min-width: $breakpoint-royale) {
+      width: calc(#{ 11 / 17} * 100%);
+    }
   }
   .links-item {
     display: block;
