@@ -158,3 +158,13 @@ img {
     margin-bottom: var(--spatial-scale-5);
   }
 }
+
+.dhd--cta-link {
+  border-bottom: 0.12rem solid var(--text-inline-hyperlink);
+  color: var(--text-inline-hyperlink);
+  display: inline-block;
+  font-size: var(--type-scale-2);
+  line-height: var(--spatial-scale-5);
+  text-decoration: none;
+  white-space: nowrap;
+}
