@@ -121,9 +121,6 @@ defineProps(
           padding: unset;
         }
       }
-      .cta a {
-        border-bottom: 0.12rem solid var(--text-inline-hyperlink);
-        text-decoration: none;
       }
     }
     @media (min-width: $breakpoint-royale) {
