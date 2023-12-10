@@ -120,7 +120,7 @@
                 "placeholder": ""
               }
             },
-            "cover_image": {
+            "image": {
               "type": "Image",
               "config": {
                 "label": "Cover Image",
@@ -135,6 +135,13 @@
                 "placeholder": "",
                 "allowTargetBlank": true,
                 "single": "strong,em,hyperlink,rtl,paragraph"
+              }
+            },
+            "image_background": {
+              "type": "Color",
+              "config": {
+                "label": "Image Background",
+                "placeholder": ""
               }
             }
           }

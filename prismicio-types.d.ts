@@ -33,10 +33,10 @@ export interface AboutPageTypeDocumentDataInfluencesListItem {
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: about_page_type.influences_list[].cover_image
+   * - **API ID Path**: about_page_type.influences_list[].image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  cover_image: prismic.ImageField<never>;
+  image: prismic.ImageField<never>;
 
   /**
    * Description field in *About Page Type → Artifacts*
@@ -47,6 +47,16 @@ export interface AboutPageTypeDocumentDataInfluencesListItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   description: prismic.RichTextField;
+
+  /**
+   * Image Background field in *About Page Type → Artifacts*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_page_type.influences_list[].image_background
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  image_background: prismic.ColorField;
 }
 
 type AboutPageTypeDocumentDataSlices3Slice = BodyCopySlice | OverlineSlice;
