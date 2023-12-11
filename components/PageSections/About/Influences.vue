@@ -20,13 +20,15 @@ const props = defineProps({
 
 <template>
   <section
-    class="dhd--layout-wrapper influence-section"
+    class="dhd--layout-wrapper Influences"
   >
-    <header class="influence-section-header">
-      <div class="dhd--text--overline" v-html="overline" />
-      <h2 class="influence-section-title" v-html="title" />
+    <header class="header">
+      <div class="header-sticky">
+        <div class="dhd--text--overline" v-html="overline" />
+      <h2 class="title" v-html="title" />
+      </div>
     </header>
-    <div class="influence-section-content">
+    <div class="content">
       <div 
         class="influence-item"
         v-for="item in influences" 
@@ -53,14 +55,14 @@ const props = defineProps({
 </template>
 
 <style lang="scss" scoped>
-  .influence-section {
+  .Influences {
     @media (min-width: $breakpoint-large) {
       display: grid;
       gap: var(--grid-gutter);
       grid-template-columns: repeat(15, 1fr);
     }
   }
-  .influence-section-header {
+  .header {
     margin-top: var(--spatial-scale-13);
     margin-bottom: var(--spatial-scale-8);
     @media (min-width: $breakpoint-large) {
@@ -73,7 +75,7 @@ const props = defineProps({
     }
   }
 
-  .influence-section-title {
+  .title {
     font-size: var(--type-scale-4);
     font-family: var(--font-heading);
     font-weight: 600;
@@ -81,7 +83,7 @@ const props = defineProps({
     margin-top: 0;
   }
 
-  .influence-section-content {
+  .content {
     @media (min-width: $breakpoint-large) {
       grid-column: 6 / span 10;
       margin-top: calc(var(--spatial-scale-00) * -1);
