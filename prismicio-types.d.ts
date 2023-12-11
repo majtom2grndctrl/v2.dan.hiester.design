@@ -275,6 +275,16 @@ export interface ArticlesPageTypeDocumentDataListItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   description: prismic.RichTextField;
+
+  /**
+   * CTA Link Label field in *Articles Page Type → List*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles_page_type.list[].cta_link_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cta_link_label: prismic.KeyTextField;
 }
 
 type ArticlesPageTypeDocumentDataSlicesSlice = never;
@@ -283,6 +293,17 @@ type ArticlesPageTypeDocumentDataSlicesSlice = never;
  * Content for Articles Page Type documents
  */
 interface ArticlesPageTypeDocumentData {
+  /**
+   * Page Title Overline field in *Articles Page Type*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles_page_type.page_title_overline
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  page_title_overline: prismic.KeyTextField;
+
   /**
    * Title field in *Articles Page Type*
    *
@@ -304,6 +325,17 @@ interface ArticlesPageTypeDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   page_overview: prismic.RichTextField;
+
+  /**
+   * Hero Image field in *Articles Page Type*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles_page_type.hero_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  hero_image: prismic.ImageField<never>;
 
   /**
    * List field in *Articles Page Type*

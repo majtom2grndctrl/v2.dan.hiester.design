@@ -12,6 +12,13 @@
         },
         "type": "UID"
       },
+      "page_title_overline": {
+        "type": "Text",
+        "config": {
+          "label": "Page Title Overline",
+          "placeholder": ""
+        }
+      },
       "page_title": {
         "type": "Text",
         "config": {
@@ -26,6 +33,14 @@
           "placeholder": "",
           "allowTargetBlank": true,
           "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "hero_image": {
+        "type": "Image",
+        "config": {
+          "label": "Hero Image",
+          "constraint": {},
+          "thumbnails": []
         }
       },
       "list": {
@@ -62,6 +77,13 @@
                 "placeholder": "",
                 "allowTargetBlank": true,
                 "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+              }
+            },
+            "cta_link_label": {
+              "type": "Text",
+              "config": {
+                "label": "CTA Link Label",
+                "placeholder": ""
               }
             }
           }
