@@ -68,10 +68,17 @@ const props = defineProps({
     @media (min-width: $breakpoint-large) {
       grid-column: 1 / span 4;
       margin: 0;
+      position: relative;
       text-align: right;
     }
     @media (min-width: $breakpoint-royale) {
       grid-column: 1 / span 4;
+    }
+  }
+  .header-sticky {
+    @media (min-width: $breakpoint-large) {
+      position: sticky;
+      top: var(--spatial-scale-8);
     }
   }
 
