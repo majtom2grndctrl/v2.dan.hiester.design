@@ -22,7 +22,12 @@
 <style lang="scss" scoped>
   .Nav1 {
     display: flex;
-    gap: var(--spatial-scale-00);
+    gap: var(--spatial-scale-4);
+    overflow-x: auto;
+    @media (min-width: $breakpoint-medium) {
+      gap: var(--spatial-scale-4);
+      overflow-x: unset;
+    }
     > .Nav1-link {
       background-color: var(--link-bg-inactive);
       border-radius: var(--spatial-scale-00);
@@ -35,12 +40,12 @@
       font-weight: 500;
       font-family: var(--font-heading);
       line-height: var(--spatial-scale-0);
-      min-width: var(--spatial-scale-10);
       margin: calc(var(--spatial-scale-0) * -1);
       padding: var(--spatial-scale-1);
       position: relative;
       text-decoration: none;
       transition: color .66s, background-color .66s;
+      white-space: nowrap;
       &:after {
         background: var(--bg-blue-600);
         border-radius: 100%;
