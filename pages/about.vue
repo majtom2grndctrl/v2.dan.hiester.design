@@ -16,7 +16,7 @@ useHead({
 
 <template>
   <PageHero>
-    <div class="hero dhd--layout-wrapper">
+    <div class="hero dhd--layout-wrapper" v-if="page">
       <div class="summary-wrapper">
         <div class="dhd--text--overline summary-overline" v-html="page?.data.page_title_overline" />
         <h1 class="page-title" v-html="page?.data.page_title" />
@@ -24,7 +24,6 @@ useHead({
       <div class="photo-wrapper">
         <PrismicImage
           :field="page.data.hero_image"
-          v-if="page"
           class="photo"
         />
       </div>
