@@ -3,8 +3,8 @@ import { components } from '~/slices'
 import PageHero from '~/components/PageHero.vue';
 
 const prismic = usePrismic()
-const { data: page } = useAsyncData('index', async () =>
-  await prismic.client.getByUID('homepage', 'home')
+const { data: page } = useAsyncData('index', () =>
+  prismic.client.getByUID('homepage', 'home')
 )
 
 useHead({

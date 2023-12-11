@@ -4,8 +4,8 @@ import PageHero from '~/components/PageHero.vue'
 import ContentList from '~/components/PageSections/ArticlesAndPresentations/ContentList.vue'
 
 const prismic = usePrismic()
-const { data: page } = useAsyncData('index', async () =>
-  await prismic.client.getByUID('articles_page_type', 'articles-and-presentations')
+const { data: articles_page } = await useAsyncData('articles-and-presentations-page', () =>
+  prismic.client.getByUID('articles_page_type', 'articles-and-presentations')
 )
 
 useHead({
@@ -15,24 +15,24 @@ useHead({
 
 <template>
   <PageHero>
-    <div class="hero dhd--layout-wrapper" v-if="page">
+    <div class="hero dhd--layout-wrapper" v-if="articles_page">
       <div class="summary-wrapper">
         <h1
           class="dhd--text--overline summary-overline"
-          v-html="page.data.page_title_overline" 
+          v-html="articles_page.data.page_title_overline" 
         />
-        <h1 class="page-title" v-html="page.data.page_title" />
+        <h1 class="page-title" v-html="articles_page.data.page_title" />
       </div>
       <div class="hero-image-wrapper">
         <PrismicImage
-          :field="page.data.hero_image"
+          :field="articles_page.data.hero_image"
           class="hero-image"
         />
       </div>
     </div>
   </PageHero>
   <ContentList
-    :content="(page?.data.list as ArticlesPageTypeDocumentDataListItem[])"
+    :content="(articles_page?.data.list as ArticlesPageTypeDocumentDataListItem[])"
   />
 </template>
 
