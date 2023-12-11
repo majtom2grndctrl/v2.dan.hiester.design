@@ -34,29 +34,21 @@
           "placeholder": ""
         }
       },
-      "toc_links": {
-        "type": "Group",
-        "config": {
-          "label": "TOC Links",
-          "fields": {
-            "page_section": {
-              "type": "Link",
-              "config": {
-                "label": "Page Section",
-                "placeholder": "",
-                "allowTargetBlank": false,
-                "select": null
-              }
-            }
-          }
-        }
-      },
       "hero_image": {
         "type": "Image",
         "config": {
           "label": "Hero Image",
           "constraint": {},
           "thumbnails": []
+        }
+      },
+      "overview": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Overview",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,strong,em,hyperlink"
         }
       }
     },
@@ -88,6 +80,13 @@
       }
     },
     "Influences": {
+      "influences_section_id": {
+        "type": "Text",
+        "config": {
+          "label": "Section ID",
+          "placeholder": ""
+        }
+      },
       "influences_section_overline": {
         "type": "Text",
         "config": {
@@ -121,7 +120,7 @@
                 "placeholder": ""
               }
             },
-            "cover_image": {
+            "image": {
               "type": "Image",
               "config": {
                 "label": "Cover Image",
@@ -137,12 +136,26 @@
                 "allowTargetBlank": true,
                 "single": "strong,em,hyperlink,rtl,paragraph"
               }
+            },
+            "image_background": {
+              "type": "Color",
+              "config": {
+                "label": "Image Background",
+                "placeholder": ""
+              }
             }
           }
         }
       }
     },
     "Outside of Work": {
+      "outside_of_work_section_id": {
+        "type": "Text",
+        "config": {
+          "label": "Outside of work section ID",
+          "placeholder": ""
+        }
+      },
       "slices3": {
         "type": "Slices",
         "fieldset": "Slice Zone",
