@@ -232,6 +232,149 @@ export type AboutPageTypeDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Item in *Articles Page Type → List*
+ */
+export interface ArticlesPageTypeDocumentDataListItem {
+  /**
+   * Overline field in *Articles Page Type → List*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles_page_type.list[].overline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  overline: prismic.KeyTextField;
+
+  /**
+   * Title field in *Articles Page Type → List*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles_page_type.list[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * URL field in *Articles Page Type → List*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles_page_type.list[].url
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  url: prismic.LinkField;
+
+  /**
+   * Description field in *Articles Page Type → List*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles_page_type.list[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+type ArticlesPageTypeDocumentDataSlicesSlice = never;
+
+/**
+ * Content for Articles Page Type documents
+ */
+interface ArticlesPageTypeDocumentData {
+  /**
+   * Title field in *Articles Page Type*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles_page_type.page_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  page_title: prismic.KeyTextField;
+
+  /**
+   * Overview field in *Articles Page Type*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles_page_type.page_overview
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  page_overview: prismic.RichTextField;
+
+  /**
+   * List field in *Articles Page Type*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles_page_type.list[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  list: prismic.GroupField<Simplify<ArticlesPageTypeDocumentDataListItem>>;
+
+  /**
+   * Slice Zone field in *Articles Page Type*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles_page_type.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<ArticlesPageTypeDocumentDataSlicesSlice> /**
+   * Meta Description field in *Articles Page Type*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: articles_page_type.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Articles Page Type*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: articles_page_type.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Articles Page Type*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: articles_page_type.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Articles Page Type document from Prismic
+ *
+ * - **API ID**: `articles_page_type`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ArticlesPageTypeDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ArticlesPageTypeDocumentData>,
+    "articles_page_type",
+    Lang
+  >;
+
 type CaseStudyDocumentDataSlicesSlice =
   | StoryOverviewSlice
   | QuoteSpreadSlice
@@ -837,6 +980,7 @@ export type StoryDocument<Lang extends string = string> =
 
 export type AllDocumentTypes =
   | AboutPageTypeDocument
+  | ArticlesPageTypeDocument
   | CaseStudyDocument
   | Ct1Document
   | Ct2Document
@@ -1347,6 +1491,10 @@ declare module "@prismicio/client" {
       AboutPageTypeDocumentData,
       AboutPageTypeDocumentDataInfluencesListItem,
       AboutPageTypeDocumentDataSlices3Slice,
+      ArticlesPageTypeDocument,
+      ArticlesPageTypeDocumentData,
+      ArticlesPageTypeDocumentDataListItem,
+      ArticlesPageTypeDocumentDataSlicesSlice,
       CaseStudyDocument,
       CaseStudyDocumentData,
       CaseStudyDocumentDataSlicesSlice,

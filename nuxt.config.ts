@@ -60,8 +60,13 @@ export default defineNuxtConfig({
         },
         {
           type: 'about_page_type',
-          uid: 'about',
-          path: paths.single_page('about'),
+          uid: 'about-dan',
+          path: paths.single_page('about-dan'),
+        },
+        {
+          type: 'articles_page_type',
+          uid: 'articles-and-presentations',
+          path: paths.single_page('articles-and-presentations'),
         },
         {
           type: 'case_study',
