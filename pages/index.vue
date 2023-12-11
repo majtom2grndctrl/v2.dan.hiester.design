@@ -7,8 +7,6 @@ const { data: page } = useAsyncData('index', async () =>
   await prismic.client.getByUID('homepage', 'home')
 )
 
-console.log({ page_data: await page.value?.data });
-
 useHead({
   title: 'Dan Hiester'
 })

@@ -6,16 +6,11 @@ const oblada = {
 };
 let emailHref = ref<string | undefined>(undefined);
 
-console.log('emailhref1', emailHref);
-
 onMounted(() => {
-  console.log('onMounted fired');
     // This helps me hide things from bots
     setTimeout(() => {
-      console.log('setTimeout callback is starting');
       const { ob, la, di } = oblada // Life goes on 🎶
       emailHref.value = `mailto:${ob + la + di}`;
-      console.log('emailhref2', emailHref);
     }, 5000);
 })
 </script>
