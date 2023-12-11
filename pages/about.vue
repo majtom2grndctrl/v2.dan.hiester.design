@@ -44,6 +44,7 @@ useHead({
 
   <SliceZone
     wrapper="section"
+    class="more-about"
     :slices="page?.data.slices3 ?? []"
     :components="components"
   />
@@ -137,6 +138,13 @@ useHead({
     }
     @media (min-width: $breakpoint-royale) {
       grid-column: 5 / span 9;
+    }
+  }
+
+  .more-about {
+    @media (min-width: $breakpoint-large) {
+      margin-top: var(--spatial-scale-12);
+      margin-bottom: var(--spatial-scale-14);
     }
   }
 
