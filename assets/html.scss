@@ -101,7 +101,7 @@ img {
 
 .dhd--text--overline {
   font-family: var(--font-heading);
-  font-weight: 600;
+  font-weight: 700;
   font-size: var(--type-scale-0);
   letter-spacing: 0.045em;
   line-height: var(--spatial-scale-0);
@@ -161,6 +161,7 @@ img {
   }
   h3 {
     font-size: var(--type-scale-2);
+    font-weight: 600;
     line-height: var(--spatial-scale-5);
   }
   p {
