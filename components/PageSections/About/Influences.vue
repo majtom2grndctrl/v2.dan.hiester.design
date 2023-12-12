@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { AboutPageTypeDocumentDataInfluencesListItem } from '~/prismicio-types'
-import { defineProps } from 'vue'
 
 const props = defineProps({
   overline: {
@@ -100,6 +99,7 @@ const props = defineProps({
     }
   }
   .influence-item {
+    margin-bottom: var(--spatial-scale-10);
     @media (min-width: $breakpoint-medium) {
       display: grid;
       gap: var(--grid-gutter);

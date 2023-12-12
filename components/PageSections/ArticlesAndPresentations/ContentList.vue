@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import type { ArticlesPageTypeDocumentDataListItem } from '~/prismicio-types'
-import type { GroupField } from '@prismicio/client';
-import { defineProps } from 'vue'
 
 const props = defineProps({
   content: {
