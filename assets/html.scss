@@ -110,6 +110,19 @@ img {
   margin-bottom: var(--spatial-scale-00);
   text-transform: uppercase;
 }
+
+.dhd--text--title-link {
+  color: inherit;
+  display: block;
+  text-decoration: underline;
+  text-decoration-color: oklch(100 0 0 / 0);
+  transition: text-decoration-color .3s ease-in-out;
+  &:hover {
+    text-decoration-color: currentColor;
+    text-decoration-thickness: .0625em;
+  }
+}
+
 .dhd--layout-wrapper {
   padding-right: var(--grid-gutter);
   padding-left: var(--grid-gutter);

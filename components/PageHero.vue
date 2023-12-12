@@ -28,10 +28,6 @@
     color: var(--text-knockout);
   }
   .site-header {
-    display: flex;
-    gap: var(--grid-gutter);
-    justify-content: space-between;
-    align-items: center;
     padding-top: var(--spatial-scale-5);
   }
   .site-header-logo-link {
@@ -46,9 +42,14 @@
 
   .Nav1--site-header {
     --nav-link-color: var(--text-knockout);
+    margin: var(--spatial-scale-2) 0;
   }
   @media (min-width: $breakpoint-medium) {
     .site-header {
+      display: flex;
+      gap: var(--grid-gutter);
+      justify-content: space-between;
+      align-items: center;
       align-items: center;
       display: grid;
       gap: var(--grid-gutter);
@@ -63,8 +64,11 @@
       line-height: var(--spatial-scale-3);
     }
     .site-header-nav1-wrapper {
-      grid-column: 5 / span 5;
+      grid-column: 5 / span 10;
       padding-top: var(--spatial-scale-00);
+    }
+    .Nav1--site-header {
+      margin: 0 calc(var(--grid-gutter) * -1);
     }
   }
   @media (min-width: $breakpoint-large) {
@@ -82,13 +86,10 @@
       font-size: var(--type-scale-4);
       line-height: var(--spatial-scale-4);
     }
-    .Nav1--site-header {
-      margin: 0 calc(var(--grid-gutter) * -1);
-    }
   }
   @media (min-width: $breakpoint-royale) {
     .site-header-nav1-wrapper {
-      grid-column: 5 / span 9;
+      grid-column: 5 / span 10;
     }
   }
 </style>

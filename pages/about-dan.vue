@@ -4,8 +4,8 @@ import PageHero from '~/components/PageHero.vue'
 import Influences from '~/components/PageSections/About/Influences.vue';
 
 const prismic = usePrismic()
-const { data: page } = useAsyncData('index', async () =>
-  await prismic.client.getByUID('about_page_type', 'about')
+const { data: page } = await useAsyncData('about-dan-page', () =>
+  prismic.client.getByUID('about_page_type', 'about')
 )
 
 useHead({
@@ -18,8 +18,8 @@ useHead({
   <PageHero>
     <div class="hero dhd--layout-wrapper" v-if="page">
       <div class="summary-wrapper">
-        <div class="dhd--text--overline summary-overline" v-html="page?.data.page_title_overline" />
-        <h1 class="page-title" v-html="page?.data.page_title" />
+        <h1 class="dhd--text--overline summary-overline" v-html="page.data.page_title_overline" />
+        <div class="page-title" v-html="page.data.page_title" />
       </div>
       <div class="photo-wrapper">
         <PrismicImage
@@ -98,7 +98,20 @@ useHead({
     font-family: var(--font-heading);
     font-weight: 600;
     font-size: var(--type-scale-3);
+    line-height: var(--spatial-scale-6);
     margin: 0;
+    @media (min-width: $breakpoint-small) {
+      font-size: var(--type-scale-4);
+      line-height: var(--spatial-scale-7);
+    }
+    @media (min-width: $breakpoint-medium) {
+      font-size: var(--type-scale-3);
+      line-height: var(--spatial-scale-6);
+    }
+    @media (min-width: $breakpoint-large) {
+      font-size: var(--type-scale-4);
+      line-height: var(--spatial-scale-7);
+    }
   }
 
   @media (min-width: $breakpoint-large) {

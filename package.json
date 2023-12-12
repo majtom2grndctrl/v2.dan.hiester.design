@@ -26,5 +26,5 @@
     "sass": "^1.69.5",
     "slice-machine-ui": "latest"
   },
-  "packageManager": "yarn@4.0.1"
+  "packageManager": "yarn@4.0.2"
 }

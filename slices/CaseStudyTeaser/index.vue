@@ -33,7 +33,10 @@ defineProps(
       <div class="content-wrapper dhd--cms-content">
         <div class="dhd--text--overline" v-html="slice.primary.case_study_type" />
         <h2 class="title">
-          <PrismicLink :field="slice.primary.cms_document">
+          <PrismicLink
+            class="dhd--text--title-link"
+            :field="slice.primary.cms_document"
+          >
             {{ slice.primary.title }}
           </PrismicLink>
         </h2>
@@ -88,17 +91,6 @@ defineProps(
       font-family: var(--font-heading);
       font-size: var(--type-scale-3);
       line-height: var(--spatial-scale-6);
-      > a {
-        color: inherit;
-        display: block;
-        text-decoration: underline;
-        text-decoration-color: oklch(100 0 0 / 0);
-        transition: text-decoration-color .3s ease-in-out;
-        &:hover {
-          text-decoration-color: currentColor;
-          text-decoration-thickness: .0625em;
-        }
-      }
     }
     .summary {
       p {
