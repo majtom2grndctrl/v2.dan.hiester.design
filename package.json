@@ -22,7 +22,7 @@
     "@zadigetvoltaire/nuxt-gtm": "^0.0.13",
     "concurrently": "^8.2.2",
     "eslint": "^8.53.0",
-    "nuxt": "^3.8.1",
+    "nuxt": "^3.8.2",
     "sass": "^1.69.5",
     "slice-machine-ui": "latest"
   },
