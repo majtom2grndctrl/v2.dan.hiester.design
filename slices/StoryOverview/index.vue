@@ -33,6 +33,8 @@ defineProps(
       margin: var(--spatial-scale-9) 0 var(--spatial-scale-7);
     }
     .sidebar {
+      border-top: calc(#{1.5rem / 18}) solid #D9D9D9;
+      border-bottom: calc(#{1.5rem / 18}) solid #D9D9D9;
       font-size: var(--type-scale-1);
       line-height: var(--spatial-scale-4);
       margin: var(--spatial-scale-7) 0;
