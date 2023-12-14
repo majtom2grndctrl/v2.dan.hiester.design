@@ -4,7 +4,7 @@ import PageHero from '~/components/PageHero.vue'
 import ContentList from '~/components/PageSections/ArticlesAndPresentations/ContentList.vue'
 
 const prismic = usePrismic()
-const { data: articles_page } = await useAsyncData('articles-and-presentations-page', () =>
+const { data: articles_page } = await useAsyncData('/articles-and-presentations', () =>
   prismic.client.getByUID('articles_page_type', 'articles-and-presentations')
 )
 

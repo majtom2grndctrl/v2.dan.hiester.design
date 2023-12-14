@@ -4,7 +4,7 @@ import PageHero from '~/components/PageHero.vue'
 import Influences from '~/components/PageSections/About/Influences.vue';
 
 const prismic = usePrismic()
-const { data: page } = await useAsyncData('about-dan-page', () =>
+const { data: page } = await useAsyncData('/about-dan', () =>
   prismic.client.getByUID('about_page_type', 'about')
 )
 
