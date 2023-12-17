@@ -8,7 +8,17 @@ const { data: page } = useAsyncData('/portfolio', async () =>
 )
 
 useHead({
-  title: 'Dan Hiester'
+  title: `${page.value?.data.meta_title} • Dan Hiester`,
+  meta: [
+    {
+      name: 'title',
+      content: page.value?.data.meta_title,
+    },
+    {
+      name: 'description',
+      content: page.value?.data.meta_description,
+    }
+  ]
 })
 </script>
 
