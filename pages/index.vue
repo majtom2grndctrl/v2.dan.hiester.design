@@ -19,49 +19,27 @@ useHead({
       <div class="summary-wrapper">
         <PrismicText :field="page?.data.hero_intro" class="summary dhd--cms-content" />
       </div>
-      <div class="photo-wrapper">
-        <PrismicImage
-          :field="page.data.hero_image"
-          v-if="page"
-          class="photo"
-        />
-      </div>
     </div>
   </PageHero>
-  <h2 class="section-header">
-    <PrismicText :field="page?.data.case_study_heading" />
-  </h2>
   <SliceZone
     wrapper="main"
     :slices="page?.data.slices ?? []"
     :components="components"
-    class="dhd--layout-wrapper"
+    class="dhd--layout-wrapper case-study-list"
   />
 </template>
 
 <style lang="scss" scoped>
   .hero {
     display: block;
-    overflow: hidden;
-  }
-  .section-header {
-      font-size: var(--type-scale-2);
-      font-family: var(--font-heading);
-      font-weight: 500;
-      line-height: var(--spatial-scale-2);
-      margin-top: var(--spatial-scale-8);
-      margin-bottom: var(--spatial-scale-3);
-      text-align: center;
   }
   .summary-wrapper {
-    margin: var(--spatial-scale-9) 0 var(--spatial-scale-7);
+    margin: var(--spatial-scale-6) 0 0;
+    padding-bottom: var(--spatial-scale-8);
   }
   .summary {
     font-size: var(--type-scale-2);
     line-height: var(--spatial-scale-6);
-  }
-  .photo-wrapper {
-    margin: var(--spatial-scale-6) 0 var(--spatial-scale-9);
   }
   .photo {
     aspect-ratio: calc(3/2);
@@ -75,15 +53,15 @@ useHead({
       gap: var(--grid-gutter);
       grid-template-columns: repeat(15, 1fr);
       overflow: unset;
-      padding-top: var(--spatial-scale-6);
-      padding-bottom: var(--spatial-scale-8);
     }
     .summary-wrapper {
       display: flex;
       flex-direction: row;
       align-items: center;
-      grid-column: 1 / span 7;
+      grid-column: 1 / span 10;
       margin: 0;
+      margin-top: var(--spatial-scale-6);
+      padding-bottom: var(--spatial-scale-6);
     }
     .summary {
       font-size: var(--type-scale-1);
@@ -91,15 +69,12 @@ useHead({
       margin-top: 0;
       margin-bottom: 0;
     }
-    .photo-wrapper {
-      justify-content: center;
-      display: flex;
-      flex-direction: column;
-      grid-column: 9 / span 7;
-      margin: 0;
-    }
   }
   @media (min-width: calc($breakpoint-medium + (200rem/16))) {
+    .summary-wrapper {
+      margin-top: var(--spatial-scale-9);
+      padding-bottom: var(--spatial-scale-9);
+    }
     .summary {
       font-size: var(--type-scale-2);
       line-height: var(--spatial-scale-6);
@@ -110,18 +85,14 @@ useHead({
     .hero {
       display: grid;
       grid-template-columns: repeat(15, 1fr);
-      padding-top: var(--spatial-scale-9);
-      padding-bottom: var(--spatial-scale-8);
+    }
+    .summary-wrapper {
+      margin-top: var(--spatial-scale-9);
+      padding-bottom: var(--spatial-scale-9);
     }
     .summary {
       font-size: var(--type-scale-2);
       line-height: var(--spatial-scale-6);
-    }
-    .section-header {
-      font-size: var(--type-scale-3);
-      line-height: var(--spatial-scale-3);
-      margin-top: var(--spatial-scale-12);
-      margin-bottom: 0;
     }
   }
 
@@ -130,14 +101,13 @@ useHead({
       grid-template-columns: repeat(17, 1fr);
     }
     .summary-wrapper {
-      grid-column: 1 / span 7;
+      grid-column: 1 / span 10;
+      margin-top: var(--spatial-scale-11);
+      padding-bottom: var(--spatial-scale-11);
     }
     .summary {
       font-size: var(--type-scale-3);
       line-height: var(--spatial-scale-7);
-    }
-    .photo-wrapper {
-      grid-column: 10 / span 6;
     }
   }
 </style>

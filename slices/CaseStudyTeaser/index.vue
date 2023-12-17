@@ -61,7 +61,7 @@ defineProps(
     display: flex;
     flex-direction: column;
     gap: var(--spatial-scale-6);
-    margin: 0 0 var(--spatial-scale-10);
+    margin: var(--spatial-scale-10) 0 var(--spatial-scale-10);
     .screenshot {
       aspect-ratio: calc(3/2);
       max-width: 100%;
