@@ -102,8 +102,8 @@ useHead({
     }
     .summary-wrapper {
       grid-column: 1 / span 10;
-      margin-top: var(--spatial-scale-11);
-      padding-bottom: var(--spatial-scale-11);
+      margin-top: var(--spatial-scale-9);
+      padding-bottom: var(--spatial-scale-9);
     }
     .summary {
       font-size: var(--type-scale-3);
