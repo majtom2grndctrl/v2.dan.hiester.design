@@ -4,8 +4,8 @@ import PageHero from '~/components/PageHero.vue'
 
 const prismic = usePrismic()
 const route = useRoute()
-const { data: page } = await useAsyncData(`/portfolio/${route.params.uid}`, () =>
-  prismic.client.getByUID('case_study', route.params.uid as string)
+const { data: page } = useAsyncData(`/portfolio/${route.params.uid}`, async () =>
+  await prismic.client.getByUID('case_study', route.params.uid as string)
 )
 useHead({
   title: prismic.asText(page.value?.data.title)
