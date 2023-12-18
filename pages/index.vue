@@ -7,9 +7,19 @@ const { data: page } = useAsyncData('/portfolio', async () =>
   await prismic.client.getByUID('homepage', 'home')
 )
 
-useHead({
-  title: 'Dan Hiester'
+useServerHead({
+  title: () => `${page.value?.data.meta_title} • Dan Hiester`,
 })
+
+useServerSeoMeta({
+  title: () => page.value!.data.meta_title,
+  description: () => page.value?.data.meta_description,
+  ogTitle: () => page.value?.data.meta_title,
+  ogDescription: () => page.value?.data.meta_description,
+  ogImage: () => page.value?.data.meta_image.url,
+  ogImageAlt: () => page.value?.data.meta_image.alt,
+})
+
 </script>
 
 

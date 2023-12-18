@@ -7,8 +7,17 @@ const route = useRoute()
 const { data: page } = useAsyncData(`/portfolio/${route.params.uid}`, async () =>
   await prismic.client.getByUID('case_study', route.params.uid as string)
 )
-useHead({
-  title: prismic.asText(page.value?.data.title)
+useServerHead({
+  title: () => prismic.asText(page.value?.data.title)
+})
+
+useServerSeoMeta({
+  title: () => page.value!.data.meta_title,
+  description: () => page.value?.data.meta_description,
+  ogTitle: () => page.value?.data.meta_title,
+  ogDescription: () => page.value?.data.meta_description,
+  ogImage: () => page.value?.data.meta_image.url,
+  ogImageAlt: () => page.value?.data.meta_image.alt,
 })
 
 </script>
