@@ -11,6 +11,16 @@ const { data: articles_page } = useAsyncData('/articles-and-presentations', asyn
 useHead({
   title: 'Articles & Presentations'
 })
+
+useServerSeoMeta({
+  title: () => articles_page.value!.data.meta_title,
+  description: () => articles_page.value?.data.meta_description,
+  ogTitle: () => articles_page.value?.data.meta_title,
+  ogDescription: () => articles_page.value?.data.meta_description,
+  ogImage: () => articles_page.value?.data.meta_image.url,
+  ogImageAlt: () => articles_page.value?.data.meta_image.alt,
+})
+
 </script>
 
 <template>

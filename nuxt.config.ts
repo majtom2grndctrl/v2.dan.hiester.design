@@ -12,8 +12,6 @@ export default defineNuxtConfig({
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { hid: 'title', name: 'title', content: 'Dan Hiester • Product Designer'},
-        { hid: 'description', name: 'description', content: 'I’m a Product Designer who fluently speaks the languages of engineering and product, so teams I work with level up their design execution.' },
         { name: 'format-detection', content: 'telephone=no' },
       ],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
