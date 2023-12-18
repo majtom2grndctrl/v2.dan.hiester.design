@@ -8,10 +8,6 @@ const { data: articles_page } = useAsyncData('/articles-and-presentations', asyn
   await prismic.client.getByUID('articles_page_type', 'articles-and-presentations')
 )
 
-useHead({
-  title: 'Articles & Presentations'
-})
-
 useServerSeoMeta({
   title: () => articles_page.value!.data.meta_title,
   description: () => articles_page.value?.data.meta_description,
