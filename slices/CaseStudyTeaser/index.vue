@@ -57,11 +57,13 @@ defineProps(
 <style lang="scss">
   /* Scoping this the old-fashioned way, because
      it’s the only way to style the Prismic content */
+  .dhd--CaseStudyTeaser-wrapper {
+    margin: var(--spatial-scale-10) 0 var(--spatial-scale-10);
+  }
   .dhd--CaseStudyTeaser {
     display: flex;
     flex-direction: column;
     gap: var(--spatial-scale-6);
-    margin: 0 0 var(--spatial-scale-10);
     .screenshot {
       aspect-ratio: calc(3/2);
       max-width: 100%;
@@ -104,8 +106,8 @@ defineProps(
       display: flex;
       flex-direction: row;
       align-items: center;
-      margin-top: var(--spatial-scale-10);
-      margin-bottom: var(--spatial-scale-10);
+      margin-top: var(--spatial-scale-12);
+      margin-bottom: var(--spatial-scale-12);
     }
     .dhd--CaseStudyTeaser {
       align-items: center;
