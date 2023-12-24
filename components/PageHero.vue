@@ -29,6 +29,18 @@
   }
   .site-header {
     padding-top: var(--spatial-scale-5);
+    @media (min-width: $breakpoint-medium) {
+      align-items: first baseline;
+      display: flex;
+      gap: var(--grid-gutter);
+      justify-content: flex-start;
+      padding-top: var(--spatial-scale-6);
+    }
+    @media (min-width: $breakpoint-large) {
+      display: grid;
+      grid-template-columns: repeat(15, 1fr);
+      padding-top: var(--spatial-scale-7);
+    }
   }
   .site-header-logo-link {
     color: var(--text-knockout);
@@ -39,23 +51,59 @@
     text-decoration: none;
     white-space: nowrap;
   }
+  .site-header-nav1-wrapper {
+    position: relative;
+    // Turns out, the downside of OKLCH is it does not currently have
+    // a good way to support a gradient from solid to transparent
+    /*
+    &:before {
+      content: ' ';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 100%;
+      background: linear-gradient(to right, var(--blue-hero-bg), var(--blue-hero-bg-transparent));
+      width: var(--grid-gutter);
+      z-index: 2;
+    }
+    &:after {
+      content: ' ';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 100%;
+      background: linear-gradient(to left, var(--blue-hero-bg), var(--blue-hero-bg-transparent));
+      width: var(--grid-gutter);
+      z-index: 2;
+    }
+    */
+    @media (min-width: $breakpoint-medium) {
+      grid-column: 5 / span 10;
+      margin: 0 var(--grid-gutter);
+    }
+    @media (min-width: $breakpoint-large) {
+      margin: 0;
+    }
+  }
 
   .Nav1--site-header {
     --nav-link-color: var(--text-knockout);
-    margin: var(--spatial-scale-2) 0;
+    margin-right: calc(var(--grid-gutter) * -1);
+    margin-left: calc(var(--grid-gutter) * -1);
+    padding: var(--spatial-scale-2) var(--grid-gutter);
+    position: relative;
+    overflow-x: auto;
+    z-index: 1;
+    @media (min-width: $breakpoint-medium) {
+      gap: var(--spatial-scale-4);
+      margin: 0;
+      padding: 0;
+      overflow-x: unset;
+    }
   }
   @media (min-width: $breakpoint-medium) {
-    .site-header {
-      display: flex;
-      gap: var(--grid-gutter);
-      justify-content: space-between;
-      align-items: center;
-      align-items: center;
-      display: grid;
-      gap: var(--grid-gutter);
-      grid-template-columns: repeat(15, 1fr);
-      padding-top: var(--spatial-scale-6);
-    }
     .site-header-logo-wrapper {
       grid-column: 1 / span 4;
     }
@@ -63,24 +111,13 @@
       font-size: var(--type-scale-3);
       line-height: var(--spatial-scale-3);
     }
-    .site-header-nav1-wrapper {
-      grid-column: 5 / span 10;
-      padding-top: var(--spatial-scale-00);
-    }
-    .Nav1--site-header {
-      margin: 0 calc(var(--grid-gutter) * -1);
-    }
   }
   @media (min-width: $breakpoint-large) {
-    .site-header {
-      grid-template-columns: repeat(17, 1fr);
-      padding-top: var(--spatial-scale-7);
-    }
     .site-header-logo-wrapper {
       grid-column: 1 / span 4;
     }
     .site-header-nav1-wrapper {
-      grid-column: 6 / span 9;
+      grid-column: 5 / span 9;
     }
     .site-header-logo-link {
       font-size: var(--type-scale-4);
@@ -88,6 +125,9 @@
     }
   }
   @media (min-width: $breakpoint-royale) {
+    .site-header {
+      grid-template-columns: repeat(17, 1fr);
+    }
     .site-header-nav1-wrapper {
       grid-column: 5 / span 10;
     }
