@@ -23,11 +23,6 @@
   .Nav1 {
     display: flex;
     gap: var(--spatial-scale-4);
-    overflow-x: auto;
-    @media (min-width: $breakpoint-medium) {
-      gap: var(--spatial-scale-4);
-      overflow-x: unset;
-    }
     > .Nav1-link {
       background-color: var(--link-bg-inactive);
       border-radius: var(--spatial-scale-00);
