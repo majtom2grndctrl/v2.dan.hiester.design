@@ -136,6 +136,10 @@ useServerSeoMeta({
   .overview-wrapper {
     margin-top: var(--spatial-scale-10);
     margin-bottom: var(--spatial-scale-10);
+    @media (min-height: 800px) {
+      margin-top: var(--spatial-scale-12);
+      margin-bottom: var(--spatial-scale-12);
+    }
     @media (min-width: $breakpoint-medium) {
       display: grid;
       grid-template-columns: repeat(15, 1fr);
@@ -163,7 +167,7 @@ useServerSeoMeta({
   .more-about {
     @media (min-width: $breakpoint-large) {
       margin-top: var(--spatial-scale-12);
-      margin-bottom: var(--spatial-scale-14);
+      margin-bottom: var(--spatial-scale-12);
     }
   }
 

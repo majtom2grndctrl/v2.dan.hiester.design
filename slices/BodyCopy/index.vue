@@ -17,7 +17,7 @@ defineProps(
   <div
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
-    class="body-copy-wrapper dhd--layout-wrapper"
+    class="dhd--layout-wrapper"
   >
     <PrismicRichText :field="slice.primary.content" class="body-copy dhd--cms-content" />
   </div>

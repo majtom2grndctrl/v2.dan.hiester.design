@@ -24,7 +24,7 @@ const props = defineProps({
     <header class="header">
       <div class="header-sticky">
         <div class="dhd--text--overline" v-html="overline" />
-      <h2 class="title" v-html="title" />
+        <h2 class="title" v-html="title" />
       </div>
     </header>
     <div class="content">
@@ -55,14 +55,16 @@ const props = defineProps({
 
 <style lang="scss" scoped>
   .Influences {
+    // margin-top: var(--spatial-scale-13);
     @media (min-width: $breakpoint-large) {
       display: grid;
       gap: var(--grid-gutter);
       grid-template-columns: repeat(15, 1fr);
+      margin: 0;
     }
   }
   .header {
-    margin-top: var(--spatial-scale-13);
+    margin-top: 0;
     margin-bottom: var(--spatial-scale-8);
     @media (min-width: $breakpoint-large) {
       grid-column: 1 / span 4;
@@ -78,6 +80,7 @@ const props = defineProps({
     @media (min-width: $breakpoint-large) {
       position: sticky;
       top: var(--spatial-scale-8);
+      padding-bottom: var(--spatial-scale-0);
     }
   }
 
@@ -87,6 +90,7 @@ const props = defineProps({
     font-weight: 600;
     line-height: var(--spatial-scale-7);
     margin-top: 0;
+    margin-bottom: 0;
   }
 
   .content {
@@ -100,6 +104,10 @@ const props = defineProps({
   }
   .influence-item {
     margin-bottom: var(--spatial-scale-10);
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
     @media (min-width: $breakpoint-medium) {
       display: grid;
       gap: var(--grid-gutter);
