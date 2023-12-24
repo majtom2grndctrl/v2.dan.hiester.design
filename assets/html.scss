@@ -128,7 +128,9 @@ img {
   @media (min-width: $breakpoint-small) {
     margin-right: auto;
     margin-left: auto;
-    max-width: calc(#{7 / 9} * 100%);
+    max-width: calc(#{13 / 15} * 100%);
+    padding-right: 0;
+    padding-left: 0;
   }
   @media (min-width: $breakpoint-medium) {
     max-width: calc(#{13 / 15} * 100%);

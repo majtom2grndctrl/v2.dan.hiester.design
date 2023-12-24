@@ -74,7 +74,9 @@ onMounted(() => {
     font-size: var(--type-scale-4);
     font-weight: 600;
     line-height: var(--spatial-scale-7);
-    text-align: center;
+    @media (min-width: $breakpoint-small) {
+      text-align: center;
+    }
     @media (min-width: $breakpoint-medium) {
       font-size: var(--type-scale-5);
       line-height: var(--spatial-scale-8);
@@ -83,31 +85,36 @@ onMounted(() => {
   .content-wrapper {
     font-size: var(--type-scale-1);
     line-height: var(--spatial-scale-5);
-    padding: 0 calc(1/15*100%);
-    @media (min-width: $breakpoint-medium) {
+    @media (min-width: $breakpoint-small) {
       margin: 0 auto;
+      max-width: calc(#{ 13 / 15} * 100%);
       padding: unset;
       text-align: justify;
-      width: calc(#{11 / 15} * 100%);
+    }
+    @media (min-width: $breakpoint-medium) {
+      max-width: calc(#{11 / 15} * 100%);
     }
     @media (min-width: $breakpoint-large) {
-      width: calc(#{ 9 / 15} * 100%);
+      max-width: calc(#{ 9 / 15} * 100%);
     }
     @media (min-width: $breakpoint-royale) {
-      width: calc(#{ 9 / 17} * 100%);
+      max-width: calc(#{ 9 / 17} * 100%);
     }
   }
 
   .links-list {
     display: block;
-    padding: 0 calc(#{1 / 15} *100%);
     margin: var(--spatial-scale-5) 0;
-    @media (min-width: $breakpoint-medium) {
+    padding: 0;
+    @media (min-width: $breakpoint-small) {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       gap: var(--grid-gutter) calc(#{1 / 15} * 100%);
       justify-content: center;
+      padding: 0 calc(#{1 / 15} *100%);
+    }
+    @media (min-width: $breakpoint-medium) {
     }
     @media (min-width: $breakpoint-large) {
       margin: var(--spatial-scale-7) auto;
@@ -124,6 +131,9 @@ onMounted(() => {
   .links-item {
     display: block;
     margin: var(--spatial-scale-3) 0;
+    @media (min-width: $breakpoint-small) {
+      margin: 0;
+    }
     @media (min-width: $breakpoint-medium) {
       margin: 0;
     }
