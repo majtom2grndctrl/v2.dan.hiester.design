@@ -144,12 +144,12 @@ img {
        This sets the illusion of a 17 column grid,
        where the outermost columns are reserved for spacing / rhythm
     */
-    --lateral-padding: calc(#{ 1 / 15 } * 100%);
+    --lateral-padding: calc(#{ 1 / 17 } * 100%);
     padding-right: var(--lateral-padding);
     padding-left: var(--lateral-padding);
   }
   @media (min-width: $breakpoint-royale) {
-    --lateral-padding: calc(#{ 1 / 17 } * 100%);
+    --lateral-padding: calc(#{ 1 / 19 } * 100%); 
   }
 }
 
