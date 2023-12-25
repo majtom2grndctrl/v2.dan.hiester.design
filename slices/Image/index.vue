@@ -25,8 +25,7 @@ defineProps(getSliceComponentProps<Content.ImageSlice>());
 <style lang="scss">
 
 .dhd--image-slice {
-  margin: var(--spatial-scale-6) var(--spatial-scale-2) var(--spatial-scale-10);
-  // max-width: calc(40rem - var(--spatial-scale-4) * 2);
+  margin: var(--spatial-scale-6) 0 var(--spatial-scale-10);
   &.has-style--Diagram {
     > img {
       background: var(--gray-900);
@@ -43,47 +42,30 @@ defineProps(getSliceComponentProps<Content.ImageSlice>());
     max-width: 100%;
   }
   > figcaption {
-    font-size: var(--type-scale-0);
-    line-height: var(--spatial-scale-4);
+    font-size: var(--type-scale-1);
+    line-height: var(--spatial-scale-5);
   }
 }
 
-@media (min-width: $breakpoint-small) {
-  .dhd--image-slice {
-    margin-right: auto;
-    margin-left: auto;
-    max-width: calc(100% * 11 / 13);
-    p {
-      margin-right: auto;
-      margin-left: auto;
-    }
-    &.has-size--Cover_Image {
-      max-width: unset;
-    }
-    &.has-size--Aside {
-      float: right;
-      margin-left: var(--spatial-scale-1);
-      max-width: calc(100% * 5 / 13);
-    }
-    &.has-style--Screenshot {
-      margin-right: auto;
-      margin-left: auto;
-      max-width: calc(100% * 11 / 13)
-    }
-  }
-}
 @media (min-width: $breakpoint-medium) {
   .dhd--image-slice {
     box-sizing: border-box;
     font-size: var(--type-scale-0);
-    max-width: calc(#{9 / 15} * 100%);
+    margin-right: auto;
+    margin-left: auto;
+    max-width: calc(#{11 / 15} * 100%);
     &.has-size--Aside {
+      float: right;
       max-width: calc(100% * 5 / 15);
       margin-right: calc(100% * 1 / 15);
       margin-left: var(--spatial-scale-3);
     }
     &.has-size--Cover_Image {
-      max-width: calc(#{13 / 15} * 100%);
+      max-width: 100%;
+      > figcaption {
+        margin: 0 auto;
+        max-width: calc(#{11 / 15} * 100%);
+      }
     }
     &.has-style--Diagram {
       padding: 0;
@@ -97,11 +79,14 @@ defineProps(getSliceComponentProps<Content.ImageSlice>());
   }
 }
 
-@media (min-width: $breakpoint-large){
+@media (min-width: $breakpoint-royale){
   .dhd--image-slice {
     max-width: calc(100% * 9 / 17);
     &.has-size--Cover_Image {
       max-width: calc(100% * 15 / 17);
+      > figcaption {
+        max-width: calc(#{9 / 15} * 100%);
+      }
     }
   }
 }
