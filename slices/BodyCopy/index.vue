@@ -38,13 +38,13 @@ defineProps(
   .body-copy {
     margin-right: auto;
     margin-left: auto;
-    max-width: 45rem;
+    max-width: calc(calc(#{11 / 15} * 100%) - calc(var(--grid-gutter) / 2));
   }
 }
 
 @media(min-width: $breakpoint-large) {
   .body-copy {
-    max-width: calc(calc(#{11 / 15} * 100%) - calc(var(--grid-gutter) / 2));
+    max-width: calc(calc(#{9 / 15} * 100%) - calc(var(--grid-gutter) / 2));
   }
 }
 
