@@ -52,10 +52,11 @@
     white-space: nowrap;
   }
   .site-header-nav1-wrapper {
-    position: relative;
+    margin: var(--spatial-scale-2) 0 0 0;
     // Turns out, the downside of OKLCH is it does not currently have
     // a good way to support a gradient from solid to transparent
     /*
+    position: relative;
     &:before {
       content: ' ';
       display: block;
@@ -90,8 +91,7 @@
 
   .Nav1--site-header {
     --nav-link-color: var(--text-knockout);
-    margin-right: calc(var(--grid-gutter) * -1);
-    margin-left: calc(var(--grid-gutter) * -1);
+    margin: calc(var(--grid-gutter) * -1);
     padding: var(--spatial-scale-2) var(--grid-gutter);
     position: relative;
     overflow-x: auto;
