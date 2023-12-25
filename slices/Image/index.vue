@@ -64,7 +64,7 @@ defineProps(getSliceComponentProps<Content.ImageSlice>());
       max-width: 100%;
       > figcaption {
         margin: 0 auto;
-        max-width: calc(#{11 / 15} * 100%);
+        max-width: 45rem;
       }
     }
     &.has-style--Diagram {
@@ -75,6 +75,16 @@ defineProps(getSliceComponentProps<Content.ImageSlice>());
     }
     &.has-style--Screenshot {
       padding: none;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-large) {
+  .dhd--image-slice {
+    &.has-size--Cover_Image {
+      > figcaption {
+        max-width: calc(#{11 / 15} * 100%);
+      }
     }
   }
 }
