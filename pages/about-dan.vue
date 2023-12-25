@@ -142,11 +142,12 @@ useServerSeoMeta({
     }
     @media (min-width: $breakpoint-medium) {
       display: grid;
+      gap: var(--grid-gutter);
       grid-template-columns: repeat(15, 1fr);
     }
     @media (min-width: $breakpoint-large) {
       margin-top: var(--spatial-scale-13);
-    margin-bottom: var(--spatial-scale-13);
+      margin-bottom: var(--spatial-scale-13);
     }
     @media (min-width: $breakpoint-royale) {
       grid-template-columns: repeat(17, 1fr);
