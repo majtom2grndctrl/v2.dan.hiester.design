@@ -98,8 +98,8 @@ useServerSeoMeta({
       grid-column: 1 / span 5;
     }
     .page-title {
-      font-size: var(--type-scale-4);
-      line-height: var(--spatial-scale-7);
+      font-size: var(--type-scale-3);
+      line-height: var(--spatial-scale-6);
     }
 
     @media (min-width: $breakpoint-royale) {
@@ -111,6 +111,10 @@ useServerSeoMeta({
       }
       .hero-meta-wrapper {
         grid-column: 1 / span 5
+      }
+      .page-title {
+        font-size: var(--type-scale-4);
+        line-height: var(--spatial-scale-7);
       }
     }
   }
