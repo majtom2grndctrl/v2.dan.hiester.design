@@ -53,7 +53,7 @@ defineProps(getSliceComponentProps<Content.ImageSlice>());
     font-size: var(--type-scale-0);
     margin-right: auto;
     margin-left: auto;
-    max-width: calc(#{11 / 15} * 100%);
+    max-width: calc(calc(#{11 / 15} * 100%) - calc(var(--grid-gutter) / 2));
     &.has-size--Aside {
       float: right;
       max-width: calc(100% * 5 / 15);
@@ -64,7 +64,7 @@ defineProps(getSliceComponentProps<Content.ImageSlice>());
       max-width: 100%;
       > figcaption {
         margin: 0 auto;
-        max-width: 45rem;
+        max-width: calc(calc(#{11 / 15} * 100%) - calc(var(--grid-gutter) / 2));
       }
     }
     &.has-style--Diagram {
@@ -81,9 +81,10 @@ defineProps(getSliceComponentProps<Content.ImageSlice>());
 
 @media (min-width: $breakpoint-large) {
   .dhd--image-slice {
+    max-width: calc(calc(#{9 / 15} * 100%) - calc(var(--grid-gutter) / 2));
     &.has-size--Cover_Image {
       > figcaption {
-        max-width: calc(#{11 / 15} * 100%);
+        max-width: calc(#{9 / 15} * 100%);
       }
     }
   }

@@ -63,7 +63,7 @@ defineProps(
 @media(min-width: $breakpoint-medium) {
   .new-chapter-intro-wrapper {
     .dhd--text--overline, .heading, .lede {
-      max-width: 45rem;
+      max-width: calc(calc(#{11 / 15} * 100%) - calc(var(--grid-gutter) / 2));
     }
   }
 }
@@ -72,7 +72,7 @@ defineProps(
   .new-chapter-intro-wrapper {
     margin-top: var(--spatial-scale-12);
     .dhd--text--overline, .heading, .lede {
-      max-width: calc(calc(#{11 / 15} * 100%) - calc(var(--grid-gutter) / 2));
+      max-width: calc(calc(#{9 / 15} * 100%) - calc(var(--grid-gutter) / 2));
     }
   }
 }
