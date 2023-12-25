@@ -148,6 +148,9 @@ img {
     padding-right: var(--lateral-padding);
     padding-left: var(--lateral-padding);
   }
+  @media (min-width: $breakpoint-royale) {
+    --lateral-padding: calc(#{ 1 / 17 } * 100%);
+  }
 }
 
 .dhd--cms-content {
