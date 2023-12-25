@@ -85,19 +85,33 @@ useServerSeoMeta({
 
   @media (min-width: $breakpoint-large) {
     .hero {
-      flex-direction: row-reverse;
+      display: grid;
+      grid-template-columns: repeat(15, 1fr);
       align-items: center;
-      gap: calc(calc(#{1/17} * 100%) + calc(var(--grid-gutter) * 2));
+      gap: var(--grid-gutter);
     }
     .hero-image-wrapper {
-      flex-basis: calc(#{11/17} * 100%);
+      grid-column: 7 / span 9;
+      grid-row: 1;
     }
     .hero-meta-wrapper {
-      flex-basis: calc(#{5/17} * 100%);
+      grid-column: 1 / span 5;
     }
     .page-title {
       font-size: var(--type-scale-4);
       line-height: var(--spatial-scale-7);
+    }
+
+    @media (min-width: $breakpoint-royale) {
+      .hero {
+        grid-template-columns: repeat(17, 1fr);
+      }
+      .hero-image-wrapper {
+        grid-column: 7 / span 11;
+      }
+      .hero-meta-wrapper {
+        grid-column: 1 / span 5
+      }
     }
   }
 </style>
