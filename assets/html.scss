@@ -26,7 +26,7 @@
   --text-primary: var(--midnight-slate);
   --background-primary: hsl(0 0% 100%);
   --text-knockout: var(--white);
-  --blue-hero-bg: oklch(66.05% 0.139623 224.62);
+  --blue-hero-bg: var(--brand-blue-5);
   --text-inline-hyperlink: oklch(60.38% 0.144423 226.95);
 
   @media(prefers-contrast: more) {
