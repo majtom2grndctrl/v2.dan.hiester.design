@@ -30,7 +30,7 @@
   --text-inline-hyperlink: oklch(60.38% 0.144423 226.95);
 
   @media(prefers-contrast: more) {
-    --blue-hero-bg: hsl(198 59% 26%);
+    --blue-hero-bg: var(--brand-blue-3);
   }
 
   @media(prefers-color-scheme: dark) {
