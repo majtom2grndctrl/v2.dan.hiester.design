@@ -35,7 +35,8 @@
 
   @media(prefers-color-scheme: dark) {
     --background-primary: var(--midnight-slate);
-    --text-primary: var(--white)
+    --blue-hero-bg: var(--brand-blue-2);
+    --text-primary: var(--white);
   }
 
   --type-scale-base: 1rem;
