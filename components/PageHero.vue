@@ -22,7 +22,8 @@
 
 <style lang="scss" scoped>
   .PageHero--wrapper {
-    background: var(--blue-hero-bg);
+    background-color: var(--blue-hero-bg);
+    transition: background-color 0.3s ease-in-out;
   }
   .PageHero {
     color: var(--text-knockout);
