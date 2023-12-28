@@ -36,6 +36,34 @@ useServerSeoMeta({
     </div>
   </PageHero>
 
+  <div class="color-swatches">
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+  </div>
+
+  <div class="color-swatches gradient-scale">
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+  </div>
+
   <section class="dhd--layout-wrapper overview-wrapper">
     <PrismicText class="overview" :field="page?.data.overview" />
   </section>
@@ -57,6 +85,28 @@ useServerSeoMeta({
 </template>
 
 <style lang="scss" scoped>
+  .color-swatches {
+    display: flex;
+    margin: var(--spatial-scale-10);
+  }
+  .color-swatch {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .color-swatch:nth-child(1) { background-color: var(--brand-blue-1); }
+  .color-swatch:nth-child(2) { background-color: var(--brand-blue-2); }
+  .color-swatch:nth-child(3) { background-color: var(--brand-blue-3); }
+  .color-swatch:nth-child(4) { background-color: var(--brand-blue-4); }
+  .color-swatch:nth-child(5) { background-color: var(--brand-blue-5); }
+  .color-swatch:nth-child(6) { background-color: var(--brand-blue-6); }
+  .color-swatch:nth-child(7) { background-color: var(--brand-blue-7); }
+  .color-swatch:nth-child(8) { background-color: var(--brand-blue-8); }
+  .color-swatch:nth-child(9) { background-color: var(--brand-blue-9); }
+  .color-swatch:nth-child(10) { background-color: var(--brand-blue-10); }
+  .color-swatch:nth-child(11) { background-color: var(--brand-blue-11); }
   .hero {
     display: block;
     padding-top: var(--spatial-scale-7);
