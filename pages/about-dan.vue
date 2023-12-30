@@ -36,6 +36,20 @@ useServerSeoMeta({
     </div>
   </PageHero>
 
+  <div class="color-swatches production-scale">
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+  </div>
+
   <div class="color-swatches">
     <div class="color-swatch"></div>
     <div class="color-swatch"></div>
