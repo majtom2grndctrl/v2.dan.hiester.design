@@ -39,6 +39,52 @@
   --brand-blue-8: hsl(198, 85%, 81%);
   --brand-blue-9: hsl(198, 95%, 89%);
 
+  .gray-1 {
+    --gray-1: hsl(228, 22%, 21%);
+    --gray-2: hsl(228, 18%, 35%);
+    --gray-3: hsl(228, 15%, 48%);
+    --gray-4: hsl(228, 13%, 57%);
+    --gray-5: hsl(228, 10%, 65%);
+    --gray-6: hsl(228, 13%, 73%);
+    --gray-7: hsl(228, 15%, 82%);
+    --gray-8: hsl(228, 18%, 88%);
+    --gray-9: hsl(228, 21%, 93%);
+  }
+
+  .gray-2 {
+    --gray-1: hsl(228, 22%, 21%);
+    --gray-2: hsl(228, 17%, 32%);
+    --gray-3: hsl(228, 13%, 46%);
+    --gray-4: hsl(228, 10%, 58%);
+    --gray-5: hsl(228, 10%, 65%);
+    --gray-6: hsl(228, 11%, 75%);
+    --gray-7: hsl(228, 15%, 84%);
+    --gray-8: hsl(228, 19%, 89%);
+    --gray-9: hsl(228, 21%, 93%);
+  }
+
+  .gray-3 {
+    --gray-1: hsl(228, 22%, 21%);
+    --gray-2: hsl(228, 19%, 36%);
+    --gray-3: hsl(228, 15%, 47%);
+    --gray-4: hsl(228, 13%, 55%);
+    --gray-5: hsl(228, 10%, 65%);
+    --gray-6: hsl(228, 13%, 75%);
+    --gray-7: hsl(228, 15%, 83%);
+    --gray-8: hsl(228, 19%, 91%);
+    --gray-9: hsl(228, 21%, 97%);
+  }
+  .brand-blue-claude {
+    --brand-blue-1: hsl(198, 95%, 11%);
+    --brand-blue-2: hsl(198, 87%, 18%); 
+    --brand-blue-3: hsl(198, 74%, 29%);
+    --brand-blue-4: hsl(198, 57%, 42%);
+    --brand-blue-5: hsl(198, 60%, 51%);
+    --brand-blue-6: hsl(198, 57%, 61%);
+    --brand-blue-7: hsl(198, 74%, 71%);
+    --brand-blue-8: hsl(198, 87%, 82%);
+    --brand-blue-9: hsl(198, 95%, 95%);
+  }
 
   --link-bg-inactive: rgba(229, 239, 239, 0);
   --link-bg-active: rgba(229, 239, 239, 1);

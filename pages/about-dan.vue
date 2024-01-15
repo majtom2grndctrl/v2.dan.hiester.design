@@ -36,23 +36,7 @@ useServerSeoMeta({
     </div>
   </PageHero>
 
-  <div class="color-swatches production-scale">
-    <div class="color-swatch"></div>
-    <div class="color-swatch"></div>
-    <div class="color-swatch"></div>
-    <div class="color-swatch"></div>
-    <div class="color-swatch"></div>
-    <div class="color-swatch"></div>
-    <div class="color-swatch"></div>
-    <div class="color-swatch"></div>
-    <div class="color-swatch"></div>
-    <div class="color-swatch"></div>
-    <div class="color-swatch"></div>
-  </div>
-
-  <div class="color-swatches">
-    <div class="color-swatch"></div>
-    <div class="color-swatch"></div>
+  <div class="color-swatches gray-1">
     <div class="color-swatch"></div>
     <div class="color-swatch"></div>
     <div class="color-swatch"></div>
@@ -64,9 +48,19 @@ useServerSeoMeta({
     <div class="color-swatch"></div>
   </div>
 
-  <div class="color-swatches gradient-scale">
+  <div class="color-swatches gray-2">
     <div class="color-swatch"></div>
     <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+    <div class="color-swatch"></div>
+  </div>
+
+  <div class="color-swatches gray-3">
     <div class="color-swatch"></div>
     <div class="color-swatch"></div>
     <div class="color-swatch"></div>
@@ -110,17 +104,17 @@ useServerSeoMeta({
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
-  .color-swatch:nth-child(1) { background-color: var(--brand-blue-1); }
-  .color-swatch:nth-child(2) { background-color: var(--brand-blue-2); }
-  .color-swatch:nth-child(3) { background-color: var(--brand-blue-3); }
-  .color-swatch:nth-child(4) { background-color: var(--brand-blue-4); }
-  .color-swatch:nth-child(5) { background-color: var(--brand-blue-5); }
-  .color-swatch:nth-child(6) { background-color: var(--brand-blue-6); }
-  .color-swatch:nth-child(7) { background-color: var(--brand-blue-7); }
-  .color-swatch:nth-child(8) { background-color: var(--brand-blue-8); }
-  .color-swatch:nth-child(9) { background-color: var(--brand-blue-9); }
-  .color-swatch:nth-child(10) { background-color: var(--brand-blue-10); }
-  .color-swatch:nth-child(11) { background-color: var(--brand-blue-11); }
+  .color-swatch:nth-child(1) { background-color: var(--gray-1); }
+  .color-swatch:nth-child(2) { background-color: var(--gray-2); }
+  .color-swatch:nth-child(3) { background-color: var(--gray-3); }
+  .color-swatch:nth-child(4) { background-color: var(--gray-4); }
+  .color-swatch:nth-child(5) { background-color: var(--gray-5); }
+  .color-swatch:nth-child(6) { background-color: var(--gray-6); }
+  .color-swatch:nth-child(7) { background-color: var(--gray-7); }
+  .color-swatch:nth-child(8) { background-color: var(--gray-8); }
+  .color-swatch:nth-child(9) { background-color: var(--gray-9); }
+  .color-swatch:nth-child(10) { background-color: var(--gray-10); }
+  .color-swatch:nth-child(11) { background-color: var(--gray-11); }
   .hero {
     display: block;
     padding-top: var(--spatial-scale-7);
