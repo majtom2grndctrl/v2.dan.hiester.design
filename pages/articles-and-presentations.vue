@@ -45,19 +45,17 @@ useServerSeoMeta({
 <style lang="scss" scoped>
   .hero {
     display: block;
-    padding-top: var(--spatial-scale-7);
-    padding-bottom: var(--spatial-scale-5);
+    margin-top: var(--spatial-scale-8);
+    padding-bottom: var(--spatial-scale-6);
     display: flex;
     flex-direction: column-reverse;
     gap: var(--spatial-scale-7);
     @media (min-width: $breakpoint-medium) {
       display: grid;
+      margin-top: var(--spatial-scale-7);
+      padding-bottom: var(--spatial-scale-7);
       gap: var(--grid-gutter);
       grid-template-columns: repeat(15, 1fr);
-    }
-    @media (min-width: $breakpoint-large) {
-      padding-top: var(--spatial-scale-5);
-      padding-bottom: var(--spatial-scale-6);
     }
   }
   .summary-wrapper {

@@ -44,7 +44,7 @@ useServerSeoMeta({
     display: block;
   }
   .summary-wrapper {
-    margin: var(--spatial-scale-6) 0 0;
+    margin: 0;
     padding-bottom: var(--spatial-scale-8);
   }
   .summary {
