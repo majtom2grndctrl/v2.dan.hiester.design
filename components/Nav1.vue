@@ -60,7 +60,7 @@
         height: calc(3.5rem/16);
         opacity: 0;
         position: absolute;
-          top: 90%;
+          top: 100%;
           left: var(--spatial-scale-1);
         transition: opacity .66s;
         width: var(--spatial-scale-2);
