@@ -32,13 +32,16 @@ defineProps(getSliceComponentProps<Content.ImageSlice>());
       box-sizing: border-box;
       color: var(--gray-300);
       padding: var(--spatial-scale-2) var(--spatial-scale-2) var(--spatial-scale-1);
+      @media(prefers-color-scheme: dark) {
+        background: var(--gray-025);
+      }
     }
   }
   > .dhd--text--overline {
     margin-bottom: var(--spatial-scale-2);
   }
   > img {
-    box-shadow: 0px 0px var(--spatial-scale-00) 0 rgba(90, 100, 104, 0.6);
+    box-shadow: 0px 0px var(--spatial-scale-00) 0 var(--box-shadow);
     max-width: 100%;
   }
   > figcaption {
