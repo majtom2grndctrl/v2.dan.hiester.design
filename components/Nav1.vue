@@ -69,7 +69,7 @@
         background-color: var(--link-bg-active);
         color: var(--gray-400);
       }
-      @media (min-width: $breakpoint-medium) {
+      @media (min-width: $breakpoint-large) {
         font-size: var(--type-scale-1);
         line-height: var(--spatial-scale-1);
       }
