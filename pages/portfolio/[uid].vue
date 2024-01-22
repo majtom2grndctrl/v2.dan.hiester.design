@@ -57,7 +57,7 @@ useServerSeoMeta({
     display: flex;
     flex-direction: column;
     gap: var(--spatial-scale-4);
-    margin-top: var(--spatial-scale-6);
+    margin-top: var(--spatial-scale-8);
     padding-bottom: var(--spatial-scale-6);
   }
   .page-title {
@@ -82,6 +82,9 @@ useServerSeoMeta({
     aspect-ratio: calc(3/2);
     max-width: 100%;
   }
+  .hero-meta-wrapper {
+    margin-top: var(--type-scale-1);
+  }
 
   @media (min-width: $breakpoint-large) {
     .hero {
@@ -96,6 +99,7 @@ useServerSeoMeta({
     }
     .hero-meta-wrapper {
       grid-column: 1 / span 5;
+      margin: 0;
     }
     .page-title {
       font-size: var(--type-scale-3);
