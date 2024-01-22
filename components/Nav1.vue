@@ -45,7 +45,7 @@
         justify-content: center;
       font-size: var(--type-scale-0);
       font-weight: 500;
-      font-family: var(--font-heading);
+      font-family: var(--font-body);
       line-height: var(--spatial-scale-0);
       margin: calc(var(--spatial-scale-0) * -1);
       padding: var(--spatial-scale-1) var(--spatial-scale-1) var(--spatial-scale-0) var(--spatial-scale-1);
@@ -68,6 +68,10 @@
       &:hover {
         background-color: var(--link-bg-active);
         color: var(--gray-400);
+      }
+      @media (min-width: $breakpoint-medium) {
+        font-size: var(--type-scale-1);
+        line-height: var(--spatial-scale-1);
       }
     }
     .router-link-active {
