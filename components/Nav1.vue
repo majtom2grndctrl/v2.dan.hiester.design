@@ -48,7 +48,7 @@
       font-family: var(--font-body);
       line-height: var(--spatial-scale-0);
       margin: calc(var(--spatial-scale-0) * -1);
-      padding: var(--spatial-scale-1) var(--spatial-scale-1) var(--spatial-scale-0) var(--spatial-scale-1);
+      padding: var(--spatial-scale-1);
       position: relative;
       text-decoration: none;
       transition: color .66s, background-color .66s;
