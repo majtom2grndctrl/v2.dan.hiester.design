@@ -44,7 +44,7 @@ useServerSeoMeta({
     display: block;
   }
   .summary-wrapper {
-    margin: 0;
+    margin: var(--spatial-scale-8) 0 0;
     padding-bottom: var(--spatial-scale-8);
   }
   .summary {
@@ -69,8 +69,7 @@ useServerSeoMeta({
       flex-direction: row;
       align-items: center;
       grid-column: 1 / span 10;
-      margin: 0;
-      margin-top: var(--spatial-scale-6);
+      margin: var(--spatial-scale-6) 0 0 0;
       padding-bottom: var(--spatial-scale-6);
     }
     .summary {
