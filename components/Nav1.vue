@@ -45,7 +45,7 @@
         justify-content: center;
       font-size: var(--type-scale-0);
       font-weight: 500;
-      font-family: var(--font-heading);
+      font-family: var(--font-body);
       line-height: var(--spatial-scale-0);
       margin: calc(var(--spatial-scale-0) * -1);
       padding: var(--spatial-scale-1) var(--spatial-scale-1) var(--spatial-scale-0) var(--spatial-scale-1);
@@ -60,7 +60,7 @@
         height: calc(3.5rem/16);
         opacity: 0;
         position: absolute;
-          top: 90%;
+          top: 100%;
           left: var(--spatial-scale-1);
         transition: opacity .66s;
         width: var(--spatial-scale-2);
@@ -68,6 +68,10 @@
       &:hover {
         background-color: var(--link-bg-active);
         color: var(--gray-400);
+      }
+      @media (min-width: $breakpoint-large) {
+        font-size: var(--type-scale-1);
+        line-height: var(--spatial-scale-1);
       }
     }
     .router-link-active {
