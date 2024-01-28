@@ -33,6 +33,8 @@
 
 <style lang="scss" scoped>
   .Nav1 {
+    --nav-link-underline-width: var(--spatial-scale-2);
+    --nav-link-underline-width--hover: calc(100% - var(--grid-gutter));
     display: flex;
     gap: var(--spatial-scale-4);
     > .Nav1-link {
@@ -51,7 +53,7 @@
       padding: var(--spatial-scale-1);
       position: relative;
       text-decoration: none;
-      transition: color .66s, background-color .66s;
+      transition: color .66s, text-decoration-color .66s;
       white-space: nowrap;
       &:after {
         background: var(--nav-link-color);
@@ -62,12 +64,14 @@
         position: absolute;
           top: 100%;
           left: var(--spatial-scale-1);
-        transition: opacity .66s;
-        width: var(--spatial-scale-2);
+        transition: opacity .66s, width 0.66s;
+        width: var(--nav-link-underline-width);
       }
       &:hover {
-        background-color: var(--link-bg-active);
-        color: var(--gray-400);
+        &:after {
+          opacity: 1;
+          width: var(--nav-link-underline-width--hover);
+        }
       }
       @media (min-width: $breakpoint-large) {
         font-size: var(--type-scale-1);
@@ -78,9 +82,10 @@
       font-weight: 600;
       &:after {
         opacity: 1;
+        width: var(--nav-link-underline-width);
       }
       &:hover:after {
-        opacity: 0;
+//        width: var(--nav-link-underline-width);
       }
   }
 }

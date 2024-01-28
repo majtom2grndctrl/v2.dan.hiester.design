@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { components } from '~/slices'
-import PageHero from '~/components/PageHero.vue'
 
 const prismic = usePrismic()
 const route = useRoute()
@@ -24,32 +23,32 @@ useServerSeoMeta({
 
 
 <template>
-    <PageHero>
-      <div class="hero dhd--layout-wrapper">
-        <div class="hero-image-wrapper">
-          <PrismicImage
-            class="hero-image"
-            :field="page.data.project_image"
-            v-if="page"
-          />
-        </div>
-        <div class="hero-meta-wrapper">
-          <div class="dhd--text--overline" v-html="page?.data.case_study_type" />
-          <h1 class="page-title">
-            <PrismicText :field="page?.data.title" />
-          </h1>
-          <div class="project-title" v-html="page?.data.project_name" />
-          <div class="employer" v-html="page?.data.employer" />
-          <div class="project-timeline" v-html="page?.data.timeline" />
-        </div>
+  <PageHero>
+    <div class="hero dhd--layout-wrapper">
+      <div class="hero-image-wrapper">
+        <PrismicImage
+          class="hero-image"
+          :field="page.data.project_image"
+          v-if="page"
+        />
       </div>
+      <div class="hero-meta-wrapper">
+        <div class="dhd--text--overline" v-html="page?.data.case_study_type" />
+        <h1 class="page-title">
+          <PrismicText :field="page?.data.title" />
+        </h1>
+        <div class="project-title" v-html="page?.data.project_name" />
+        <div class="employer" v-html="page?.data.employer" />
+        <div class="project-timeline" v-html="page?.data.timeline" />
+      </div>
+    </div>
 
-    </PageHero>
-    <SliceZone
-      wrapper="main"
-      :slices="page?.data.slices ?? []"
-      :components="components"
-    />
+  </PageHero>
+  <SliceZone
+    wrapper="main"
+    :slices="page?.data.slices ?? []"
+    :components="components"
+  />
 </template>
 
 <style lang="scss" scoped>
@@ -57,7 +56,7 @@ useServerSeoMeta({
     display: flex;
     flex-direction: column;
     gap: var(--spatial-scale-4);
-    margin-top: var(--spatial-scale-8);
+    padding-top: var(--spatial-scale-8);
     padding-bottom: var(--spatial-scale-6);
   }
   .page-title {
