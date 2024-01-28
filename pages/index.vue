@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { components } from '~/slices'
 import PageHero from '~/components/PageHero.vue';
+import { components } from '~/slices'
 
 const prismic = usePrismic()
 const { data: page } = useAsyncData('/portfolio', async () =>
@@ -26,10 +26,10 @@ useServerSeoMeta({
 <template>
   <PageHero>
     <div class="hero dhd--layout-wrapper">
-      <div class="summary-wrapper">
-        <PrismicText :field="page?.data.hero_intro" class="summary dhd--cms-content" />
+        <div class="summary-wrapper">
+          <PrismicText :field="page?.data.hero_intro" class="summary dhd--cms-content" />
+        </div>
       </div>
-    </div>
   </PageHero>
   <SliceZone
     wrapper="main"
@@ -44,8 +44,7 @@ useServerSeoMeta({
     display: block;
   }
   .summary-wrapper {
-    margin: var(--spatial-scale-8) 0 0;
-    padding-bottom: var(--spatial-scale-8);
+    padding: var(--spatial-scale-8) 0;
   }
   .summary {
     font-size: var(--type-scale-2);
@@ -69,8 +68,7 @@ useServerSeoMeta({
       flex-direction: row;
       align-items: center;
       grid-column: 1 / span 10;
-      margin: var(--spatial-scale-6) 0 0 0;
-      padding-bottom: var(--spatial-scale-6);
+      padding: var(--spatial-scale-6) 0;
     }
     .summary {
       font-size: var(--type-scale-1);
@@ -81,8 +79,7 @@ useServerSeoMeta({
   }
   @media (min-width: calc($breakpoint-medium + (200rem/16))) {
     .summary-wrapper {
-      margin-top: var(--spatial-scale-9);
-      padding-bottom: var(--spatial-scale-9);
+      padding: var(--spatial-scale-9) 0;
     }
     .summary {
       font-size: var(--type-scale-2);
@@ -95,14 +92,6 @@ useServerSeoMeta({
       display: grid;
       grid-template-columns: repeat(15, 1fr);
     }
-    .summary-wrapper {
-      margin-top: var(--spatial-scale-9);
-      padding-bottom: var(--spatial-scale-9);
-    }
-    .summary {
-      font-size: var(--type-scale-2);
-      line-height: var(--spatial-scale-6);
-    }
   }
 
   @media (min-width: $breakpoint-royale) {
@@ -111,8 +100,6 @@ useServerSeoMeta({
     }
     .summary-wrapper {
       grid-column: 1 / span 10;
-      margin-top: var(--spatial-scale-9);
-      padding-bottom: var(--spatial-scale-9);
     }
     .summary {
       font-size: var(--type-scale-3);

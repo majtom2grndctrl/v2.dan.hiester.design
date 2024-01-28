@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { components } from '~/slices'
-import PageHero from '~/components/PageHero.vue'
 import Influences from '~/components/PageSections/About/Influences.vue';
+import PageHero from '~/components/PageHero.vue';
 
 const prismic = usePrismic()
 const { data: page } = useAsyncData('/about-dan', async () =>
@@ -35,7 +35,6 @@ useServerSeoMeta({
       </div>
     </div>
   </PageHero>
-
   <section class="dhd--layout-wrapper overview-wrapper">
     <PrismicText class="overview" :field="page?.data.overview" />
   </section>
@@ -59,7 +58,7 @@ useServerSeoMeta({
 <style lang="scss" scoped>
   .hero {
     display: block;
-    margin-top: var(--spatial-scale-7);
+    padding-top: var(--spatial-scale-7);
     padding-bottom: var(--spatial-scale-7);
     display: flex;
     flex-direction: column-reverse;
