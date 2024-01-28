@@ -1,15 +1,18 @@
 <script lang="ts" setup>
-  import ContactCTA from '~/components/ContactCTA.vue';
   import paths from '~/paths';
+  import SiteHeader from '~/components/SiteHeader.vue';
+  import ContactCTA from '~/components/ContactCTA.vue';
   const prismic = usePrismic();
   const navLinks = useAsyncData(
     '$site_navigation',
     () => prismic.client.getSingle('main_navigation')
   ).data;
+
 </script>
 
 <template>
-  <slot />
+  <SiteHeader />
+  <NuxtPage />
   <ContactCTA />
   <footer class="SiteFooter--wrapper">
     <div class="SiteFooter dhd--layout-wrapper">

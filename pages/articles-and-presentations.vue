@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { ArticlesPageTypeDocumentDataListItem } from '~/prismicio-types'
-import PageHero from '~/components/PageHero.vue'
+import PageHero from '~/components/PageHero.vue';
 import ContentList from '~/components/PageSections/ArticlesAndPresentations/ContentList.vue'
 
 const prismic = usePrismic()
@@ -22,20 +22,20 @@ useServerSeoMeta({
 <template>
   <PageHero>
     <div class="hero dhd--layout-wrapper" v-if="articles_page">
-      <div class="summary-wrapper">
-        <h1
-          class="dhd--text--overline summary-overline"
-          v-html="articles_page.data.page_title_overline" 
-        />
-        <h1 class="page-title" v-html="articles_page.data.page_title" />
+        <div class="summary-wrapper">
+          <h1
+            class="dhd--text--overline summary-overline"
+            v-html="articles_page.data.page_title_overline" 
+          />
+          <h1 class="page-title" v-html="articles_page.data.page_title" />
+        </div>
+        <div class="hero-image-wrapper">
+          <PrismicImage
+            :field="articles_page.data.hero_image"
+            class="hero-image"
+          />
+        </div>
       </div>
-      <div class="hero-image-wrapper">
-        <PrismicImage
-          :field="articles_page.data.hero_image"
-          class="hero-image"
-        />
-      </div>
-    </div>
   </PageHero>
   <ContentList
     :content="(articles_page?.data.list as ArticlesPageTypeDocumentDataListItem[])"
@@ -45,19 +45,17 @@ useServerSeoMeta({
 <style lang="scss" scoped>
   .hero {
     display: block;
-    padding-top: var(--spatial-scale-7);
-    padding-bottom: var(--spatial-scale-5);
+    padding-top: var(--spatial-scale-8);
+    padding-bottom: var(--spatial-scale-6);
     display: flex;
     flex-direction: column-reverse;
     gap: var(--spatial-scale-7);
     @media (min-width: $breakpoint-medium) {
       display: grid;
+      padding-top: var(--spatial-scale-7);
+      padding-bottom: var(--spatial-scale-7);
       gap: var(--grid-gutter);
       grid-template-columns: repeat(15, 1fr);
-    }
-    @media (min-width: $breakpoint-large) {
-      padding-top: var(--spatial-scale-5);
-      padding-bottom: var(--spatial-scale-6);
     }
   }
   .summary-wrapper {

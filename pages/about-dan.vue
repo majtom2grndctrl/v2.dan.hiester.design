@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { components } from '~/slices'
-import PageHero from '~/components/PageHero.vue'
 import Influences from '~/components/PageSections/About/Influences.vue';
+import PageHero from '~/components/PageHero.vue';
 
 const prismic = usePrismic()
 const { data: page } = useAsyncData('/about-dan', async () =>
@@ -118,7 +118,7 @@ useServerSeoMeta({
   .hero {
     display: block;
     padding-top: var(--spatial-scale-7);
-    padding-bottom: var(--spatial-scale-5);
+    padding-bottom: var(--spatial-scale-7);
     display: flex;
     flex-direction: column-reverse;
     gap: var(--spatial-scale-7);
