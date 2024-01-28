@@ -33,7 +33,8 @@
 
 <style lang="scss" scoped>
   .Nav1 {
-    --nav-link-underline-width: calc(100% - var(--grid-gutter));
+    --nav-link-underline-width: var(--spatial-scale-2);
+    --nav-link-underline-width--hover: calc(100% - var(--grid-gutter));
     display: flex;
     gap: var(--spatial-scale-4);
     > .Nav1-link {
@@ -69,6 +70,7 @@
       &:hover {
         &:after {
           opacity: 1;
+          width: var(--nav-link-underline-width--hover);
         }
       }
       @media (min-width: $breakpoint-large) {
@@ -80,10 +82,10 @@
       font-weight: 600;
       &:after {
         opacity: 1;
-        width: var(--spatial-scale-2);
+        width: var(--nav-link-underline-width);
       }
       &:hover:after {
-        width: var(--nav-link-underline-width);
+//        width: var(--nav-link-underline-width);
       }
   }
 }
