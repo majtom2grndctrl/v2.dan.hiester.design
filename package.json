@@ -15,16 +15,16 @@
     "lint": "eslint ."
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "^0.2.0",
-    "@nuxtjs/prismic": "^3.1.0",
+    "@nuxt/eslint-config": "^0.3.12",
+    "@nuxtjs/prismic": "^3.2.1",
     "@slicemachine/adapter-nuxt": "latest",
     "@types/node": "^20",
     "@zadigetvoltaire/nuxt-gtm": "^0.0.13",
     "concurrently": "^8.2.2",
-    "eslint": "^8.56.0",
-    "nuxt": "^3.10.1",
-    "sass": "^1.70.0",
+    "eslint": "^9.2.0",
+    "nuxt": "^3.11.2",
+    "sass": "^1.77.0",
     "slice-machine-ui": "latest"
   },
-  "packageManager": "yarn@4.0.2"
+  "packageManager": "yarn@4.2.2"
 }
