@@ -11,7 +11,7 @@ useServerHead({
 })
 
 useServerSeoMeta({
-  title: () => page.value!.data.meta_title,
+  title: () => page.value?.data.meta_title || '',
   description: () => page.value?.data.meta_description,
   ogTitle: () => page.value?.data.meta_title,
   ogDescription: () => page.value?.data.meta_description,
