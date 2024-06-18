@@ -30,8 +30,12 @@ export default defineNuxtConfig({
     },
   },
   modules: [
+    '@nuxt/image',
     '@nuxtjs/prismic',
-    '@zadigetvoltaire/nuxt-gtm'
+    '@zadigetvoltaire/nuxt-gtm',
+    ['nuxt-ssr-lit', {
+      litElementPrefix: 'lit-'
+    }]
   ],
   image: {
     provider: "prismic",
