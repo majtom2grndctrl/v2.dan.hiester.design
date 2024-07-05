@@ -408,6 +408,7 @@ export type ArticlesPageTypeDocument<Lang extends string = string> =
   >;
 
 type CaseStudyDocumentDataSlicesSlice =
+  | DeeperDetailsSlice
   | StoryOverviewSlice
   | QuoteSpreadSlice
   | SidebarSlice
@@ -603,6 +604,40 @@ interface Ct2DocumentData {
  */
 export type Ct2Document<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<Ct2DocumentData>, "ct2", Lang>;
+
+type DeeperDetailsContentDocumentDataSlicesSlice = ImageSlice | BodyCopySlice;
+
+/**
+ * Content for Deeper Details Content documents
+ */
+interface DeeperDetailsContentDocumentData {
+  /**
+   * Slice Zone field in *Deeper Details Content*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: deeper_details_content.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<DeeperDetailsContentDocumentDataSlicesSlice>;
+}
+
+/**
+ * Deeper Details Content document from Prismic
+ *
+ * - **API ID**: `deeper_details_content`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type DeeperDetailsContentDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<DeeperDetailsContentDocumentData>,
+    "deeper_details_content",
+    Lang
+  >;
 
 type HomeDocumentDataSlicesSlice = CaseStudyTeaserSlice;
 
@@ -1016,6 +1051,7 @@ export type AllDocumentTypes =
   | CaseStudyDocument
   | Ct1Document
   | Ct2Document
+  | DeeperDetailsContentDocument
   | HomeDocument
   | HomepageDocument
   | MainNavigationDocument
@@ -1023,15 +1059,15 @@ export type AllDocumentTypes =
   | StoryDocument;
 
 /**
- * Primary content in *BodyCopy → Primary*
+ * Primary content in *BodyCopy → Default → Primary*
  */
 export interface BodyCopySliceDefaultPrimary {
   /**
-   * Content field in *BodyCopy → Primary*
+   * Content field in *BodyCopy → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: body_copy.primary.content
+   * - **API ID Path**: body_copy.default.primary.content
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   content: prismic.RichTextField;
@@ -1068,65 +1104,65 @@ export type BodyCopySlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *CaseStudyTeaser → Primary*
+ * Primary content in *CaseStudyTeaser → Default → Primary*
  */
 export interface CaseStudyTeaserSliceDefaultPrimary {
   /**
-   * Case Study Type field in *CaseStudyTeaser → Primary*
+   * Case Study Type field in *CaseStudyTeaser → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: case_study_teaser.primary.case_study_type
+   * - **API ID Path**: case_study_teaser.default.primary.case_study_type
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   case_study_type: prismic.KeyTextField;
 
   /**
-   * Title field in *CaseStudyTeaser → Primary*
+   * Title field in *CaseStudyTeaser → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: case_study_teaser.primary.title
+   * - **API ID Path**: case_study_teaser.default.primary.title
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   title: prismic.KeyTextField;
 
   /**
-   * Summary field in *CaseStudyTeaser → Primary*
+   * Summary field in *CaseStudyTeaser → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: case_study_teaser.primary.summary
+   * - **API ID Path**: case_study_teaser.default.primary.summary
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   summary: prismic.RichTextField;
 
   /**
-   * Image field in *CaseStudyTeaser → Primary*
+   * Image field in *CaseStudyTeaser → Default → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: case_study_teaser.primary.image
+   * - **API ID Path**: case_study_teaser.default.primary.image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
 
   /**
-   * CMS Document field in *CaseStudyTeaser → Primary*
+   * CMS Document field in *CaseStudyTeaser → Default → Primary*
    *
    * - **Field Type**: Content Relationship
    * - **Placeholder**: *None*
-   * - **API ID Path**: case_study_teaser.primary.cms_document
+   * - **API ID Path**: case_study_teaser.default.primary.cms_document
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   cms_document: prismic.ContentRelationshipField;
 
   /**
-   * CTA Label field in *CaseStudyTeaser → Primary*
+   * CTA Label field in *CaseStudyTeaser → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: case_study_teaser.primary.cta_label
+   * - **API ID Path**: case_study_teaser.default.primary.cta_label
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   cta_label: prismic.KeyTextField;
@@ -1163,55 +1199,150 @@ export type CaseStudyTeaserSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *Image → Primary*
+ * Primary content in *DeeperDetails → Default → Primary*
+ */
+export interface DeeperDetailsSliceDefaultPrimary {
+  /**
+   * Show Content Button Text field in *DeeperDetails → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: deeper_details.default.primary.show_content_button_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  show_content_button_text: prismic.RichTextField;
+
+  /**
+   * Body Copy field in *DeeperDetails → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: deeper_details.default.primary.body_copy
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  body_copy: prismic.RichTextField;
+}
+
+/**
+ * Default variation for DeeperDetails Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DeeperDetailsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<DeeperDetailsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *DeeperDetails → Freeform → Primary*
+ */
+export interface DeeperDetailsSliceImportedDocumentPrimary {
+  /**
+   * Show Content Button Text field in *DeeperDetails → Freeform → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: deeper_details.importedDocument.primary.show_content_button_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  show_content_button_text: prismic.RichTextField;
+
+  /**
+   * Document field in *DeeperDetails → Freeform → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: deeper_details.importedDocument.primary.document_relation
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  document_relation: prismic.ContentRelationshipField;
+}
+
+/**
+ * Freeform variation for DeeperDetails Slice
+ *
+ * - **API ID**: `importedDocument`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DeeperDetailsSliceImportedDocument = prismic.SharedSliceVariation<
+  "importedDocument",
+  Simplify<DeeperDetailsSliceImportedDocumentPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *DeeperDetails*
+ */
+type DeeperDetailsSliceVariation =
+  | DeeperDetailsSliceDefault
+  | DeeperDetailsSliceImportedDocument;
+
+/**
+ * DeeperDetails Shared Slice
+ *
+ * - **API ID**: `deeper_details`
+ * - **Description**: DeeperDetails
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type DeeperDetailsSlice = prismic.SharedSlice<
+  "deeper_details",
+  DeeperDetailsSliceVariation
+>;
+
+/**
+ * Primary content in *Image → Default → Primary*
  */
 export interface ImageSliceDefaultPrimary {
   /**
-   * Overline field in *Image → Primary*
+   * Overline field in *Image → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: image.primary.overline
+   * - **API ID Path**: image.default.primary.overline
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   overline: prismic.KeyTextField;
 
   /**
-   * Image field in *Image → Primary*
+   * Image field in *Image → Default → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: image.primary.image
+   * - **API ID Path**: image.default.primary.image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
 
   /**
-   * Caption field in *Image → Primary*
+   * Caption field in *Image → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: image.primary.caption
+   * - **API ID Path**: image.default.primary.caption
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   caption: prismic.RichTextField;
 
   /**
-   * Image Style field in *Image → Primary*
+   * Image Style field in *Image → Default → Primary*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
-   * - **API ID Path**: image.primary.image_style
+   * - **API ID Path**: image.default.primary.image_style
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   image_style: prismic.SelectField<"Screenshot" | "Diagram">;
 
   /**
-   * Display Size field in *Image → Primary*
+   * Display Size field in *Image → Default → Primary*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
-   * - **API ID Path**: image.primary.display_size
+   * - **API ID Path**: image.default.primary.display_size
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   display_size: prismic.SelectField<"Cover_Image" | "Large" | "Aside">;
@@ -1245,35 +1376,35 @@ type ImageSliceVariation = ImageSliceDefault;
 export type ImageSlice = prismic.SharedSlice<"image", ImageSliceVariation>;
 
 /**
- * Primary content in *NewChapter → Primary*
+ * Primary content in *NewChapter → Default → Primary*
  */
 export interface OverlineSliceDefaultPrimary {
   /**
-   * Overline field in *NewChapter → Primary*
+   * Overline field in *NewChapter → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: overline.primary.overline
+   * - **API ID Path**: overline.default.primary.overline
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   overline: prismic.KeyTextField;
 
   /**
-   * Chapter Title field in *NewChapter → Primary*
+   * Chapter Title field in *NewChapter → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: overline.primary.title
+   * - **API ID Path**: overline.default.primary.title
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   title: prismic.RichTextField;
 
   /**
-   * Lede field in *NewChapter → Primary*
+   * Lede field in *NewChapter → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: overline.primary.lede
+   * - **API ID Path**: overline.default.primary.lede
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   lede: prismic.RichTextField;
@@ -1310,45 +1441,45 @@ export type OverlineSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *QuoteSpread → Primary*
+ * Primary content in *QuoteSpread → Default → Primary*
  */
 export interface QuoteSpreadSliceDefaultPrimary {
   /**
-   * Background Image field in *QuoteSpread → Primary*
+   * Background Image field in *QuoteSpread → Default → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: quote_spread.primary.background_image
+   * - **API ID Path**: quote_spread.default.primary.background_image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   background_image: prismic.ImageField<never>;
 
   /**
-   * Primary Content field in *QuoteSpread → Primary*
+   * Primary Content field in *QuoteSpread → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: quote_spread.primary.primary_content
+   * - **API ID Path**: quote_spread.default.primary.primary_content
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   primary_content: prismic.RichTextField;
 
   /**
-   * Attribution field in *QuoteSpread → Primary*
+   * Attribution field in *QuoteSpread → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: quote_spread.primary.attribution
+   * - **API ID Path**: quote_spread.default.primary.attribution
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   attribution: prismic.KeyTextField;
 
   /**
-   * Supplemental Content field in *QuoteSpread → Primary*
+   * Supplemental Content field in *QuoteSpread → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: quote_spread.primary.supplemental_content
+   * - **API ID Path**: quote_spread.default.primary.supplemental_content
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   supplemental_content: prismic.RichTextField;
@@ -1440,15 +1571,15 @@ export type SidebarSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *StoryOverview → Primary*
+ * Primary content in *StoryOverview → Default → Primary*
  */
 export interface StoryOverviewSliceDefaultPrimary {
   /**
-   * Body Copy field in *StoryOverview → Primary*
+   * Body Copy field in *StoryOverview → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: story_overview.primary.body_copy
+   * - **API ID Path**: story_overview.default.primary.body_copy
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   body_copy: prismic.RichTextField;
@@ -1536,6 +1667,9 @@ declare module "@prismicio/client" {
       Ct2Document,
       Ct2DocumentData,
       Ct2DocumentDataSlicesSlice,
+      DeeperDetailsContentDocument,
+      DeeperDetailsContentDocumentData,
+      DeeperDetailsContentDocumentDataSlicesSlice,
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
@@ -1560,6 +1694,12 @@ declare module "@prismicio/client" {
       CaseStudyTeaserSliceDefaultPrimary,
       CaseStudyTeaserSliceVariation,
       CaseStudyTeaserSliceDefault,
+      DeeperDetailsSlice,
+      DeeperDetailsSliceDefaultPrimary,
+      DeeperDetailsSliceImportedDocumentPrimary,
+      DeeperDetailsSliceVariation,
+      DeeperDetailsSliceDefault,
+      DeeperDetailsSliceImportedDocument,
       ImageSlice,
       ImageSliceDefaultPrimary,
       ImageSliceVariation,

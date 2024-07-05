@@ -8,6 +8,9 @@ export const components = defineSliceZoneComponents({
   case_study_teaser: defineAsyncComponent(
     () => import("./CaseStudyTeaser/index.vue"),
   ),
+  deeper_details: defineAsyncComponent(
+    () => import("./DeeperDetails/index.vue"),
+  ),
   image: defineAsyncComponent(() => import("./Image/index.vue")),
   overline: defineAsyncComponent(() => import("./NewChapter/index.vue")),
   quote_spread: defineAsyncComponent(() => import("./QuoteSpread/index.vue")),

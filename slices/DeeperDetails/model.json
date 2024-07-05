@@ -1,0 +1,64 @@
+{
+  "id": "deeper_details",
+  "type": "SharedSlice",
+  "name": "DeeperDetails",
+  "description": "DeeperDetails",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "show_content_button_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Show Content Button Text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "strong,em"
+          }
+        },
+        "body_copy": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Body Copy",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "importedDocument",
+      "name": "Freeform",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "show_content_button_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Show Content Button Text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "strong,em"
+          }
+        },
+        "document_relation": {
+          "type": "Link",
+          "config": {
+            "label": "Document",
+            "select": "document"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
