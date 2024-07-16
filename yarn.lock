@@ -4911,12 +4911,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"deeper-details@npm:^0.0.13":
-  version: 0.0.13
-  resolution: "deeper-details@npm:0.0.13"
+"deeper-details@npm:^0.0.15":
+  version: 0.0.15
+  resolution: "deeper-details@npm:0.0.15"
   dependencies:
     lit: "npm:^3.1.4"
-  checksum: 10/42eebd5272b16c95c4a4ed445a62f19b4432400678fc69adac152b67150ab5f3564f3c6d958dcebb885a7ff9883f32833e1dba9db8fcf032d189f38915d46974
+  checksum: 10/6de8d8c63843ac05d585a77e0bbe0b6b3ce79917b5c04758ba1b597b0d1fa6cf4e5319ddb9ab9fb801270238c503c34ae7d245a13931241d81a461ceba0b103e
   languageName: node
   linkType: hard
 
@@ -8465,7 +8465,7 @@ __metadata:
     "@types/node": "npm:^20"
     "@zadigetvoltaire/nuxt-gtm": "npm:^0.0.13"
     concurrently: "npm:^8.2.2"
-    deeper-details: "npm:^0.0.13"
+    deeper-details: "npm:^0.0.15"
     eslint: "npm:^9.5.0"
     nuxt: "npm:^3.12.2"
     nuxt-ssr-lit: "npm:^1.6.20"

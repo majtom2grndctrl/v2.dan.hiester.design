@@ -32,6 +32,6 @@
   "packageManager": "yarn@4.2.2",
   "dependencies": {
     "@nuxt/image": "^1.7.0",
-    "deeper-details": "^0.0.13"
+    "deeper-details": "^0.0.15"
   }
 }
