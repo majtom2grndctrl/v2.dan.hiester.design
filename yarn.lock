@@ -1875,6 +1875,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@prismicio/types@npm:^0.2.9":
+  version: 0.2.9
+  resolution: "@prismicio/types@npm:0.2.9"
+  checksum: 10/e74e393fcbdc66b455dda74f640872099c948789628d7b991a8454b94cd92e86f2a4a1d1f7747a88d1e6d6c368caca40c5a19f95d34eb6a8434da5291724bfca
+  languageName: node
+  linkType: hard
+
 "@prismicio/vue@npm:^4.2.2":
   version: 4.2.2
   resolution: "@prismicio/vue@npm:4.2.2"
@@ -7793,6 +7800,7 @@ __metadata:
   dependencies:
     "@nuxt/eslint-config": "npm:^0.3.13"
     "@nuxtjs/prismic": "npm:^3.2.1"
+    "@prismicio/types": "npm:^0.2.9"
     "@slicemachine/adapter-nuxt": "npm:latest"
     "@types/node": "npm:^20"
     "@zadigetvoltaire/nuxt-gtm": "npm:^0.0.13"
