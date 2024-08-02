@@ -18,20 +18,20 @@
   "devDependencies": {
     "@nuxt/eslint-config": "^0.3.13",
     "@nuxt/types": "^2.17.4",
-    "@nuxtjs/prismic": "^3.2.1",
+    "@nuxtjs/prismic": "^3.3.2",
+    "@prismicio/types": "^0.2.9",
     "@slicemachine/adapter-nuxt": "latest",
     "@types/node": "^20",
     "@zadigetvoltaire/nuxt-gtm": "^0.0.13",
     "concurrently": "^8.2.2",
-    "eslint": "^9.5.0",
-    "nuxt": "^3.12.2",
-    "nuxt-ssr-lit": "^1.6.20",
-    "sass": "^1.77.6",
+    "eslint": "^9.8.0",
+    "nuxt": "^3.12.4",
+    "sass": "^1.77.8",
     "slice-machine-ui": "latest"
   },
-  "packageManager": "yarn@4.2.2",
   "dependencies": {
     "@nuxt/image": "^1.7.0",
     "deeper-details": "^0.0.15"
-  }
+  },
+  "packageManager": "yarn@4.3.1"
 }

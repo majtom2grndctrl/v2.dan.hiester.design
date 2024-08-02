@@ -42,17 +42,6 @@
   --blue-hero-bg: var(--brand-blue-500);
   --text-inline-hyperlink: oklch(60.38% 0.144423 226.95);
 
-  @media(prefers-contrast: more) {
-    --blue-hero-bg: var(--brand-blue-300);
-  }
-
-  @media(prefers-color-scheme: dark) {
-    --background-primary: var(--gray-100);
-    --blue-hero-bg: var(--brand-blue-200);
-    --text-primary: var(--white);
-    --box-shadow: black;
-  }
-
   --type-scale-base: 1rem;
   --scale-multiplier: 1.2;
   --type-scale-1: var(--type-scale-base);
@@ -89,6 +78,18 @@
   --block-border-radius: var(--spatial-scale-2);
   --mobile-block-margin: var(--spatial-scale-2);
   --grid-gutter: var(--spatial-scale-4);
+
+
+  @media(prefers-contrast: more) {
+    --blue-hero-bg: var(--brand-blue-300);
+  }
+
+  @media(prefers-color-scheme: dark) {
+    --background-primary: var(--gray-100);
+    --blue-hero-bg: var(--brand-blue-200);
+    --text-primary: var(--white);
+    --box-shadow: black;
+  }
 
   @media(min-width: $breakpoint-medium) {
     --scale-multiplier: 1.25;
