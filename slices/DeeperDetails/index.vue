@@ -39,6 +39,8 @@ console.log({ documentValue: importedDocument })
   >
     <BodyCopy>
       <deeper-details>
+        <button slot="expand-button">Tell me more!</button>
+        <button slot="hide-button">Show me less</button>
         <PrismicRichText :field="slice.primary.body_copy" />
       </deeper-details>
     </BodyCopy>
@@ -49,6 +51,8 @@ console.log({ documentValue: importedDocument })
     v-if="props.slice.variation === 'importedDocument' && importedDocument?.value?.data"
   >
       <deeper-details>
+        <button slot="expand-button">Tell me more!</button>
+        <button slot="hide-button">Show me less</button>
         <SliceZone
           :slices="importedDocument?.value?.data?.slices ?? []"
           :components="components"
@@ -61,5 +65,9 @@ console.log({ documentValue: importedDocument })
   deeper-details {
     --deeperDetails-transition: max-height 400ms ease-in-out, opacity 400ms ease-in-out, transform 400ms linear;
   }
+  button[slot] {
+    min-width: 8rem;
+  }
+
 
 </style>
