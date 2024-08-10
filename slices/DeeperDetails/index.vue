@@ -49,7 +49,9 @@ console.log({ documentValue: importedDocument })
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
     v-if="props.slice.variation === 'importedDocument' && importedDocument?.value?.data"
+    class="dhd--layout-wrapper"
   >
+    <BodyCopy>
       <deeper-details>
         <button slot="expand-button">Tell me more!</button>
         <button slot="hide-button">Show me less</button>
@@ -58,6 +60,7 @@ console.log({ documentValue: importedDocument })
           :components="components"
         />
       </deeper-details>
+    </BodyCopy>
   </div>
 </template>
 
