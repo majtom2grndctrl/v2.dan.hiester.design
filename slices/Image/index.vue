@@ -24,6 +24,12 @@ defineProps(getSliceComponentProps<Content.ImageSlice>());
 
 <style lang="scss">
 
+.body-copy .dhd--image-slice {
+  margin-right: 0;
+  margin-left: 0;
+  max-width: none;
+}
+
 .dhd--image-slice {
   margin: var(--spatial-scale-6) 0 var(--spatial-scale-10);
   &.has-style--Diagram {

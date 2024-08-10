@@ -29,4 +29,11 @@
     max-width: calc(calc(#{9 / 17} * 100%) - calc(var(--grid-gutter) / 2));
   }
 }
+
+.body-copy .body-copy {
+  margin-right: 0;
+  margin-left: 0;
+  max-width: none;
+}
+
 </style>
