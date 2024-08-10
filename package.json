@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@nuxt/image": "^1.7.0",
-    "deeper-details": "^0.0.15"
+    "deeper-details": "^0.0.17"
   },
   "packageManager": "yarn@4.3.1"
 }
