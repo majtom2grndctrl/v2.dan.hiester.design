@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-  import Nav1 from './Nav1.vue';
-  import paths from '~/paths';
 </script>
 
 <template>
