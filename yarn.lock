@@ -327,15 +327,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.21.0":
-  version: 7.26.7
-  resolution: "@babel/runtime@npm:7.26.7"
-  dependencies:
-    regenerator-runtime: "npm:^0.14.0"
-  checksum: 10/c7a661a6836b332d9d2e047cba77ba1862c1e4f78cec7146db45808182ef7636d8a7170be9797e5d8fd513180bffb9fa16f6ca1c69341891efec56113cf22bfc
-  languageName: node
-  linkType: hard
-
 "@babel/standalone@npm:^7.26.4":
   version: 7.26.7
   resolution: "@babel/standalone@npm:7.26.7"
@@ -1109,7 +1100,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/kit@npm:3.15.3, @nuxt/kit@npm:^3.15.0, @nuxt/kit@npm:^3.15.1, @nuxt/kit@npm:^3.5.1":
+"@nuxt/kit@npm:3.15.3, @nuxt/kit@npm:^3.15.0, @nuxt/kit@npm:^3.15.1, @nuxt/kit@npm:^3.15.2, @nuxt/kit@npm:^3.5.1":
   version: 3.15.3
   resolution: "@nuxt/kit@npm:3.15.3"
   dependencies:
@@ -1214,21 +1205,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxtjs/prismic@npm:^3.3.2":
-  version: 3.4.8
-  resolution: "@nuxtjs/prismic@npm:3.4.8"
+"@nuxtjs/prismic@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "@nuxtjs/prismic@npm:4.0.1"
   dependencies:
     "@nuxt/devtools-kit": "npm:^1.7.0"
-    "@nuxt/kit": "npm:^3.15.0"
-    "@prismicio/client": "npm:^7.13.1"
-    "@prismicio/vue": "npm:^4.3.1"
-    birpc: "npm:0.2.19"
-    consola: "npm:^3.3.3"
+    "@nuxt/kit": "npm:^3.15.2"
+    "@prismicio/client": "npm:^7.15.1"
+    "@prismicio/vue": "npm:^5.0.1"
+    birpc: "npm:2.0.19"
     defu: "npm:^6.1.4"
-    pathe: "npm:^1.1.2"
+    pathe: "npm:^2.0.2"
     sirv: "npm:^3.0.0"
     terminate: "npm:^2.8.0"
-  checksum: 10/8e34bbd7a58404d6fa1d5222020d723e1111318646026df629cb41f127028d4ad5f662e49b60deb777c31143e3ea67807970e36e70cafecc3f4b49a606047495
+  checksum: 10/d213327fbafb1c607251fc5e5065fe78900b4c72ed5b050b2616c74cec388724851404d4cd2d55088634508e39928173d1c1f8de6bcdb462229716a2197c8ca7
   languageName: node
   linkType: hard
 
@@ -1423,7 +1413,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prismicio/client@npm:^7.1.0, @prismicio/client@npm:^7.11.0, @prismicio/client@npm:^7.12.0, @prismicio/client@npm:^7.13.1":
+"@prismicio/client@npm:^7.1.0, @prismicio/client@npm:^7.11.0, @prismicio/client@npm:^7.15.1":
   version: 7.15.1
   resolution: "@prismicio/client@npm:7.15.1"
   dependencies:
@@ -1502,16 +1492,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prismicio/vue@npm:^4.3.1":
-  version: 4.3.1
-  resolution: "@prismicio/vue@npm:4.3.1"
+"@prismicio/vue@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "@prismicio/vue@npm:5.0.1"
   dependencies:
-    "@prismicio/client": "npm:^7.12.0"
-    isomorphic-unfetch: "npm:^3.1.0"
+    "@prismicio/client": "npm:^7.15.1"
+    esm-env: "npm:^1.2.2"
     vue-router: "npm:^4.5.0"
   peerDependencies:
     vue: ^3.0.0
-  checksum: 10/c19f9d4e9de43890c87f79f275f88ac75eab2f3315087c95f50919208650c9d724c1fdd4f5f8045c6335be46122359a2c63b47595c8566425aca7433bacd1ed9
+  checksum: 10/b4f8e28424f23e7972202144e0c12c54e6c03b8253fec73829ac483c57e3366bb3d4467e1abe6211ebe0dc20c4a07cbba643819ee5ad8b5297431b0f2b09bfa6
   languageName: node
   linkType: hard
 
@@ -2106,21 +2096,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
+"@types/node@npm:*, @types/node@npm:^22":
   version: 22.12.0
   resolution: "@types/node@npm:22.12.0"
   dependencies:
     undici-types: "npm:~6.20.0"
   checksum: 10/aac2b6f6a845ec3540c3d979b3150efe3162165bfda953af10b579df2d1cc4f5c48506922bf6bf661a2e5a7ebb571c5729bf1f9f12488a810bb1a5fa9522ef9d
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^20":
-  version: 20.17.16
-  resolution: "@types/node@npm:20.17.16"
-  dependencies:
-    undici-types: "npm:~6.19.2"
-  checksum: 10/2a6f9f3d6e2640a6de5ae88ea690d8064eb421cca2989c84bc23eb1adf5e9f483c52e273722c05afba451054d3ca902df72bb8b6c33d1684404161bb410922f7
   languageName: node
   linkType: hard
 
@@ -2959,7 +2940,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"birpc@npm:0.2.19, birpc@npm:^0.2.19":
+"birpc@npm:2.0.19":
+  version: 2.0.19
+  resolution: "birpc@npm:2.0.19"
+  checksum: 10/1971294f828c6388d224df24e73af41fa3bd8a7ea397dcd8855346c93ecd1871bcbc44ed67af9e9dafbf7e9aca6cca03cdabe7661d76d9ffef6dd87d77731d85
+  languageName: node
+  linkType: hard
+
+"birpc@npm:^0.2.19":
   version: 0.2.19
   resolution: "birpc@npm:0.2.19"
   checksum: 10/3b3a57f0b6e395672868249f43cb2fa3ea670ad610d7d06a95ec8b1acff9369e23db5561b13c09cc192d01b7fbd8fa5a115f5851e376daeb7ecd12dc8a7a6ef2
@@ -3418,23 +3406,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"concurrently@npm:^8.2.2":
-  version: 8.2.2
-  resolution: "concurrently@npm:8.2.2"
+"concurrently@npm:^9.1.2":
+  version: 9.1.2
+  resolution: "concurrently@npm:9.1.2"
   dependencies:
     chalk: "npm:^4.1.2"
-    date-fns: "npm:^2.30.0"
     lodash: "npm:^4.17.21"
     rxjs: "npm:^7.8.1"
     shell-quote: "npm:^1.8.1"
-    spawn-command: "npm:0.0.2"
     supports-color: "npm:^8.1.1"
     tree-kill: "npm:^1.2.2"
     yargs: "npm:^17.7.2"
   bin:
     conc: dist/bin/concurrently.js
     concurrently: dist/bin/concurrently.js
-  checksum: 10/dcb1aa69d9c611a7bda9d4fc0fe1e388f971d1744acec7e0d52dffa2ef55743f1266ec9292f414c5789b9f61734b3fce772bd005d4de9564a949fb121b97bae1
+  checksum: 10/52f20653db53e25950e84026d153177af976d6d0e139b95fc5983c684221cc20ef5548ad5dc8885f146fff2c87bc7f7beb18f5fa54eee3bb62b5e795234d6cbc
   languageName: node
   linkType: hard
 
@@ -3732,15 +3718,6 @@ __metadata:
   version: 4.0.1
   resolution: "data-uri-to-buffer@npm:4.0.1"
   checksum: 10/0d0790b67ffec5302f204c2ccca4494f70b4e2d940fea3d36b09f0bb2b8539c2e86690429eb1f1dc4bcc9e4df0644193073e63d9ee48ac9fce79ec1506e4aa4c
-  languageName: node
-  linkType: hard
-
-"date-fns@npm:^2.30.0":
-  version: 2.30.0
-  resolution: "date-fns@npm:2.30.0"
-  dependencies:
-    "@babel/runtime": "npm:^7.21.0"
-  checksum: 10/70b3e8ea7aaaaeaa2cd80bd889622a4bcb5d8028b4de9162cbcda359db06e16ff6e9309e54eead5341e71031818497f19aaf9839c87d1aba1e27bb4796e758a9
   languageName: node
   linkType: hard
 
@@ -4510,6 +4487,13 @@ __metadata:
   bin:
     eslint: bin/eslint.js
   checksum: 10/850d19fd6a34702d1e3d9bdad6aef84a20a5c2de006a8fa6380843384b13944b180232ddd74b8725ffcdf8f296399037f0e8eb4783d5f7393f13c059112b843d
+  languageName: node
+  linkType: hard
+
+"esm-env@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "esm-env@npm:1.2.2"
+  checksum: 10/caf5f3cc2bc7107494585b4e38835787f48ef77b670aeb2d765a5b6b64c41102d20bbdd34bda32474291b6b8d819d4d02ce92570a0886baca6cef70f5fe689f3
   languageName: node
   linkType: hard
 
@@ -5932,16 +5916,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"isomorphic-unfetch@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "isomorphic-unfetch@npm:3.1.0"
-  dependencies:
-    node-fetch: "npm:^2.6.1"
-    unfetch: "npm:^4.2.0"
-  checksum: 10/4e760d9a3f94b42c59fe5c6b53202469cecd864875dcac927668b1f43eb57698422a0086fadde47f7815752c4f4e30ecf1ce9a0eb09c44a871a2484dbc580b39
-  languageName: node
-  linkType: hard
-
 "jackspeak@npm:^3.1.2":
   version: 3.4.3
   resolution: "jackspeak@npm:3.4.3"
@@ -7132,20 +7106,20 @@ __metadata:
   resolution: "nuxt-starter-prismic-minimal@workspace:."
   dependencies:
     "@nuxt/eslint-config": "npm:^0.3.13"
-    "@nuxtjs/prismic": "npm:^3.3.2"
+    "@nuxtjs/prismic": "npm:^4.0.1"
     "@prismicio/types": "npm:^0.2.9"
     "@slicemachine/adapter-nuxt": "npm:latest"
-    "@types/node": "npm:^20"
+    "@types/node": "npm:^22"
     "@zadigetvoltaire/nuxt-gtm": "npm:^0.0.13"
-    concurrently: "npm:^8.2.2"
+    concurrently: "npm:^9.1.2"
     eslint: "npm:^9.8.0"
-    nuxt: "npm:^3.12.4"
-    sass: "npm:^1.77.8"
+    nuxt: "npm:^3.15.3"
+    sass: "npm:^1.83.4"
     slice-machine-ui: "npm:latest"
   languageName: unknown
   linkType: soft
 
-"nuxt@npm:^3.12.4":
+"nuxt@npm:^3.15.3":
   version: 3.15.3
   resolution: "nuxt@npm:3.15.3"
   dependencies:
@@ -8416,13 +8390,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"regenerator-runtime@npm:^0.14.0":
-  version: 0.14.1
-  resolution: "regenerator-runtime@npm:0.14.1"
-  checksum: 10/5db3161abb311eef8c45bcf6565f4f378f785900ed3945acf740a9888c792f75b98ecb77f0775f3bf95502ff423529d23e94f41d80c8256e8fa05ed4b07cf471
-  languageName: node
-  linkType: hard
-
 "regexp-ast-analysis@npm:^0.7.0, regexp-ast-analysis@npm:^0.7.1":
   version: 0.7.1
   resolution: "regexp-ast-analysis@npm:0.7.1"
@@ -8693,7 +8660,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.77.8":
+"sass@npm:^1.83.4":
   version: 1.83.4
   resolution: "sass@npm:1.83.4"
   dependencies:
@@ -9035,13 +9002,6 @@ __metadata:
   version: 0.7.4
   resolution: "source-map@npm:0.7.4"
   checksum: 10/a0f7c9b797eda93139842fd28648e868a9a03ea0ad0d9fa6602a0c1f17b7fb6a7dcca00c144476cccaeaae5042e99a285723b1a201e844ad67221bf5d428f1dc
-  languageName: node
-  linkType: hard
-
-"spawn-command@npm:0.0.2":
-  version: 0.0.2
-  resolution: "spawn-command@npm:0.0.2"
-  checksum: 10/f13e8c3c63abd4a0b52fb567eba5f7940d480c5ed3ec61781d38a1850f179b1196c39e6efa2bbd301f82c1bf1cd7807abc8fbd8fc8e44bcaa3975a124c0d1657
   languageName: node
   linkType: hard
 
@@ -9703,13 +9663,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici-types@npm:~6.19.2":
-  version: 6.19.8
-  resolution: "undici-types@npm:6.19.8"
-  checksum: 10/cf0b48ed4fc99baf56584afa91aaffa5010c268b8842f62e02f752df209e3dea138b372a60a963b3b2576ed932f32329ce7ddb9cb5f27a6c83040d8cd74b7a70
-  languageName: node
-  linkType: hard
-
 "undici-types@npm:~6.20.0":
   version: 6.20.0
   resolution: "undici-types@npm:6.20.0"
@@ -9727,13 +9680,6 @@ __metadata:
     node-fetch-native: "npm:^1.6.4"
     pathe: "npm:^1.1.2"
   checksum: 10/23198e150fd3b4db4d7abe444b75ee05a0d36768bd6d94a6aaf5dca830db82e707ccc0f6cca22671327b62c5cd85ada08d4665bf7652afec9de0bdc7a4546249
-  languageName: node
-  linkType: hard
-
-"unfetch@npm:^4.2.0":
-  version: 4.2.0
-  resolution: "unfetch@npm:4.2.0"
-  checksum: 10/d4924178060b6828d858acef3ce2baea69acd3f3f9e2429fd503a0ed0d2b1ed0ee107786aceadfd167ce884fad12d22b5288eb865a3ea036979b8358b8555c9a
   languageName: node
   linkType: hard
 
