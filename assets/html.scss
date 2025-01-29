@@ -1,4 +1,4 @@
-@use "./scss-lib" as dhd--vars;
+@use "./scss-lib" as *;
 
 :root {
   --font-heading: gilmer, poppins, sans-serif;
@@ -91,12 +91,12 @@
     --box-shadow: black;
   }
 
-  @media(min-width: dhd--vars.$breakpoint-medium) {
+  @media(min-width: $breakpoint-medium) {
     --scale-multiplier: 1.25;
     --type-scale-base: calc(18rem/16);
   }
 
-  @media(min-width: dhd--vars.$breakpoint-large) {
+  @media(min-width: $breakpoint-large) {
     --type-scale-base: calc(20rem/16);
   }
 }
@@ -139,17 +139,17 @@ img {
 .dhd--layout-wrapper {
   padding-right: var(--grid-gutter);
   padding-left: var(--grid-gutter);
-  @media (min-width: dhd--vars.$breakpoint-small) {
+  @media (min-width: $breakpoint-small) {
     margin-right: auto;
     margin-left: auto;
     max-width: calc(#{13 / 15} * 100%);
     padding-right: 0;
     padding-left: 0;
   }
-  @media (min-width: dhd--vars.$breakpoint-medium) {
+  @media (min-width: $breakpoint-medium) {
     max-width: calc(#{13 / 15} * 100%);
   }
-  @media (min-width: dhd--vars.$breakpoint-large) {
+  @media (min-width: $breakpoint-large) {
     margin-right: auto;
     margin-left: auto;
     max-width: calc(#{1478rem} / 16);
@@ -162,7 +162,7 @@ img {
     padding-right: var(--lateral-padding);
     padding-left: var(--lateral-padding);
   }
-  @media (min-width: dhd--vars.$breakpoint-royale) {
+  @media (min-width: $breakpoint-royale) {
     --lateral-padding: calc(#{ 1 / 19 } * 100%); 
   }
 }
