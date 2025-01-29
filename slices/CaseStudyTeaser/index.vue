@@ -40,7 +40,9 @@ defineProps(
             {{ slice.primary.title }}
           </PrismicLink>
         </h2>
-        <PrismicRichText class="summary" :field="slice.primary.summary" />
+        <div class="summary">
+          <PrismicRichText :field="slice.primary.summary" />
+        </div>
         <div class="actions">
           <PrismicLink 
             class="dhd--cta-link"

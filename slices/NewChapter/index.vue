@@ -21,8 +21,12 @@ defineProps(
   >
     <div class="horizontal-rule"></div>
     <div class="dhd--text--overline" v-if="slice.primary.overline" v-html="slice.primary.overline" />
-    <PrismicRichText :field="slice.primary.title" class="heading" />
-    <PrismicRichText v-if="slice.primary.lede" :field="slice.primary.lede" class="lede" />
+    <div class="heading">
+      <PrismicRichText :field="slice.primary.title" />
+    </div>
+    <div class="lede">
+      <PrismicRichText v-if="slice.primary.lede" :field="slice.primary.lede" />
+    </div>
 </div>
 </template>
 

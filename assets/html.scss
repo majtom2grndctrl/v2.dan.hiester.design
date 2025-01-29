@@ -1,4 +1,4 @@
-@import "webfonts";
+@use "./scss-lib" as *;
 
 :root {
   --font-heading: gilmer, poppins, sans-serif;

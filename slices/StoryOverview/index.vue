@@ -15,7 +15,9 @@ defineProps(
 
 <template>
   <div class="dhd--layout-wrapper dhd--StoryOverview-wrapper">
-    <PrismicRichText :field="slice.primary.body_copy" class="StoryOverview" />
+    <div class="StoryOverview">
+      <PrismicRichText :field="slice.primary.body_copy" />
+    </div>
     <div class="sidebar">
       <div class="sidebar-section" v-for="item in slice.items" :key="`sidebar-item-${item.section_title}`">
         <div class="sidebar-section-title" v-html="item.section_title" />

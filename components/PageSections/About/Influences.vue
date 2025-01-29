@@ -47,7 +47,9 @@
               loading="lazy" 
             />
           </div>
-          <PrismicRichText class="influence-description" :field="item.description" />
+          <div class="influence-description">
+            <PrismicRichText :field="item.description" />
+          </div>
         </div>
       </div>
     </section>

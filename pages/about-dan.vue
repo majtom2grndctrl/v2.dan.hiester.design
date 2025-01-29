@@ -36,7 +36,9 @@ useServerSeoMeta({
     </div>
   </PageHero>
   <section class="dhd--layout-wrapper overview-wrapper">
-    <PrismicText class="overview" :field="page?.data.overview" />
+    <div class="overview">
+      <PrismicText :field="page?.data.overview" />
+    </div>
   </section>
 
   <Influences

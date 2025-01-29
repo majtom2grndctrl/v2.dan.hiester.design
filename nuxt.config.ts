@@ -17,14 +17,15 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     }
   },
-  css: [
-    '/assets/html.scss',
-  ],
+  css: ['@/assets/html.scss'],
   vite: {
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@import "@/assets/scss-lib";',
+          additionalData: `
+            @use "@/assets/scss-lib" as *;
+            @use "@/assets/webfonts";
+          `,
         },
       },
     },
@@ -76,5 +77,17 @@ export default defineNuxtConfig({
   },
   gtm: {
     id: 'GTM-MRDBF6QQ',
+  },
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: [
+        '/',
+        '/about',
+        '/articles-and-presentations',
+        '/portfolio'
+      ]
+    },
+    preset: 'netlify-static'
   }
 });
