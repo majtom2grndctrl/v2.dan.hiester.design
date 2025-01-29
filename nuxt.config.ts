@@ -77,5 +77,17 @@ export default defineNuxtConfig({
   },
   gtm: {
     id: 'GTM-MRDBF6QQ',
+  },
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: [
+        '/',
+        '/about',
+        '/articles-and-presentations',
+        '/portfolio'
+      ]
+    },
+    preset: 'netlify-static'
   }
 });
