@@ -70,7 +70,7 @@ onUnmounted(() => {
 
       @media (prefers-color-scheme: dark) {
         --nav-link-color: var(--text-knockout); // Keep the original color in dark mode
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: rgba(0, 0, 0, 0.33);
         color: var(--text-knockout);
       }
     }
