@@ -60,7 +60,7 @@ useServerSeoMeta({
 <style lang="scss" scoped>
   .hero {
     display: block;
-    padding-top: var(--spatial-scale-7);
+    padding-top: var(--spatial-scale-8);
     padding-bottom: var(--spatial-scale-7);
     display: flex;
     flex-direction: column-reverse;
