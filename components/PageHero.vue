@@ -11,7 +11,8 @@
 
 <style lang="scss" scoped>
   .PageHero--wrapper {
-    background-color: var(--blue-hero-bg);
+    background: var(--hero-bg);
+    padding-top: var(--spatial-scale-9);
     transition: background-color 0.3s ease-in-out;
   }
   .PageHero {

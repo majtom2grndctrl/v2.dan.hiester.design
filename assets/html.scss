@@ -39,7 +39,7 @@
   --text-primary: var(--midnight-slate);
   --background-primary: hsl(0 0% 100%);
   --text-knockout: var(--white);
-  --blue-hero-bg: var(--brand-blue-500);
+  --hero-bg: var(--brand-blue-500);
   --text-inline-hyperlink: oklch(60.38% 0.144423 226.95);
 
   --type-scale-base: 1rem;
@@ -81,12 +81,12 @@
 
 
   @media(prefers-contrast: more) {
-    --blue-hero-bg: var(--brand-blue-300);
+    --hero-bg: var(--brand-blue-300);
   }
 
   @media(prefers-color-scheme: dark) {
-    --background-primary: var(--gray-100);
-    --blue-hero-bg: var(--brand-blue-200);
+    --background-primary: oklch(25.7% 0.008 220.9);
+    --hero-bg: radial-gradient(54.1% 59.54% at 50% 100%, #0B526D 0%, #003F58 100%);
     --text-primary: var(--white);
     --box-shadow: black;
   }
