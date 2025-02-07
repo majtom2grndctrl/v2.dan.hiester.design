@@ -5,15 +5,15 @@
   --font-body: libre-franklin, 'Libre Franklin', sans-serif;
   --mobile-nav-transition-duration: .3s;
 
-  --brand-blue-100: oklch(20.22% 0.048 222.96);
-  --brand-blue-200: oklch(42.44% 0.105 228.1);
-  --brand-blue-300: oklch(34.75% 0.053 270.69);
-  --brand-blue-400: oklch(59.74% 0.138 226.15);
+  --brand-blue-100: oklch(20.2% 0.048 223);
+  --brand-blue-200: oklch(42.4% 0.105 228.1);
+  --brand-blue-300: oklch(51.5% 0.124 227.2);
+  --brand-blue-400: oklch(59.7% 0.138 226.1);
   --brand-blue-500: oklch(66.1% 0.14 224.6);
-  --brand-blue-600: oklch(77.9% 0.118 222.26);
-  --brand-blue-700: oklch(84.72% 0.091 221.48);
-  --brand-blue-800: oklch(90.91% 0.059 221.11);
-  --brand-blue-900: oklch(96.4% 0.027 221.57);
+  --brand-blue-600: oklch(66.1% 0.14 224.6);
+  --brand-blue-700: oklch(77.9% 0.118 222.3);
+  --brand-blue-800: oklch(84.7% 0.091 221.5);
+  --brand-blue-900: oklch(90.9% 0.059 221.1);
 
   --gray-025: oklch(7.92% 0.026 257.24);
   --gray-100: oklch(14.16% 0.019 269.39);
@@ -39,7 +39,7 @@
   --text-primary: var(--midnight-slate);
   --background-primary: hsl(0 0% 100%);
   --text-knockout: var(--white);
-  --blue-hero-bg: var(--brand-blue-500);
+  --hero-bg: var(--brand-blue-500);
   --text-inline-hyperlink: oklch(60.38% 0.144423 226.95);
 
   --type-scale-base: 1rem;
@@ -81,12 +81,12 @@
 
 
   @media(prefers-contrast: more) {
-    --blue-hero-bg: var(--brand-blue-300);
+    --hero-bg: var(--brand-blue-300);
   }
 
   @media(prefers-color-scheme: dark) {
-    --background-primary: var(--gray-100);
-    --blue-hero-bg: var(--brand-blue-200);
+    --background-primary: oklch(25.7% 0.008 220.9);
+    --hero-bg: radial-gradient(54.1% 59.54% at 50% 100%, #0B526D 0%, #003F58 100%);
     --text-primary: var(--white);
     --box-shadow: black;
   }
