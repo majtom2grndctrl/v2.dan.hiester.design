@@ -58,6 +58,11 @@ useServerSeoMeta({
     box-sizing: border-box;
     max-width: 100%
   }
+  @media (min-width: $breakpoint-small) {
+      .summary-wrapper {
+        padding-top: 0;
+    }
+  }
   @media (min-width: $breakpoint-medium) {
     .hero {
       display: grid;
@@ -70,7 +75,7 @@ useServerSeoMeta({
       flex-direction: row;
       align-items: center;
       grid-column: 1 / span 10;
-      padding: var(--spatial-scale-6) 0;
+      padding: 0;
     }
     .summary {
       font-size: var(--type-scale-1);
@@ -80,9 +85,6 @@ useServerSeoMeta({
     }
   }
   @media (min-width: calc($breakpoint-medium + (200rem/16))) {
-    .summary-wrapper {
-      padding: var(--spatial-scale-9) 0;
-    }
     .summary {
       font-size: var(--type-scale-2);
       line-height: var(--spatial-scale-6);

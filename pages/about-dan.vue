@@ -65,14 +65,17 @@ useServerSeoMeta({
     display: flex;
     flex-direction: column-reverse;
     gap: var(--spatial-scale-7);
+    @media (min-width: $breakpoint-small) {
+      padding-top: 0;
+    }
     @media (min-width: $breakpoint-medium) {
       display: grid;
       gap: var(--grid-gutter);
       grid-template-columns: repeat(15, 1fr);
+      padding-top: 0;
+      padding-bottom: 0;
     }
     @media (min-width: $breakpoint-large) {
-      padding-top: var(--spatial-scale-5);
-      padding-bottom: var(--spatial-scale-6);
     }
   }
   .summary-wrapper {

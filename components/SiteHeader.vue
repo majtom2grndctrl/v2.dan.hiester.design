@@ -77,7 +77,8 @@ onUnmounted(() => {
   }
 
   .SiteHeader {
-    padding: var(--spatial-scale-5) 0 var(--spatial-scale-7);
+    padding-top: var(--spatial-scale-5);
+    padding-bottom: var(--spatial-scale-7);
     @media (min-width: $breakpoint-medium) {
       align-items: first baseline;
       display: flex;
@@ -88,7 +89,8 @@ onUnmounted(() => {
     @media (min-width: $breakpoint-large) {
       display: grid;
       grid-template-columns: repeat(15, 1fr);
-      padding: var(--spatial-scale-7) 0 var(--spatial-scale-6);
+      padding-top: var(--spatial-scale-6);
+      padding-bottom: var(--spatial-scale-3);
     }
   }
 

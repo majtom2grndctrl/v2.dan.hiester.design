@@ -84,7 +84,12 @@ useServerSeoMeta({
   .hero-meta-wrapper {
     margin-top: var(--type-scale-1);
   }
-
+  @media (min-width: $breakpoint-small) {
+    .hero {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
   @media (min-width: $breakpoint-large) {
     .hero {
       display: grid;
