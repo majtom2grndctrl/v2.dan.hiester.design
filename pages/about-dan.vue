@@ -22,7 +22,7 @@ useServerSeoMeta({
 
 <template>
   <PageHero>
-    <div class="hero dhd--layout-wrapper" v-if="page">
+    <div class="hero" v-if="page">
       <div class="summary-wrapper">
         <h1 class="dhd--text--overline summary-overline" v-html="page.data.page_title_overline" />
         <div class="page-title" v-html="page.data.page_title" />

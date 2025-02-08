@@ -24,7 +24,7 @@ useServerSeoMeta({
 
 <template>
   <PageHero>
-    <div class="hero dhd--layout-wrapper">
+    <div class="hero">
       <div class="hero-image-wrapper">
         <PrismicImage
           class="hero-image"

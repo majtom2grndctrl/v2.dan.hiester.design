@@ -25,7 +25,7 @@ useServerSeoMeta({
 
 <template>
   <PageHero>
-    <div class="hero dhd--layout-wrapper">
+    <div class="hero">
         <div class="summary-wrapper">
           <div class="summary dhd--cms-content">
             <PrismicText :field="page?.data.hero_intro" />
