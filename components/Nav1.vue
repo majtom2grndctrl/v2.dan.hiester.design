@@ -84,10 +84,7 @@
         opacity: 1;
         width: var(--nav-link-underline-width);
       }
-      &:hover:after {
-//        width: var(--nav-link-underline-width);
-      }
+    }
   }
-}
 
 </style>

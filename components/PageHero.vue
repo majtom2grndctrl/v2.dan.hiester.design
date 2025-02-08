@@ -3,7 +3,7 @@
 
 <template>
   <div class="PageHero--wrapper">
-    <header class="PageHero">
+    <header class="PageHero dhd--layout-wrapper">
         <slot />
     </header>
   </div>
