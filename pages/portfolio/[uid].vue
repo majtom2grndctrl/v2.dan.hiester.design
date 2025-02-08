@@ -87,6 +87,10 @@ useServerSeoMeta({
   @media (min-width: $breakpoint-small) {
     .hero {
       padding-top: 0;
+    }
+  }
+  @media (min-width: $breakpoint-medium) {
+    .hero {
       padding-bottom: 0;
     }
   }
