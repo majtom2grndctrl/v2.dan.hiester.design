@@ -18,4 +18,5 @@ export const components = defineSliceZoneComponents({
   story_overview: defineAsyncComponent(
     () => import("./StoryOverview/index.vue"),
   ),
+  video: defineAsyncComponent(() => import("./VimeoClip/index.vue")),
 });

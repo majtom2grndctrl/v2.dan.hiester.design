@@ -264,7 +264,7 @@ export interface ArticlesPageTypeDocumentDataListItem {
    * - **API ID Path**: articles_page_type.list[].url
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  url: prismic.LinkField;
+  url: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
 
   /**
    * Description field in *Articles Page Type → List*
@@ -865,7 +865,7 @@ export interface MainNavigationDocumentDataLinksItem {
    * - **API ID Path**: main_navigation.links[].link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  link: prismic.LinkField;
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
 
   /**
    * Label field in *Main Navigation → Links*
@@ -1640,12 +1640,65 @@ export type StoryOverviewSlice = prismic.SharedSlice<
   StoryOverviewSliceVariation
 >;
 
+/**
+ * Primary content in *VimeoClip → Default → Primary*
+ */
+export interface VideoSliceDefaultPrimary {
+  /**
+   * Vimeo ID field in *VimeoClip → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video.default.primary.vimeo_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  vimeo_id: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for VimeoClip Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<VideoSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *VimeoClip*
+ */
+type VideoSliceVariation = VideoSliceDefault;
+
+/**
+ * VimeoClip Shared Slice
+ *
+ * - **API ID**: `video`
+ * - **Description**: Video
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoSlice = prismic.SharedSlice<"video", VideoSliceVariation>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
       repositoryNameOrEndpoint: string,
       options?: prismic.ClientConfig,
     ): prismic.Client<AllDocumentTypes>;
+  }
+
+  interface CreateWriteClient {
+    (
+      repositoryNameOrEndpoint: string,
+      options: prismic.WriteClientConfig,
+    ): prismic.WriteClient<AllDocumentTypes>;
+  }
+
+  interface CreateMigration {
+    (): prismic.Migration<AllDocumentTypes>;
   }
 
   namespace Content {
@@ -1721,6 +1774,10 @@ declare module "@prismicio/client" {
       StoryOverviewSliceDefaultItem,
       StoryOverviewSliceVariation,
       StoryOverviewSliceDefault,
+      VideoSlice,
+      VideoSliceDefaultPrimary,
+      VideoSliceVariation,
+      VideoSliceDefault,
     };
   }
 }
