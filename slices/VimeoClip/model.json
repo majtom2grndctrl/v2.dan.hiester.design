@@ -1,0 +1,26 @@
+{
+  "id": "video",
+  "type": "SharedSlice",
+  "name": "VimeoClip",
+  "description": "Video",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "vimeo_id": {
+          "type": "Text",
+          "config": {
+            "label": "Vimeo ID",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

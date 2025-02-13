@@ -53,7 +53,7 @@
       padding: var(--spatial-scale-1);
       position: relative;
       text-decoration: none;
-      transition: color .66s, text-decoration-color .66s;
+      transition: color .3s ease-out, text-decoration-color .3s ease-out;
       white-space: nowrap;
       &:after {
         background: var(--nav-link-color);
@@ -84,10 +84,7 @@
         opacity: 1;
         width: var(--nav-link-underline-width);
       }
-      &:hover:after {
-//        width: var(--nav-link-underline-width);
-      }
+    }
   }
-}
 
 </style>

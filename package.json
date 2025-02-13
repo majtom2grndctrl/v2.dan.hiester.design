@@ -17,21 +17,21 @@
   },
   "devDependencies": {
     "@nuxt/eslint-config": "^0.3.13",
-    "@nuxt/types": "^2.17.4",
-    "@nuxtjs/prismic": "^3.3.2",
+    "@nuxtjs/prismic": "^4.0.1",
     "@prismicio/types": "^0.2.9",
     "@slicemachine/adapter-nuxt": "latest",
-    "@types/node": "^20",
+    "@types/node": "^22",
     "@zadigetvoltaire/nuxt-gtm": "^0.0.13",
-    "concurrently": "^8.2.2",
+    "concurrently": "^9.1.2",
     "eslint": "^9.8.0",
-    "nuxt": "^3.12.4",
-    "sass": "^1.77.8",
+    "nuxt": "^3.15.3",
+    "sass": "^1.83.4",
     "slice-machine-ui": "latest"
   },
   "dependencies": {
     "@nuxt/image": "^1.7.0",
-    "deeper-details": "^0.0.17"
+    "deeper-details": "^0.0.17",
+    "vue-vimeo-player": "^0.2.2"
   },
-  "packageManager": "yarn@4.3.1"
+  "packageManager": "yarn@4.6.0"
 }

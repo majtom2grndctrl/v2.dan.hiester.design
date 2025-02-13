@@ -24,7 +24,7 @@ useServerSeoMeta({
 
 <template>
   <PageHero>
-    <div class="hero dhd--layout-wrapper">
+    <div class="hero">
       <div class="hero-image-wrapper">
         <PrismicImage
           class="hero-image"
@@ -84,7 +84,16 @@ useServerSeoMeta({
   .hero-meta-wrapper {
     margin-top: var(--type-scale-1);
   }
-
+  @media (min-width: $breakpoint-small) {
+    .hero {
+      padding-top: 0;
+    }
+  }
+  @media (min-width: $breakpoint-medium) {
+    .hero {
+      padding-bottom: 0;
+    }
+  }
   @media (min-width: $breakpoint-large) {
     .hero {
       display: grid;

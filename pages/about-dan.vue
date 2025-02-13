@@ -22,7 +22,7 @@ useServerSeoMeta({
 
 <template>
   <PageHero>
-    <div class="hero dhd--layout-wrapper" v-if="page">
+    <div class="hero" v-if="page">
       <div class="summary-wrapper">
         <h1 class="dhd--text--overline summary-overline" v-html="page.data.page_title_overline" />
         <div class="page-title" v-html="page.data.page_title" />
@@ -36,7 +36,9 @@ useServerSeoMeta({
     </div>
   </PageHero>
   <section class="dhd--layout-wrapper overview-wrapper">
-    <PrismicText class="overview" :field="page?.data.overview" />
+    <div class="overview">
+      <PrismicText :field="page?.data.overview" />
+    </div>
   </section>
 
   <Influences
@@ -58,19 +60,22 @@ useServerSeoMeta({
 <style lang="scss" scoped>
   .hero {
     display: block;
-    padding-top: var(--spatial-scale-7);
+    padding-top: var(--spatial-scale-8);
     padding-bottom: var(--spatial-scale-7);
     display: flex;
     flex-direction: column-reverse;
     gap: var(--spatial-scale-7);
+    @media (min-width: $breakpoint-small) {
+      padding-top: 0;
+    }
     @media (min-width: $breakpoint-medium) {
       display: grid;
       gap: var(--grid-gutter);
       grid-template-columns: repeat(15, 1fr);
+      padding-top: 0;
+      padding-bottom: 0;
     }
     @media (min-width: $breakpoint-large) {
-      padding-top: var(--spatial-scale-5);
-      padding-bottom: var(--spatial-scale-6);
     }
   }
   .summary-wrapper {

@@ -1,0 +1,14 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"vimeo_id": {
+				"__TYPE__": "FieldContent",
+				"value": "train",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

@@ -21,10 +21,11 @@ const props = defineProps({
             </PrismicLink>
           </h2>
         </header>
-        <PrismicRichText
-          class="description"
-          :field="item.description" 
-        />
+        <div class="description">
+          <PrismicRichText
+            :field="item.description" 
+          />
+        </div>
         <PrismicLink class="dhd--cta-link" :field="item.url">
           {{ item.cta_link_label }}
         </PrismicLink>
