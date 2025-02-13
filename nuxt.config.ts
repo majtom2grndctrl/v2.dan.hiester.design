@@ -51,6 +51,7 @@ export default defineNuxtConfig({
   },
   plugins: [
     '~/plugins/deeper-details.client.ts',
+    '~/plugins/vue-vimeo-player.client.ts'
   ],
   prismic: {
     endpoint: 'dan-hiester-design',
