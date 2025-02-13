@@ -7,6 +7,22 @@
 				"__TYPE__": "FieldContent",
 				"value": "train",
 				"type": "Text"
+			},
+			"overline": {
+				"__TYPE__": "FieldContent",
+				"value": "song",
+				"type": "Text"
+			},
+			"caption": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Officia in quis aliqua est amet cupidatat irure laboris velit laborum consectetur mollit non eu eu. In fugiat non cupidatat nulla qui irure eu occaecat id veniam dolore. Nisi consectetur consequat nisi adipisicing aliqua dolor aliquip fugiat mollit proident sit."
+						}
+					}
+				]
 			}
 		},
 		"items": []
