@@ -408,6 +408,7 @@ export type ArticlesPageTypeDocument<Lang extends string = string> =
   >;
 
 type CaseStudyDocumentDataSlicesSlice =
+  | VideoSlice
   | DeeperDetailsSlice
   | StoryOverviewSlice
   | QuoteSpreadSlice
@@ -1645,6 +1646,16 @@ export type StoryOverviewSlice = prismic.SharedSlice<
  */
 export interface VideoSliceDefaultPrimary {
   /**
+   * Overline field in *VimeoClip → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video.default.primary.overline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  overline: prismic.KeyTextField;
+
+  /**
    * Vimeo ID field in *VimeoClip → Default → Primary*
    *
    * - **Field Type**: Text
@@ -1653,6 +1664,16 @@ export interface VideoSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   vimeo_id: prismic.KeyTextField;
+
+  /**
+   * Caption field in *VimeoClip → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video.default.primary.caption
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  caption: prismic.RichTextField;
 }
 
 /**
