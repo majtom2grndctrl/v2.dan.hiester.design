@@ -2453,7 +2453,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vimeo/player@npm:^2.14.1":
+"@vimeo/player@npm:^2.16.2":
   version: 2.25.1
   resolution: "@vimeo/player@npm:2.25.1"
   dependencies:
@@ -2574,7 +2574,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/compiler-sfc@npm:3.5.13, @vue/compiler-sfc@npm:^3.5.13, @vue/compiler-sfc@npm:^3.5.3":
+"@vue/compiler-sfc@npm:3.5.13, @vue/compiler-sfc@npm:^3.2.23, @vue/compiler-sfc@npm:^3.5.13, @vue/compiler-sfc@npm:^3.5.3":
   version: 3.5.13
   resolution: "@vue/compiler-sfc@npm:3.5.13"
   dependencies:
@@ -7497,7 +7497,7 @@ __metadata:
     nuxt: "npm:^3.15.3"
     sass: "npm:^1.83.4"
     slice-machine-ui: "npm:latest"
-    vue-vimeo-player: "npm:^0.2.2"
+    vue-vimeo-player: "npm:^1.1.2"
   languageName: unknown
   linkType: soft
 
@@ -7616,7 +7616,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"object-assign@npm:^4, object-assign@npm:^4.1.1":
+"object-assign@npm:^4":
   version: 4.1.1
   resolution: "object-assign@npm:4.1.1"
   checksum: 10/fcc6e4ea8c7fe48abfbb552578b1c53e0d194086e2e6bbbf59e0a536381a292f39943c6e9628af05b5528aa5e3318bb30d6b2e53cadaf5b8fe9e12c4b69af23f
@@ -10842,19 +10842,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-vimeo-player@npm:^0.2.2":
-  version: 0.2.2
-  resolution: "vue-vimeo-player@npm:0.2.2"
+"vue-vimeo-player@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "vue-vimeo-player@npm:1.1.2"
   dependencies:
-    "@vimeo/player": "npm:^2.14.1"
-    object-assign: "npm:^4.1.1"
-  peerDependencies:
-    vue: ^2.5.17
-  checksum: 10/0f26e86f075c07746a4b1e04befde5b2207623a0dc4e04e0d4429342996eece7d6e48b8ac6b573939522fdd0154ceb2400d1a664b291499353fe0dd805407e64
+    "@vimeo/player": "npm:^2.16.2"
+    "@vue/compiler-sfc": "npm:^3.2.23"
+    vue: "npm:^3.2.23"
+  checksum: 10/6c58fdc25ff338a8b58aa7c6b52f8d7bc3a3541a485051888ae596cf81829a2860390626a62603eece2c5499f5e6ca6b6217911f16d5ea0c3be281c7bab5a7ac
   languageName: node
   linkType: hard
 
-"vue@npm:^3.5.13":
+"vue@npm:^3.2.23, vue@npm:^3.5.13":
   version: 3.5.13
   resolution: "vue@npm:3.5.13"
   dependencies:

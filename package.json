@@ -31,7 +31,7 @@
   "dependencies": {
     "@nuxt/image": "^1.7.0",
     "deeper-details": "^0.0.17",
-    "vue-vimeo-player": "^0.2.2"
+    "vue-vimeo-player": "^1.1.2"
   },
   "packageManager": "yarn@4.6.0"
 }
