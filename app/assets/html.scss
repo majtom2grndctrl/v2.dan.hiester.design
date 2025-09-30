@@ -1,0 +1,228 @@
+@use "./scss-lib" as *;
+
+:root {
+  --font-heading: gilmer, poppins, sans-serif;
+  --font-body: libre-franklin, 'Libre Franklin', sans-serif;
+  --mobile-nav-transition-duration: .3s;
+
+  --brand-blue-100: oklch(20.2% 0.048 223);
+  --brand-blue-200: oklch(42.4% 0.105 228.1);
+  --brand-blue-300: oklch(51.5% 0.124 227.2);
+  --brand-blue-400: oklch(59.7% 0.138 226.1);
+  --brand-blue-500: oklch(66.1% 0.14 224.6);
+  --brand-blue-600: oklch(66.1% 0.14 224.6);
+  --brand-blue-700: oklch(77.9% 0.118 222.3);
+  --brand-blue-800: oklch(84.7% 0.091 221.5);
+  --brand-blue-900: oklch(90.9% 0.059 221.1);
+
+  --gray-025: oklch(7.92% 0.026 257.24);
+  --gray-100: oklch(14.16% 0.019 269.39);
+  --gray-200: oklch(29.2% 0.048 270.5);
+  --gray-300: oklch(43.35% 0.05 271.41);
+  --gray-400: oklch(56.66% 0.049 271.91);
+  --gray-500: oklch(70.88% 0.023 272.8);
+  --gray-600: oklch(83.24% 0.019 272.95);
+  --gray-700: oklch(88.97% 0.015 273.04);
+  --gray-800: oklch(94.07% 0.009 273.15);
+  --gray-900: oklch(97.46% 0.004 273.23);
+
+  --box-shadow: oklch(20.22% 0.048 222.96 / 0.4);
+
+  --light-dark-transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+  --link-bg-inactive: rgba(229, 239, 239, 0);
+  --link-bg-active: rgba(229, 239, 239, 1);
+
+  --white: #fff;
+
+  --midnight-slate: hsl(220 6% 10%);
+
+  --text-primary: var(--midnight-slate);
+  --background-primary: hsl(0 0% 100%);
+  --text-knockout: var(--white);
+  --hero-bg: var(--brand-blue-500);
+  --text-inline-hyperlink: oklch(60.38% 0.144423 226.95);
+
+  --type-scale-base: 1rem;
+  --scale-multiplier: 1.2;
+  --type-scale-1: var(--type-scale-base);
+  --type-scale-2: calc(var(--type-scale-1) * var(--scale-multiplier));
+  --type-scale-3: calc(var(--type-scale-2) * var(--scale-multiplier));
+  --type-scale-4: calc(var(--type-scale-3) * var(--scale-multiplier));
+  --type-scale-5: calc(var(--type-scale-4) * var(--scale-multiplier));
+  --type-scale-6: calc(var(--type-scale-5) * var(--scale-multiplier));
+  --type-scale-7: calc(var(--type-scale-6) * var(--scale-multiplier));
+  --type-scale-8: calc(var(--type-scale-7) * var(--scale-multiplier));
+  --type-scale-0: calc(var(--type-scale-base) / var(--scale-multiplier));
+  --type-scale-00: calc(var(--type-scale-0) / var(--scale-multiplier));
+
+  --spatial-scale-base: calc(var(--type-scale-base) * .73);
+  --spatial-scale-1: var(--spatial-scale-base);
+  --spatial-scale-2: calc(var(--spatial-scale-1) * var(--scale-multiplier));
+  --spatial-scale-3: calc(var(--spatial-scale-2) * var(--scale-multiplier));
+  --spatial-scale-4: calc(var(--spatial-scale-3) * var(--scale-multiplier));
+  --spatial-scale-5: calc(var(--spatial-scale-4) * var(--scale-multiplier));
+  --spatial-scale-6: calc(var(--spatial-scale-5) * var(--scale-multiplier));
+  --spatial-scale-7: calc(var(--spatial-scale-6) * var(--scale-multiplier));
+  --spatial-scale-8: calc(var(--spatial-scale-7) * var(--scale-multiplier));
+  --spatial-scale-9: calc(var(--spatial-scale-8) * var(--scale-multiplier));
+  --spatial-scale-10: calc(var(--spatial-scale-9) * var(--scale-multiplier));
+  --spatial-scale-11: calc(var(--spatial-scale-10) * var(--scale-multiplier));
+  --spatial-scale-12: calc(var(--spatial-scale-11) * var(--scale-multiplier));
+  --spatial-scale-13: calc(var(--spatial-scale-12) * var(--scale-multiplier));
+  --spatial-scale-14: calc(var(--spatial-scale-13) * var(--scale-multiplier));
+  --spatial-scale-0: calc(var(--spatial-scale-base) / var(--scale-multiplier));
+  --spatial-scale-00: calc(var(--spatial-scale-0) / var(--scale-multiplier));
+
+  --desktop-max-width: calc(1512rem /16);
+
+  --block-border-radius: var(--spatial-scale-2);
+  --mobile-block-margin: var(--spatial-scale-2);
+  --grid-gutter: var(--spatial-scale-4);
+
+
+  @media(prefers-contrast: more) {
+    --hero-bg: var(--brand-blue-300);
+  }
+
+  @media(prefers-color-scheme: dark) {
+    --background-primary: oklch(25.7% 0.008 220.9);
+    --hero-bg: radial-gradient(54.1% 59.54% at 50% 100%, #0B526D 0%, #003F58 100%);
+    --text-primary: var(--white);
+    --box-shadow: black;
+  }
+
+  @media(min-width: $breakpoint-medium) {
+    --scale-multiplier: 1.25;
+    --type-scale-base: calc(18rem/16);
+  }
+
+  @media(min-width: $breakpoint-large) {
+    --type-scale-base: calc(20rem/16);
+  }
+}
+body {
+  background: var(--background-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  margin: 0;
+  transition: var(--light-dark-transition);
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+figure img,
+.dhd--image-slice img,
+.dhd--CaseStudyTeaser img {
+  height: auto;
+}
+
+.dhd--text--overline {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--type-scale-0);
+  letter-spacing: 0.045em;
+  line-height: var(--spatial-scale-0);
+  margin-top: 0;
+  margin-bottom: var(--spatial-scale-00);
+  text-transform: uppercase;
+}
+
+.dhd--text--title-link {
+  color: inherit;
+  display: block;
+  text-decoration: underline;
+  text-decoration-color: oklch(100 0 0 / 0);
+  transition: text-decoration-color .3s ease-in-out;
+  &:hover {
+    text-decoration-color: currentColor;
+    text-decoration-thickness: .0625em;
+  }
+}
+
+.dhd--layout-wrapper {
+  padding-right: var(--grid-gutter);
+  padding-left: var(--grid-gutter);
+  @media (min-width: $breakpoint-small) {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: calc(#{13 / 15} * 100%);
+    padding-right: 0;
+    padding-left: 0;
+  }
+  @media (min-width: $breakpoint-medium) {
+    max-width: calc(#{13 / 15} * 100%);
+  }
+  @media (min-width: $breakpoint-large) {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: calc(#{1478rem} / 16);
+    /*
+       One out of 15 columns, plus a gutter of spacial scale 2
+       This sets the illusion of a 17 column grid,
+       where the outermost columns are reserved for spacing / rhythm
+    */
+    --lateral-padding: calc(#{ 1 / 17 } * 100%);
+    padding-right: var(--lateral-padding);
+    padding-left: var(--lateral-padding);
+  }
+  @media (min-width: $breakpoint-royale) {
+    --lateral-padding: calc(#{ 1 / 19 } * 100%); 
+  }
+}
+
+.dhd--cms-content {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+  h2 {
+    font-size: var(--type-scale-3);
+    font-weight: 600;
+    line-height: var(--spatial-scale-6);
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  h3 {
+    font-size: var(--type-scale-2);
+    font-weight: 600;
+    line-height: var(--spatial-scale-5);
+  }
+  p {
+    font-size: var(--type-scale-1);
+    line-height: var(--spatial-scale-5);
+    margin-top: var(--spatial-scale-5);
+    margin-bottom: var(--spatial-scale-5);
+  }
+  ul, ol {
+    font-size: var(--type-scale-1);
+    line-height: var(--spatial-scale-5);
+    margin-top: var(--spatial-scale-5);
+    margin-bottom: var(--spatial-scale-5);
+  }
+  li {
+    margin: var(--spatial-scale-3)
+            0
+            var(--spatial-scale-3)
+            0;
+  }
+  // Spacing for numbers and discs are too different by default
+  // so let’s override them.
+  ol > li {
+    padding-left: var(--spatial-scale-2);
+  }
+  ul > li {
+    padding-left: var(--spatial-scale-00);
+  }
+}
+
+.dhd--cta-link {
+  border-bottom: 0.12rem solid var(--text-inline-hyperlink);
+  color: var(--text-inline-hyperlink);
+  display: inline-block;
+  font-size: var(--type-scale-2);
+  line-height: var(--spatial-scale-5);
+  text-decoration: none;
+  white-space: nowrap;
+}

@@ -1,0 +1,36 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"section_title",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "for",
+							"type": "Text"
+						}
+					],
+					[
+						"content",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Commodo sunt do officia quis et labore ut laboris nulla quis sunt esse. Commodo magna fugiat non laboris id deserunt elit veniam laborum tempor cupidatat. Aliquip pariatur ad laboris eiusmod mollit enim."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]

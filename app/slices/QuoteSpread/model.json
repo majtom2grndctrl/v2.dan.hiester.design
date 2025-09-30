@@ -1,0 +1,52 @@
+{
+  "id": "quote_spread",
+  "type": "SharedSlice",
+  "name": "QuoteSpread",
+  "description": "QuoteSpread",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "background_image": {
+          "type": "Image",
+          "config": {
+            "label": "Background Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "primary_content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Primary Content",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,strong,em,hyperlink,list-item,o-list-item,rtl"
+          }
+        },
+        "attribution": {
+          "type": "Text",
+          "config": {
+            "label": "Attribution",
+            "placeholder": ""
+          }
+        },
+        "supplemental_content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Supplemental Content",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
