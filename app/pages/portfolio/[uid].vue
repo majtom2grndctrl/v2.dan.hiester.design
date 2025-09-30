@@ -29,6 +29,7 @@ useServerSeoMeta({
         <PrismicImage
           class="hero-image"
           :field="page.data.project_image"
+          :imgixParams="{ fit: 'crop', ar: '3:2' }"
           v-if="page"
         />
       </div>
@@ -79,6 +80,7 @@ useServerSeoMeta({
   }
   .hero-image {
     aspect-ratio: calc(3/2);
+    height: auto;
     max-width: 100%;
   }
   .hero-meta-wrapper {

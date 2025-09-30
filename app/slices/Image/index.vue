@@ -13,7 +13,10 @@ defineProps(getSliceComponentProps<Content.ImageSlice>());
       v-if="Boolean(slice.primary.image.url)"
     >
       <div v-if="slice.primary.overline" class="dhd--text--overline" v-html="slice.primary.overline" />
-      <PrismicImage :field="slice.primary.image" loading="lazy" />
+      <PrismicImage
+        :field="slice.primary.image"
+        loading="lazy"
+      />
       <figcaption>
         <PrismicRichText :field="slice.primary.caption" />
       </figcaption>
@@ -42,7 +45,9 @@ defineProps(getSliceComponentProps<Content.ImageSlice>());
   }
   > img {
     box-shadow: 0px 0px var(--spatial-scale-00) 0 var(--box-shadow);
+    height: auto;
     max-width: 100%;
+    width: 100%;
   }
   > figcaption {
     font-size: var(--type-scale-1);

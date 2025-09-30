@@ -113,6 +113,12 @@ img {
   vertical-align: middle;
 }
 
+figure img,
+.dhd--image-slice img,
+.dhd--CaseStudyTeaser img {
+  height: auto;
+}
+
 .dhd--text--overline {
   font-family: var(--font-heading);
   font-weight: 700;
