@@ -16,10 +16,22 @@ defineProps(
 </script>
 
 <template>
-  <section
+  <div
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
   >
-    <vimeo-player :video-id="slice.primary.vimeo_id" />
-  </section>
+  <h1>Vimeo Slice</h1>
+    <CaseStudyAsset
+      :caption="slice.primary.caption"
+      :overline="slice.primary.overline"
+    >
+      <vimeo-player :video-id="slice.primary.vimeo_id" class="player" />
+    </CaseStudyAsset>
+  </div>
 </template>
+
+<style lang="scss" scoped>
+  .player {
+    width: 80vw;
+  }
+</style>
