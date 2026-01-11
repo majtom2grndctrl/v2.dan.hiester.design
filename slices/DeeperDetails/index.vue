@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import BodyCopy from "~/components/PageSections/Style/BodyCopy.vue";
 import { isFilled, type Content, type PrismicDocument } from "@prismicio/client";
-import { components } from '~/slices'
-import type { DeeperDetailsContentDocument } from "~/prismicio-types";
+import { components } from '~~/slices'
+import type { DeeperDetailsContentDocument } from "~~/prismicio-types";
 
 // The array passed to `getSliceComponentProps` is purely optional.
 // Consider it as a visual hint for you when templating your slice.
