@@ -6,8 +6,8 @@
   "author": "Prismic <contact@prismic.io> (https://prismic.io)",
   "scripts": {
     "slicemachine": "start-slicemachine",
-    "dev": "concurrently \"npm:generate-slicemachine-types\" \"npm:nuxt:dev\" \"npm:slicemachine\" --names \"nuxt,slicemachine\" --prefix-colors green,magenta",
-    "nuxt:dev": "nuxt dev",
+    "dev:all": "concurrently \"npm:generate-slicemachine-types\" \"npm:nuxt:dev\" \"npm:slicemachine\" --names \"slicemachine,nuxt\" --prefix-colors green,magenta",
+    "dev": "nuxt dev",
     "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",

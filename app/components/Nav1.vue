@@ -11,7 +11,6 @@
   // We want the link to / to also show as active when a case study
   // from the /portfolio folder is currently being shown.
   const additionalLinkClassName = (linkPath: string) => {
-    console.log({ linkPath });
     return linkPath === '/' && route.path.startsWith('/portfolio')
       ? 'router-link-active'
       : ''

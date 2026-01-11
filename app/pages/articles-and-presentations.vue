@@ -9,7 +9,7 @@ const { data: articles_page } = useAsyncData('/articles-and-presentations', asyn
 )
 
 useServerSeoMeta({
-  title: () => articles_page.value!.data.meta_title,
+  title: () => articles_page.value?.data.meta_title || '',
   description: () => articles_page.value?.data.meta_description,
   ogTitle: () => articles_page.value?.data.meta_title,
   ogDescription: () => articles_page.value?.data.meta_description,
