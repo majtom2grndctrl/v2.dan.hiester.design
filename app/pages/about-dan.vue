@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { components } from '~/slices'
+import { components } from '~~/slices'
 import Influences from '~/components/PageSections/About/Influences.vue';
 import PageHero from '~/components/PageHero.vue';
 

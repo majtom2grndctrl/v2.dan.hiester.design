@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ArticlesPageTypeDocumentDataListItem } from '~/prismicio-types'
+import type { ArticlesPageTypeDocumentDataListItem } from '~~/prismicio-types'
 
 const props = defineProps({
   content: {

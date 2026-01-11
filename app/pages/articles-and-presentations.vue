@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { ArticlesPageTypeDocumentDataListItem } from '~/prismicio-types'
+import type { ArticlesPageTypeDocumentDataListItem } from '~~/prismicio-types'
 import PageHero from '~/components/PageHero.vue';
 import ContentList from '~/components/PageSections/ArticlesAndPresentations/ContentList.vue'
 
