@@ -149,6 +149,9 @@
     .influence-image-wrapper {
       background-color: var(--item-background-color);
       box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin: 0 0 var(--grid-gutter);
       padding: var(--grid-gutter);
       @media (min-width: $breakpoint-medium) {
@@ -162,11 +165,15 @@
     }
     .influence-image {
       display: block;
-      margin: 0 auto;
+      height: auto;
+      width: auto;
       max-height: 20lvh;
       max-width: 100%;
       @media (min-width: $breakpoint-medium) {
+        height: 100%;
         max-height: 100%;
+        object-fit: contain;
+        width: 100%;
       }
     }
     .influence-description {
