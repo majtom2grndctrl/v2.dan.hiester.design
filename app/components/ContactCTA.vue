@@ -4,7 +4,7 @@ const oblada = {
   ob: 'talk-sh',
   di: 'ter.design',
 };
-let emailHref = ref<string | undefined>(undefined);
+const emailHref = ref<string | undefined>(undefined);
 
 onMounted(() => {
     // This helps me hide things from bots
