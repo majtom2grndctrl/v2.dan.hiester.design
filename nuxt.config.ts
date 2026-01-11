@@ -15,6 +15,11 @@ export default defineNuxtConfig({
         { name: 'format-detection', content: 'telephone=no' },
       ],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    },
+  },
+  vue: {
+    compilerOptions: {
+      isCustomElement: (element) => element.startsWith('deeper-details')
     }
   },
   css: ['@/assets/html.scss'],
@@ -31,8 +36,9 @@ export default defineNuxtConfig({
     },
   },
   modules: [
+    '@nuxt/image',
     '@nuxtjs/prismic',
-    '@zadigetvoltaire/nuxt-gtm'
+    '@zadigetvoltaire/nuxt-gtm',
   ],
   image: {
     provider: "prismic",
@@ -43,7 +49,10 @@ export default defineNuxtConfig({
       "large": 1200,
     }
   },
-
+  plugins: [
+    '~/plugins/deeper-details.client.ts',
+    '~/plugins/vue-vimeo-player.client.ts'
+  ],
   prismic: {
     endpoint: 'dan-hiester-design',
     preview: '/api/preview',

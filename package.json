@@ -5,13 +5,14 @@
   "license": "Apache-2.0",
   "author": "Prismic <contact@prismic.io> (https://prismic.io)",
   "scripts": {
-    "dev": "concurrently \"npm:nuxt:dev\" \"npm:slicemachine\" --names \"nuxt,slicemachine\" --prefix-colors green,magenta",
+    "slicemachine": "start-slicemachine",
+    "dev": "concurrently \"npm:generate-slicemachine-types\" \"npm:nuxt:dev\" \"npm:slicemachine\" --names \"nuxt,slicemachine\" --prefix-colors green,magenta",
     "nuxt:dev": "nuxt dev",
     "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "slicemachine": "start-slicemachine",
+    "generate-slicemachine-types": "npx slicemachine generate-types",
     "lint": "eslint ."
   },
   "devDependencies": {
@@ -27,6 +28,11 @@
     "sass": "^1.93.2",
     "slice-machine-ui": "latest",
     "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@nuxt/image": "^1.7.0",
+    "deeper-details": "^0.0.17",
+    "vue-vimeo-player": "^1.1.2"
   },
   "packageManager": "yarn@4.6.0"
 }

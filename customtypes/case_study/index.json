@@ -62,6 +62,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "video": {
+              "type": "SharedSlice"
+            },
+            "deeper_details": {
+              "type": "SharedSlice"
+            },
             "story_overview": {
               "type": "SharedSlice"
             },

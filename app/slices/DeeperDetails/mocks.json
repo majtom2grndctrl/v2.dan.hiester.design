@@ -1,0 +1,61 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"show_content_button_text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Pariatur elit aliquip exercitation id laboris consequat deserunt tempor sit aute."
+						}
+					}
+				]
+			},
+			"body_copy": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Voluptate proident aliquip proident culpa est nulla ex magna magna. Exercitation irure amet reprehenderit sunt do eu cillum sit deserunt laborum sit consequat aute."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "importedDocument",
+		"primary": {
+			"show_content_button_text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Qui culpa velit officia laboris adipisicing ipsum incididunt aute eiusmod. Enim nostrud velit fugiat consequat occaecat. Dolor dolor et aute nostrud laborum ut veniam pariatur occaecat mollit eiusmod ea reprehenderit."
+						}
+					}
+				]
+			},
+			"document_relation": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "DocumentLink",
+					"id": "mock_document_id"
+				}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
+]

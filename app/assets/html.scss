@@ -145,6 +145,11 @@ figure img,
 .dhd--layout-wrapper {
   padding-right: var(--grid-gutter);
   padding-left: var(--grid-gutter);
+  .dhd--layout-wrapper {
+    max-width: none;
+    padding-right: 0;
+    padding-left: 0;
+  }
   @media (min-width: $breakpoint-small) {
     margin-right: auto;
     margin-left: auto;
