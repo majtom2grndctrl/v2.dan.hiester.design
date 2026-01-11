@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { components } from '~/slices'
+import { components } from '~~/slices'
 
 const prismic = usePrismic()
 const route = useRoute()

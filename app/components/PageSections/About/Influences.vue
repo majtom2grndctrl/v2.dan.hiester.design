@@ -1,5 +1,5 @@
   <script setup lang="ts">
-  import type { AboutPageTypeDocumentDataInfluencesListItem } from '~/prismicio-types'
+  import type { AboutPageTypeDocumentDataInfluencesListItem } from '~~/prismicio-types'
 
   const props = defineProps({
     overline: {

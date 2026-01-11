@@ -48,6 +48,22 @@
           "single": "heading2,em"
         }
       },
+      "titles_list": {
+        "type": "Group",
+        "config": {
+          "label": "Titles",
+          "repeat": true,
+          "fields": {
+            "title_item": {
+              "type": "Text",
+              "config": {
+                "label": "Title",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

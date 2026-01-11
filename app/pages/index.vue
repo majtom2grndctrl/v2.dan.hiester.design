@@ -1,11 +1,24 @@
 <script setup lang="ts">
 import PageHero from '~/components/PageHero.vue';
-import { components } from '~/slices'
+import TypewriterText from '~/components/TypewriterText.vue';
+import { components } from '~~/slices';
 
 const prismic = usePrismic()
 const { data: page } = useAsyncData('/portfolio', async () =>
   await prismic.client.getByUID('homepage', 'home')
 )
+
+const heroIntroText = computed(() => prismic.asText(page.value?.data.hero_intro) || '');
+const titleList = computed(() => (page.value?.data.titles_list ?? [])
+  .map((item) => item.title_item)
+  .filter((item): item is string => typeof item === 'string' && item.trim().length > 0)
+);
+const summaryTyped = ref(false);
+const showTitles = computed(() => (summaryTyped.value || !heroIntroText.value) && titleList.value.length > 0);
+
+watch(heroIntroText, (value) => {
+  summaryTyped.value = !value;
+});
 
 useServerHead({
   title: () => `${page.value?.data.meta_title} • Dan Hiester`,
@@ -28,7 +41,26 @@ useServerSeoMeta({
     <div class="hero">
         <div class="summary-wrapper">
           <div class="summary dhd--cms-content">
-            <PrismicText :field="page?.data.hero_intro" />
+            <TypewriterText
+              :text="heroIntroText"
+              :type-speed="26"
+              :start-delay="300"
+              :pause-delay="900"
+              @done="summaryTyped = true"
+            />
+            <span v-if="showTitles" class="summary-titles">
+              <TypewriterText
+                :texts="titleList"
+                :loop="true"
+                :type-speed="32"
+                :delete-speed="20"
+                :pause-delay="3000"
+                :start-delay="200"
+                :next-delay="1000"
+                :hide-cursor-on-complete="false"
+                prefix=" "
+              />
+            </span>
           </div>
         </div>
       </div>
