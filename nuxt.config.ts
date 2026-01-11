@@ -1,4 +1,4 @@
-import paths from './paths';
+import paths from './app/paths';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({

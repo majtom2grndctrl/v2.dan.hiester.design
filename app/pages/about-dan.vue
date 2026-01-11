@@ -30,6 +30,7 @@ useServerSeoMeta({
       <div class="photo-wrapper">
         <PrismicImage
           :field="page.data.hero_image"
+          :imgixParams="{ fit: 'crop', ar: '3:2' }"
           class="photo"
         />
       </div>
@@ -102,7 +103,8 @@ useServerSeoMeta({
     aspect-ratio: calc(3/2);
     border: var(--spatial-scale-1) solid var(--text-knockout);
     box-sizing: border-box;
-    max-width: 100%
+    height: auto;
+    max-width: 100%;
   }
   .page-title {
     font-family: var(--font-heading);
