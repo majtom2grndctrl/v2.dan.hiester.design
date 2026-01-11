@@ -13,6 +13,17 @@ const titleList = computed(() => (page.value?.data.titles_list ?? [])
   .map((item) => item.title_item)
   .filter((item): item is string => typeof item === 'string' && item.trim().length > 0)
 );
+const longestTitle = computed(() => titleList.value.reduce((longest, current) => (
+  current.length > longest.length ? current : longest
+), ''));
+const summaryGhostText = computed(() => {
+  const base = heroIntroText.value.trim();
+  const suffix = longestTitle.value.trim();
+  if (base && suffix) {
+    return `${base} ${suffix}`;
+  }
+  return base || suffix;
+});
 const summaryTyped = ref(false);
 const showTitles = computed(() => (summaryTyped.value || !heroIntroText.value) && titleList.value.length > 0);
 
@@ -41,25 +52,32 @@ useServerSeoMeta({
     <div class="hero">
         <div class="summary-wrapper">
           <div class="summary dhd--cms-content">
-            <TypewriterText
-              :text="heroIntroText"
-              :type-speed="26"
-              :start-delay="300"
-              :pause-delay="900"
-              @done="summaryTyped = true"
-            />
-            <span v-if="showTitles" class="summary-titles">
+            <span v-if="summaryGhostText" class="summary-ghost" aria-hidden="true">
+              {{ summaryGhostText }}
+            </span>
+            <span class="summary-live">
               <TypewriterText
-                :texts="titleList"
-                :loop="true"
-                :type-speed="32"
-                :delete-speed="20"
-                :pause-delay="3000"
-                :start-delay="200"
-                :next-delay="1000"
-                :hide-cursor-on-complete="false"
-                prefix=" "
-              />
+                :text="heroIntroText"
+                :type-speed="26"
+                :start-delay="300"
+                :pause-delay="900"
+                :reserve-space="false"
+                @done="summaryTyped = true"
+              /><!--
+              --><span v-if="showTitles" class="summary-titles">
+                <TypewriterText
+                  :texts="titleList"
+                  :loop="true"
+                  :type-speed="32"
+                  :delete-speed="20"
+                  :pause-delay="3000"
+                  :start-delay="200"
+                  :next-delay="1000"
+                  :hide-cursor-on-complete="false"
+                  :reserve-space="false"
+                  prefix=" "
+                />
+              </span>
             </span>
           </div>
         </div>
@@ -83,6 +101,18 @@ useServerSeoMeta({
   .summary {
     font-size: var(--type-scale-2);
     line-height: var(--spatial-scale-6);
+    position: relative;
+  }
+  .summary-ghost {
+    display: inline;
+    visibility: hidden;
+    white-space: pre-wrap;
+  }
+  .summary-live {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    white-space: pre-wrap;
   }
   .photo {
     aspect-ratio: calc(3/2);

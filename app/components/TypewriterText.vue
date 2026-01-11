@@ -10,6 +10,9 @@ type Props = {
   startDelay?: number;
   pauseDelay?: number;
   nextDelay?: number;
+  reserveSpace?: boolean;
+  reserveMode?: 'space' | 'inline';
+  reserveText?: string;
   cursor?: string;
   showCursor?: boolean;
   hideCursorOnComplete?: boolean;
@@ -22,6 +25,8 @@ const props = withDefaults(defineProps<Props>(), {
   deleteSpeed: 22,
   startDelay: 250,
   pauseDelay: 1200,
+  reserveSpace: true,
+  reserveMode: 'space',
   cursor: '',
   showCursor: true,
   hideCursorOnComplete: true,
@@ -50,6 +55,34 @@ const effectiveTexts = computed(() => {
 });
 
 const textsKey = computed(() => effectiveTexts.value.join('\u0000'));
+const reserveContent = computed(() => {
+  if (!props.reserveSpace) {
+    return '';
+  }
+  if (props.reserveText !== undefined) {
+    return props.reserveText;
+  }
+  const texts = effectiveTexts.value;
+  if (!texts.length) {
+    return '';
+  }
+  if (props.text !== undefined) {
+    return props.text;
+  }
+  return texts.reduce((longest, current) => (
+    current.length > longest.length ? current : longest
+  ), '');
+});
+const reserveTextValue = computed(() => `${props.prefix}${reserveContent.value}`);
+const shouldRenderGhost = computed(() => (
+  props.reserveSpace && reserveContent.value.length > 0
+));
+const isReserveSpaceMode = computed(() => (
+  shouldRenderGhost.value && props.reserveMode === 'space'
+));
+const isReserveInlineMode = computed(() => (
+  shouldRenderGhost.value && props.reserveMode === 'inline'
+));
 
 const shouldLoop = computed(() => {
   if (props.loop !== undefined) {
@@ -159,16 +192,28 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <span class="typewriter" :class="{ 'typewriter--preserve': preserveWhitespace }">
-    <span v-if="prefix" class="typewriter-prefix">{{ prefix }}</span>
-    <span class="typewriter-text">{{ displayText }}</span>
-    <span
-      v-if="shouldShowCursor"
-      class="typewriter-cursor"
-      :class="{ 'typewriter-cursor--glyph': hasGlyphCursor }"
-      aria-hidden="true"
-    >
-      <span v-if="hasGlyphCursor" class="typewriter-cursor-text">{{ cursor }}</span>
+  <span
+    class="typewriter"
+    :class="{
+      'typewriter--preserve': preserveWhitespace,
+      'typewriter--reserve-space': isReserveSpaceMode,
+      'typewriter--reserve-inline': isReserveInlineMode
+    }"
+  >
+    <span v-if="shouldRenderGhost" class="typewriter-ghost" aria-hidden="true">
+      {{ reserveTextValue }}
+    </span>
+    <span class="typewriter-live">
+      <span v-if="prefix" class="typewriter-prefix">{{ prefix }}</span>
+      <span class="typewriter-text">{{ displayText }}</span>
+      <span
+        v-if="shouldShowCursor"
+        class="typewriter-cursor"
+        :class="{ 'typewriter-cursor--glyph': hasGlyphCursor }"
+        aria-hidden="true"
+      >
+        <span v-if="hasGlyphCursor" class="typewriter-cursor-text">{{ cursor }}</span>
+      </span>
     </span>
   </span>
 </template>
@@ -176,10 +221,46 @@ onBeforeUnmount(() => {
 <style lang="scss" scoped>
 .typewriter {
   display: inline;
+  max-width: 100%;
+  position: relative;
 }
 
 .typewriter--preserve {
   white-space: pre-wrap;
+}
+
+.typewriter--reserve-space {
+  display: inline-block;
+}
+
+.typewriter--reserve-space .typewriter-live {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  display: block;
+}
+
+.typewriter-ghost {
+  white-space: inherit;
+  visibility: hidden;
+}
+
+.typewriter--reserve-space .typewriter-ghost {
+  display: inline-block;
+}
+
+.typewriter--reserve-inline .typewriter-ghost {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.typewriter-live {
+  display: inline;
+  white-space: inherit;
 }
 
 .typewriter-text {
