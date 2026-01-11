@@ -6,13 +6,13 @@
   "author": "Prismic <contact@prismic.io> (https://prismic.io)",
   "scripts": {
     "slicemachine": "start-slicemachine",
-    "dev:all": "concurrently \"npm:generate-slicemachine-types\" \"npm:nuxt:dev\" \"npm:slicemachine\" --names \"slicemachine,nuxt\" --prefix-colors green,magenta",
+    "dev:all": "concurrently \"npm:generate-slicemachine-types\" \"npm:dev\" \"npm:slicemachine\" --names \"slicemachine,nuxt\" --prefix-colors green,magenta",
     "dev": "nuxt dev",
     "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "generate-slicemachine-types": "npx slicemachine generate-types",
+    "generate-slicemachine-types": "node ./node_modules/prismic-ts-codegen/bin/prismic-ts-codegen.js --config ./prismicCodegen.config.ts",
     "lint": "eslint ."
   },
   "devDependencies": {
