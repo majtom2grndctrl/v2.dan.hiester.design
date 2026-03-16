@@ -20,7 +20,7 @@ onMounted(() => {
     <div class="ContactCTA">
       <h2 class="heading">Want to see more?<br>Let’s get in touch.</h2>
       <div class="content-wrapper">
-        <p>Much of my work is under NDA, and I’m also often working on new projects that aren’t ready to be published here. The best way to learn about my capabilities is to get in touch and talk&nbsp;shop!</p>
+        <p>Much of my work is under NDA. I often show previews of upcoming projects on <a href="https://linkedin.com/in/danhiester" target="_blank">my LinkedIn profile</a>. The best way to learn about my capabilities is to get in touch and talk&nbsp;shop!</p>
       </div>
       <ul class="links-list">
         <li class="links-item">
