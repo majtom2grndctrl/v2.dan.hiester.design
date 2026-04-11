@@ -148,6 +148,7 @@ figure img,
   text-decoration-color: oklch(100 0 0 / 0);
   transition: text-decoration-color .3s ease-in-out;
   &:hover {
+    color: inherit;
     text-decoration-color: currentColor;
     text-decoration-thickness: .0625em;
   }
